@@ -1,0 +1,3491 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='EEEE, MMMM dd, yyyy, hh:mm a "("zzz")"'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>LabelingOflabel</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>LabelingOflabel</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Wednesday, March 12, 2025, 09:57 PM "("IST")"</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Smoke</a></li>
+					<li><a href='#'>Smote</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='46%'><span class='strong'>23</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='54%'>27</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='31.132%'><span class='strong'>66</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='27.358%'>58</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='41.509%'>88</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Setup</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 09:57 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 09:57 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 09:57 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+648ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>9:57:25 PM</td>
+					<td class='step-details'>Working On : <b>https://csjewellersuat.sandbox.operations.dynamics.com<b/> URL.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_30</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 09:58 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 09:58 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:00 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 36s+408ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'> System should display a "Posted Successfully" message upon clicking the Post button. </h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>9:59:21 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Posted | Actual: Posted
+Validated</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>9:59:21 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_21-59-21-086.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_21-59-21-086.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_21-59-21-086.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>9:59:21 PM</td>
+					<td class='step-details'>Posted
+Validated</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>9:59:23 PM</td>
+					<td class='step-details'>Posted<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_21-59-21-337.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_21-59-21-337.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_21-59-21-337.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:00:20 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : PostF</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-00-20-760.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-00-20-760.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-00-20-760.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_55</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:00 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:00 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:01 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 18s+826ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>1.Verify add the tag  collection code in reprinting of label
+2.After posting, if the user selects "Collection Code" from the "Purpose of Reprinting" dropdown, the scanned tag collection code should be updated in all tags under the Collection Code column.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:01:35 PM</td>
+					<td class='step-details'><span class='label white-text green'>Collection code is added Reprint123 sucessfully: </span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:01:35 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-01-35-406.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-01-35-406.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-01-35-406.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:01:41 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : addCollectionCode</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-01-41-722.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-01-41-722.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-01-41-722.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_43</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:01 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:01 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:04 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 3m 16s+797ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>1.Verify add the tag  design code in reprinting of label
+2.After posting, if the user selects "Design Code" from the "Purpose of Reprinting" dropdown, the scanned tag Design code should be updated in all tags under the Design code column.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:03:06 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Posted | Actual: No Design Code is present in Design Code Master against tag's item and configuration.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:03:06 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-06-452.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-06-452.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-06-452.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:03:06 PM</td>
+					<td class='step-details'>No Design Code is present in Design Code Master against tag's item and configuration.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:03:07 PM</td>
+					<td class='step-details'>No Design Code is present in Design Code Master against tag's item and configuration.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-06-608.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-06-608.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-06-608.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:03:09 PM</td>
+					<td class='step-details'><span class='label white-text red'>An exception occurred while checking notification presence</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:03:09 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-09-062.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-09-062.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-09-062.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:03:09 PM</td>
+					<td class='step-details'>Exception occurred while checking notification presence<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-09-246.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-09-246.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-03-09-246.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:04:20 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:04:20 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-20-150.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-20-150.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-20-150.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:04:20 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:04:21 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-20-296.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-20-296.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-20-296.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:04:58 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : addDesignCode</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-58-864.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-58-864.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-04-58-864.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_34</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:04 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:04 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:06 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 16s+672ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>1.Verify add the tag  Hm pcs in reprinting of label
+2.After scanned the tag with valid information ,Hm pcs should be reflected in reprinting of label line with respective column.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:06:09 PM</td>
+					<td class='step-details'><span class='label white-text green'>Hm Pcs is added 4 sucessfully: </span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:06:09 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-06-09-518.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-06-09-518.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-06-09-518.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:06:15 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : addHmPcs</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-06-15-774.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-06-15-774.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-06-15-774.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_31</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:06 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:06 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:07 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 16s+559ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>1.Verify add the tag  size in reprinting of label
+2.After posting, if the user selects "Ornament Size" from the "Purpose of Reprinting" dropdown, the scanned tag size should be updated in all tags under the ornamnet Size  column.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:07:32 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : addSize</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-32-571.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-32-571.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-32-571.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_24</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:07 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:07 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:07 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 25s+791ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify Attribute Change and scan field are display if User select dropdown value as "Attribute Change" from "Purpose of Reprinting" dropdownn</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smote</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:07:52 PM</td>
+					<td class='step-details'><span class='label white-text green'>Attribute Change  Attribute Change is displayed: </span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:07:52 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-52-230.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-52-230.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-52-230.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:07:52 PM</td>
+					<td class='step-details'><span class='label white-text green'> Scan Tag fields  Scan Tag  is displayed: </span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:07:52 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-52-367.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-52-367.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-52-367.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:07:58 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : attributeValidateFields</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-58-578.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-58-578.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-07-58-578.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_23</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:07 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:07 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:09 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 0s+317ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>1.Verify add the tag subsmithame in reprinting of label
+2.After posting, if the user selects "Subsmith Change" from the "Purpose of Reprinting" dropdown, the scanned Subsmith should be updated in all tags under the Subsmith column.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:08:59 PM</td>
+					<td class='step-details'><span class='label white-text green'>Subsmith is added OM JEWELS sucessfully: </span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:08:59 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-08-59-347.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-08-59-347.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-08-59-347.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:09:29 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:09:29 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-29-500.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-29-500.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-29-500.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:09:29 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:09:30 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-29-632.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-29-632.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-29-632.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:09:59 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : changeSubsmith</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-59-109.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-59-109.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-09-59-109.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_46</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:09 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:09 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:10 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+633ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan sold tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:10:35 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Please select tag with tag status - Release. | Actual: Please select tag with tag status - Release.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:10:35 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-10-35-611.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-10-35-611.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-10-35-611.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:10:35 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:10:37 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-10-35-746.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-10-35-746.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-10-35-746.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_46</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:10 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:10 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:11 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+718ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan consumed tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:11:34 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Please select tag with tag type - Tag. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:11:34 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-11-34-819.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-11-34-819.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-11-34-819.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:11:34 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:11:36 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-11-34-969.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-11-34-969.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-11-34-969.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_46</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:11 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:11 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:12 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+958ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan invalid tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:12:20 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Not a valid Tag. | Actual: Not a valid Tag.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:12:21 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-12-20-941.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-12-20-941.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-12-20-941.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:12:21 PM</td>
+					<td class='step-details'>Not a valid Tag.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:12:22 PM</td>
+					<td class='step-details'>Not a valid Tag.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-12-21-098.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-12-21-098.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-12-21-098.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_46</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:12 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:12 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:13 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+568ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan different location tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:13:17 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Location Doesn't Match. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:13:17 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-13-17-590.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-13-17-590.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-13-17-590.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:13:17 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:13:19 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-13-17-740.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-13-17-740.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-13-17-740.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_46</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:13 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:13 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:15 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 38s+861ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should show a validation message after entering mandatory fields with valid data and clicking the Validate button.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:14:53 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:14:53 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-14-53-435.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-14-53-435.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-14-53-435.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:14:53 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:14:54 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-14-53-554.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-14-53-554.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-14-53-554.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:15:26 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : negativeCertificateNo</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-15-26-707.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-15-26-707.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-15-26-707.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_52</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:15 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:15 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:16 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+687ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan sold tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:16:03 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Please select tag with tag status - Release. | Actual: Please select tag with tag status - Release.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:16:03 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-16-03-304.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-16-03-304.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-16-03-304.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:16:03 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:16:04 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-16-03-470.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-16-03-470.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-16-03-470.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_52</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:16 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:16 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:17 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+658ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan consumed tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:17:03 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Please select tag with tag type - Tag. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:17:03 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-17-03-529.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-17-03-529.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-17-03-529.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:17:03 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:17:04 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-17-03-684.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-17-03-684.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-17-03-684.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_52</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:17 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:17 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:18 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+787ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan invalid tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:18:13 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Not a valid Tag. | Actual: Not a valid Tag.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:18:13 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-18-13-135.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-18-13-135.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-18-13-135.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:18:13 PM</td>
+					<td class='step-details'>Not a valid Tag.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:18:14 PM</td>
+					<td class='step-details'>Not a valid Tag.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-18-13-300.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-18-13-300.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-18-13-300.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_52</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:18 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:18 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:19 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+795ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan different location tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:19:20 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Location Doesn't Match. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:19:20 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-19-20-221.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-19-20-221.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-19-20-221.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:19:20 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:19:21 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-19-20-381.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-19-20-381.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-19-20-381.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_52</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:20 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:20 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:22 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 0s+875ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should be throws error while enter tag but collection code is not set in collection master agianst item id and configuration</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:22:07 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:22:07 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-22-07-778.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-22-07-778.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-22-07-778.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:22:07 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:22:09 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-22-07-897.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-22-07-897.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-22-07-897.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_52</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:22 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:22 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:24 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 53s+307ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should show a validation message after entering mandatory fields with valid data and clicking the Validate button.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:23:32 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: No Collection Code is present in Collection Code Master. | Actual: No Collection Code is present in Collection Code Master.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:23:32 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-23-32-246.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-23-32-246.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-23-32-246.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:23:32 PM</td>
+					<td class='step-details'>No Collection Code is present in Collection Code Master.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:23:33 PM</td>
+					<td class='step-details'>No Collection Code is present in Collection Code Master.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-23-32-397.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-23-32-397.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-23-32-397.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:24:48 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : negativeCollectionCode</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-24-48-134.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-24-48-134.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-24-48-134.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:24 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:24 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:26 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 54s+232ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan sold tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:26:41 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:26:41 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-26-41-266.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-26-41-266.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-26-41-266.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:26:41 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:26:42 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-26-41-391.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-26-41-391.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-26-41-391.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:27 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:27 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:29 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 54s+506ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan consumed tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:29:11 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:29:11 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-29-11-205.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-29-11-205.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-29-11-205.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:29:11 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:29:12 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-29-11-324.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-29-11-324.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-29-11-324.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:29 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:29 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:31 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 53s+802ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan invalid tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:31:34 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:31:34 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-31-34-280.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-31-34-280.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-31-34-280.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:31:34 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:31:35 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-31-34-403.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-31-34-403.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-31-34-403.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:32 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:32 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:34 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 53s+816ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan different location tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:34:23 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:34:23 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-34-23-493.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-34-23-493.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-34-23-493.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:34:23 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:34:24 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-34-23-599.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-34-23-599.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-34-23-599.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:35 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:35 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:37 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 53s+983ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should be throws error while enter tag but size is not set in size master agianst item id and configuration</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:37:11 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:37:11 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-37-11-847.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-37-11-847.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-37-11-847.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:37:11 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-37-11-948.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-37-11-948.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-37-11-948.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_29</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:37 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:37 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:40 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 24s+4ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify Validate functionality without enter subsmmith name</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:39:31 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:39:31 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-39-31-457.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-39-31-457.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-39-31-457.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:39:31 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:39:32 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-39-31-578.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-39-31-578.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-39-31-578.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:40:02 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : negativeDesignCode</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-02-487.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-02-487.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-02-487.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_34</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:40 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:40 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:40 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+224ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan sold tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:40:38 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Please select tag with tag status - Release. | Actual: Please select tag with tag status - Release.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:40:38 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-38-562.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-38-562.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-38-562.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:40:38 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:40:40 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-38-695.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-38-695.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-40-38-695.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_34</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:41 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:41 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:41 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+125ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan consumed tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:41:54 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Please select tag with tag type - Tag. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:41:54 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-41-54-553.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-41-54-553.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-41-54-553.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:41:54 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:41:55 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-41-54-697.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-41-54-697.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-41-54-697.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='28'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_34</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:42 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:42 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:43 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+33ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan invalid tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:43:25 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Not a valid Tag. | Actual: Not a valid Tag.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:43:25 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-43-25-008.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-43-25-008.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-43-25-008.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:43:25 PM</td>
+					<td class='step-details'>Not a valid Tag.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:43:26 PM</td>
+					<td class='step-details'>Not a valid Tag.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-43-25-142.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-43-25-142.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-43-25-142.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_34</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:43 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:43 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:44 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+84ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan different location tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:44:32 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Location Doesn't Match. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:44:32 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-44-32-560.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-44-32-560.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-44-32-560.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:44:32 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:44:34 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-44-32-707.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-44-32-707.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-44-32-707.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_34</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:44 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:44 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:45 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 36s+884ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should be throws error while enter tag but hm pcs is not set in hallmarking master agianst item id and configuration</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:45:32 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: No HMpcs Entry is present in Hallmarking Charges Master against tag's item , configuration and weight. | Actual: No HMpcs Entry is present in Hallmarking Charges Master against tag's item , configuration and weight.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:45:32 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-45-32-005.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-45-32-005.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-45-32-005.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:45:32 PM</td>
+					<td class='step-details'>No HMpcs Entry is present in Hallmarking Charges Master against tag's item , configuration and weight.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:45:33 PM</td>
+					<td class='step-details'>No HMpcs Entry is present in Hallmarking Charges Master against tag's item , configuration and weight.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-45-32-140.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-45-32-140.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-45-32-140.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_34</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:45 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:45 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:47 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 16s+713ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should show a validation message after entering mandatory fields with valid data and clicking the Validate button.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:46:24 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: No HMpcs Entry is present in Hallmarking Charges Master against tag's item , configuration and weight. | Actual: No HMpcs Entry is present in Hallmarking Charges Master against tag's item , configuration and weight.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:46:24 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-46-24-236.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-46-24-236.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-46-24-236.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:46:24 PM</td>
+					<td class='step-details'>No HMpcs Entry is present in Hallmarking Charges Master against tag's item , configuration and weight.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:46:25 PM</td>
+					<td class='step-details'>No HMpcs Entry is present in Hallmarking Charges Master against tag's item , configuration and weight.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-46-24-370.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-46-24-370.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-46-24-370.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:47:05 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : negativeHmPcs</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-05-445.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-05-445.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-05-445.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:47 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:47 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:47 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+829ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan sold tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:47:35 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Please select tag with tag status - Release. | Actual: Please select tag with tag status - Release.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:47:35 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-35-143.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-35-143.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-35-143.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:47:35 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:47:36 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-35-271.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-35-271.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-47-35-271.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:48 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:48 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:48 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 31s+358ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan consumed tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:48:35 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Please select tag with tag type - Tag. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:48:35 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-48-35-778.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-48-35-778.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-48-35-778.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:48:35 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:48:37 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-48-35-983.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-48-35-983.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-48-35-983.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:49 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:49 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:49 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 31s+910ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan invalid tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:49:31 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Not a valid Tag. | Actual: Not a valid Tag.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:49:31 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-49-31-116.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-49-31-116.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-49-31-116.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:49:31 PM</td>
+					<td class='step-details'>Not a valid Tag.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:49:32 PM</td>
+					<td class='step-details'>Not a valid Tag.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-49-31-330.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-49-31-330.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-49-31-330.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:49 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:49 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:50 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 32s+13ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan different location tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:50:27 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Location Doesn't Match. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:50:27 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-50-27-430.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-50-27-430.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-50-27-430.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:50:27 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:50:28 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-50-27-613.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-50-27-613.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-50-27-613.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='36'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:50 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:50 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:51 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 32s+21ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should be throws error while enter tag but size is not set in size master agianst item id and configuration</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:51:19 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: No Size Entry is present in Size Master against tag's item , configuration and weight. | Actual: No Size Entry is present in Size Master against tag's item , configuration and weight.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:51:19 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-51-19-507.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-51-19-507.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-51-19-507.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:51:19 PM</td>
+					<td class='step-details'>No Size Entry is present in Size Master against tag's item , configuration and weight.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:51:20 PM</td>
+					<td class='step-details'>No Size Entry is present in Size Master against tag's item , configuration and weight.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-51-19-626.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-51-19-626.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-51-19-626.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='37'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_29</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:51 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:51 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:52 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 3s+688ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify Validate functionality without enter subsmmith name</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:52:03 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: No Size Entry is present in Size Master against tag's item , configuration and weight. | Actual: No Size Entry is present in Size Master against tag's item , configuration and weight.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:52:03 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-03-185.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-03-185.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-03-185.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:52:03 PM</td>
+					<td class='step-details'>No Size Entry is present in Size Master against tag's item , configuration and weight.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:52:04 PM</td>
+					<td class='step-details'>No Size Entry is present in Size Master against tag's item , configuration and weight.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-03-371.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-03-371.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-03-371.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:52:27 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : negativeOrnament</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-27-618.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-27-618.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-27-618.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='38'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_20</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:52 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:52 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:52 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 28s+470ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan sold tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:52:54 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Please select tag with tag status - Release. | Actual: Please select tag with tag status - Release.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:52:54 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-54-792.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-54-792.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-54-792.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:52:54 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:52:56 PM</td>
+					<td class='step-details'>Please select tag with tag status - Release.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-54-985.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-54-985.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-52-54-985.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='39'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_20</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:53 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:53 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:53 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 28s+473ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan consumed tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:53:35 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Please select tag with tag type - Tag or Lot. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:53:36 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-53-35-926.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-53-35-926.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-53-35-926.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:53:36 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:53:37 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-53-36-130.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-53-36-130.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-53-36-130.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='40'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_20</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:54 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:54 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:54 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 28s+164ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan invalid tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:54:50 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Not a valid Tag. | Actual: Not a valid Tag.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:54:50 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-54-50-209.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-54-50-209.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-54-50-209.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:54:50 PM</td>
+					<td class='step-details'>Not a valid Tag.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:54:51 PM</td>
+					<td class='step-details'>Not a valid Tag.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-54-50-328.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-54-50-328.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-54-50-328.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='41'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_20</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:55 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:55 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:56 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 4s+356ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify system throws an error when scan different location tag</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:56:05 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Please select tag with tag type - Tag or Lot. | Actual: Please select tag with tag type - Tag or Lot.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:56:05 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-05-479.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-05-479.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-05-479.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:56:05 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:56:06 PM</td>
+					<td class='step-details'>Please select tag with tag type - Tag or Lot.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-05-619.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-05-619.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-05-619.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:56:43 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : negativeSubsmith</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-43-215.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-43-215.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-56-43-215.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='42'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_26</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:56 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:56 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:57 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 29s+910ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify subsmith name and scan field are display if User select dropdown value as "Subsmith Change" from "Purpose of Reprinting" dropdown</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smote</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:57:06 PM</td>
+					<td class='step-details'><span class='label white-text green'>value fields  Value is displayed: </span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:57:06 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-06-765.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-06-765.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-06-765.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:57:06 PM</td>
+					<td class='step-details'><span class='label white-text green'>Scan Tag fields  Scan Tag is not displayed: </span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:57:07 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-06-943.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-06-943.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-06-943.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:57:13 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : ornamentValidateField</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-13-168.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-13-168.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-13-168.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='43'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_43</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:57 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:57 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:58 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 14s+445ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'> System should display a "Posted Successfully" message upon clicking the Post button. </h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:57:55 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Posted | Actual: Posted
+Validated</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:57:55 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-55-663.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-55-663.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-55-663.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:57:55 PM</td>
+					<td class='step-details'>Posted
+Validated</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>10:57:57 PM</td>
+					<td class='step-details'>Posted<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-55-851.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-55-851.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-57-55-851.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:58:27 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : postDesigncode</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-58-27-681.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-58-27-681.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-58-27-681.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='44'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_2</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:58 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:58 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 10:59 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 53s+601ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify User should be able select location from dropdown.</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smote</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:59:21 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : selectDropdownLocation</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_22-59-21-320.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-59-21-320.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_22-59-21-320.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='45'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_21</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 10:59 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 10:59 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 11:01 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 10s+497ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify Validate functionality with filled all mandatory fields and getting validate message</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smote</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>11:00:54 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>11:00:54 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-00-54-723.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-00-54-723.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-00-54-723.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:00:54 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:00:56 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-00-54-853.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-00-54-853.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-00-54-853.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:01:32 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : validate</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-01-31-885.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-01-31-885.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-01-31-885.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='46'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_43</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 11:01 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 11:01 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 11:02 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 24s+291ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should show a validation message after entering mandatory fields with valid data and clicking the Validate button</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:11 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Validated | Actual: Validated</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:11 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-11-115.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-11-115.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-11-115.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:02:11 PM</td>
+					<td class='step-details'>Validated</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:02:12 PM</td>
+					<td class='step-details'>Validated<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-11-278.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-11-278.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-11-278.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:02:56 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : validateDeisgnCode</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-56-226.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-56-226.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-02-56-226.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='47'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_29</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 11:02 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 11:02 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 11:04 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 15s+552ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify Validate functionality with filled all mandatory fields</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:03:29 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Validated | Actual: Validated</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:03:29 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-03-29-727.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-03-29-727.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-03-29-727.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:03:29 PM</td>
+					<td class='step-details'>Validated</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:03:31 PM</td>
+					<td class='step-details'>Validated<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-03-29-902.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-03-29-902.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-03-29-902.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:04:12 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : validateF</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-11-761.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-11-761.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-11-761.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='48'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_34</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 11:04 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 11:04 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 11:05 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 38s+927ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>System should show a validation message after entering mandatory fields with valid data and clicking the Validate button</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:04:52 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Validated | Actual: Validated</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:04:52 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-52-620.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-52-620.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-52-620.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:04:52 PM</td>
+					<td class='step-details'>Validated</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:04:54 PM</td>
+					<td class='step-details'>Validated<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-52-841.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-52-841.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-04-52-841.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:05:51 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : validateHmPcs</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-05-50-764.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-05-50-764.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-05-50-764.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='49'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_3</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 11:05 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 11:05 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 11:06 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 53s+838ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify Location dropdown should be single selection</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smote</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:06:44 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : validateSingleSelectionDropdownLocation</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-06-44-684.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-06-44-684.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-06-44-684.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='50'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_20</span>
+						<span class='test-time'>Wednesday, March 12, 2025, 11:06 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, March 12, 2025, 11:06 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, March 12, 2025, 11:07 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 48s+465ms</span>
+</div>
+	<div class='test-desc'><h5 style='font-size: 18px;'>Verify Validate functionality without enter subsmmith name</h5> </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smote</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:07:14 PM</td>
+					<td class='step-details'><span class='label white-text green'>Expected: Field 'Sub Smith Name' must be filled in. | Actual: Field 'Sub Smith Name' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:07:14 PM</td>
+					<td class='step-details'><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-14-626.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-14-626.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-14-626.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:07:14 PM</td>
+					<td class='step-details'>Field 'Sub Smith Name' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>11:07:16 PM</td>
+					<td class='step-details'>Field 'Sub Smith Name' must be filled in.<img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-14-767.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-14-767.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-14-767.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:07:33 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : withoutEnterSubsmith</b><br /><img data-featherlight='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-33-167.png' width='10%' src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-33-167.png' data-src='Screenshots/SS_ReportsHelper_12-Mar-2025_23-07-33-167.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Smoke</span>
+						<span class='category-status right'>
+							<span class='label pass'>17</span>
+							<span class='label fail'>26</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 17</span>
+							<span class='label red lighten-1 white-text'>Failed: 26</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Wednesday, March 12, 2025, 09:58 PM "("IST")"</td>
+										<td class='linked' test-id='2'>TC_30</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:00 PM "("IST")"</td>
+										<td class='linked' test-id='3'>TC_55</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:01 PM "("IST")"</td>
+										<td class='linked' test-id='4'>TC_43</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:04 PM "("IST")"</td>
+										<td class='linked' test-id='5'>TC_34</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:06 PM "("IST")"</td>
+										<td class='linked' test-id='6'>TC_31</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:07 PM "("IST")"</td>
+										<td class='linked' test-id='8'>TC_23</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:09 PM "("IST")"</td>
+										<td class='linked' test-id='9'>TC_46</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:10 PM "("IST")"</td>
+										<td class='linked' test-id='10'>TC_46</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:11 PM "("IST")"</td>
+										<td class='linked' test-id='11'>TC_46</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:12 PM "("IST")"</td>
+										<td class='linked' test-id='12'>TC_46</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:13 PM "("IST")"</td>
+										<td class='linked' test-id='13'>TC_46</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:15 PM "("IST")"</td>
+										<td class='linked' test-id='14'>TC_52</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:16 PM "("IST")"</td>
+										<td class='linked' test-id='15'>TC_52</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:17 PM "("IST")"</td>
+										<td class='linked' test-id='16'>TC_52</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:18 PM "("IST")"</td>
+										<td class='linked' test-id='17'>TC_52</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:20 PM "("IST")"</td>
+										<td class='linked' test-id='18'>TC_52</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:22 PM "("IST")"</td>
+										<td class='linked' test-id='19'>TC_52</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:24 PM "("IST")"</td>
+										<td class='linked' test-id='20'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:27 PM "("IST")"</td>
+										<td class='linked' test-id='21'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:29 PM "("IST")"</td>
+										<td class='linked' test-id='22'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:32 PM "("IST")"</td>
+										<td class='linked' test-id='23'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:35 PM "("IST")"</td>
+										<td class='linked' test-id='24'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:37 PM "("IST")"</td>
+										<td class='linked' test-id='25'>TC_29</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:40 PM "("IST")"</td>
+										<td class='linked' test-id='26'>TC_34</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:41 PM "("IST")"</td>
+										<td class='linked' test-id='27'>TC_34</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:42 PM "("IST")"</td>
+										<td class='linked' test-id='28'>TC_34</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:43 PM "("IST")"</td>
+										<td class='linked' test-id='29'>TC_34</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:44 PM "("IST")"</td>
+										<td class='linked' test-id='30'>TC_34</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:45 PM "("IST")"</td>
+										<td class='linked' test-id='31'>TC_34</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:47 PM "("IST")"</td>
+										<td class='linked' test-id='32'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:48 PM "("IST")"</td>
+										<td class='linked' test-id='33'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:49 PM "("IST")"</td>
+										<td class='linked' test-id='34'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:49 PM "("IST")"</td>
+										<td class='linked' test-id='35'>TC_28</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:50 PM "("IST")"</td>
+										<td class='linked' test-id='36'>TC_28</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:51 PM "("IST")"</td>
+										<td class='linked' test-id='37'>TC_29</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:52 PM "("IST")"</td>
+										<td class='linked' test-id='38'>TC_20</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:53 PM "("IST")"</td>
+										<td class='linked' test-id='39'>TC_20</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:54 PM "("IST")"</td>
+										<td class='linked' test-id='40'>TC_20</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:55 PM "("IST")"</td>
+										<td class='linked' test-id='41'>TC_20</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:57 PM "("IST")"</td>
+										<td class='linked' test-id='43'>TC_43</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 11:01 PM "("IST")"</td>
+										<td class='linked' test-id='46'>TC_43</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 11:02 PM "("IST")"</td>
+										<td class='linked' test-id='47'>TC_29</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 11:04 PM "("IST")"</td>
+										<td class='linked' test-id='48'>TC_34</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Smote</span>
+						<span class='category-status right'>
+							<span class='label pass'>5</span>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 5</span>
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:07 PM "("IST")"</td>
+										<td class='linked' test-id='7'>TC_24</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:56 PM "("IST")"</td>
+										<td class='linked' test-id='42'>TC_26</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:58 PM "("IST")"</td>
+										<td class='linked' test-id='44'>TC_2</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 10:59 PM "("IST")"</td>
+										<td class='linked' test-id='45'>TC_21</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 11:05 PM "("IST")"</td>
+										<td class='linked' test-id='49'>TC_3</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, March 12, 2025, 11:06 PM "("IST")"</td>
+										<td class='linked' test-id='50'>TC_20</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>50</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>212</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Wednesday, March 12, 2025, 09:57 PM "("IST")"</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Wednesday, March 12, 2025, 11:07 PM "("IST")"</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>1h 10m 18s+949ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>QA Name</td>
+								<td>Kiran Dhanepkar</td>
+							</tr>
+							<tr>
+								<td>HostName</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows 11</td>
+							</tr>
+							<tr>
+								<td>Browser</td>
+								<td></td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Smoke</td>
+							<td>17</td>
+							<td>26</td>
+							<td>0</td>
+							<td>
+									39.535%
+							</td>
+						</tr>
+						<tr>
+							<td>Smote</td>
+							<td>5</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									83.333%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 23,
+				failParent: 27,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 27,
+				
+				passChild: 66,
+				failChild: 58,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 88,
+				exceptionsChild: 58,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

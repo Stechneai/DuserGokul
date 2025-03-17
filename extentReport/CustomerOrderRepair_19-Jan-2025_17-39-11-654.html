@@ -1,0 +1,2438 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='EEEE, MMMM dd, yyyy, hh:mm a "("zzz")"'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>CustomerOrderRepair</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>CustomerOrderRepair</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Sunday, January 19, 2025, 05:39 PM "("IST")"</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Smoke</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='11.765%'><span class='strong'>2</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='88.235%'>15</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='2.19%'><span class='strong'>6</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='10.949%'>30</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='86.861%'>238</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Setup</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:39 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:39 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:39 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 47s+377ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:39:15 PM</td>
+					<td class='step-details'>Working on chrome browser</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:39:23 PM</td>
+					<td class='step-details'>Working On : <b>https://d365-dev3385637a5c3f458893devaos.axcloud.dynamics.com/?cmp=CSPL&mi=DefaultDashboard<b/> URL.</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>5:39:59 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : <b/> addCustomerOrderRepairData<br /><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-39-37-076.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-39-37-076.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-39-37-076.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_64</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:40 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:40 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:41 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 16s+136ms</span>
+</div>
+	<div class='test-desc'>Verify without enter Field 'Customer No' </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:40:26 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-26-223.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-26-223.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-26-223.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:40:29 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-29-822.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-29-822.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-29-822.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:40:30 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-30-279.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-30-279.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-40-30-279.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>5:41:34 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Customer No.' must be filled in. | Actual: Field 'Customer No.' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>5:41:34 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-41-34-764.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-41-34-764.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-41-34-764.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:41:34 PM</td>
+					<td class='step-details'>Field 'Customer No.' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:41:37 PM</td>
+					<td class='step-details'>Field 'Customer No.' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-41-34-927.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-41-34-927.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-41-34-927.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:41:37 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Customer No.' must be filled in. | Actual: Customer No. must be filled in</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:41:37 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-41-37-184.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-41-37-184.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-41-37-184.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:41:37 PM</td>
+					<td class='step-details'>Customer No. must be filled in</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:41:38 PM</td>
+					<td class='step-details'>Customer No. must be filled in<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-41-37-328.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-41-37-328.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-41-37-328.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_65</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:42 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:42 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:43 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 43s+834ms</span>
+</div>
+	<div class='test-desc'>Verify without enter Field 'Sales Person' </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:42:04 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-04-015.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-04-015.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-04-015.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:42:07 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-07-554.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-07-554.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-07-554.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:42:08 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-08-164.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-08-164.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-42-08-164.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:43:42 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:43:42 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-43-42-601.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-43-42-601.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-43-42-601.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:43:42 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:43:44 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-43-42-756.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-43-42-756.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-43-42-756.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_66</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:44 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:44 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:44 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 23s+435ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Variant number' must be filled in. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:10 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-10-626.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-10-626.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-10-626.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:14 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-14-245.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-14-245.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-14-245.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:14 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-14-735.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-14-735.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-14-735.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:19 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:19 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-19-553.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-19-553.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-19-553.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:20 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:20 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-20-171.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-20-171.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-20-171.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:20 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:20 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-20-725.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-20-725.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-20-725.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:21 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:23 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:24 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-23-937.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-23-937.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-23-937.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:25 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:25 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-25-476.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-25-476.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-25-476.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:44:28 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Making Rate' must be filled in. | Actual: Field 'RepairRemarks' must be filled in.
+Field 'Variant number' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:44:29 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-28-939.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-28-939.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-44-28-939.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:29 PM</td>
+					<td class='step-details'>Field 'RepairRemarks' must be filled in.
+Field 'Variant number' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:44:30 PM</td>
+					<td class='step-details'>Field 'RepairRemarks' must be filled in.
+Field 'Variant number' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-44-29-110.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-44-29-110.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-44-29-110.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_67</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:44 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:44 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:45 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+864ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Purity' must be filled in. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:00 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-00-683.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-00-683.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-00-683.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:04 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-04-402.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-04-402.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-04-402.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:04 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-04-846.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-04-846.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-04-846.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:09 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:09 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-09-455.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-09-455.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-09-455.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:09 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:10 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-09-970.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-09-970.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-09-970.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:10 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:10 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-10-670.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-10-670.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-10-670.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:11 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:13 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:13 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-13-766.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-13-766.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-13-766.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:15 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:15 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-15-140.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-15-140.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-15-140.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>5:45:18 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Purity' must be filled in. | Actual: Field 'Purity' must be filled in.
+Field 'RepairRemarks' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>5:45:18 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-18-439.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-18-439.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-18-439.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:18 PM</td>
+					<td class='step-details'>Field 'Purity' must be filled in.
+Field 'RepairRemarks' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:20 PM</td>
+					<td class='step-details'>Field 'Purity' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-45-18-568.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-45-18-568.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-45-18-568.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_68</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:45 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:45 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:46 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+645ms</span>
+</div>
+	<div class='test-desc'>Verify without enter Field 'Order Pcs' </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:45 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-45-290.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-45-290.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-45-290.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:49 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-48-908.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-48-908.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-48-908.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:49 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-49-332.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-49-332.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-49-332.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:53 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:54 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-53-977.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-53-977.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-53-977.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:54 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:54 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-54-719.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-54-719.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-54-719.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:55 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:55 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-55-295.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-55-295.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-55-295.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:55 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:58 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:58 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-58-243.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-58-243.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-58-243.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:59 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:45:59 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-59-445.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-59-445.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-45-59-445.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:46:02 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Order Pcs' must be filled in. | Actual: Customer Item Pieces should be filled in.
+Field 'Customer Item PCS' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:46:02 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-02-813.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-02-813.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-02-813.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:02 PM</td>
+					<td class='step-details'>Customer Item Pieces should be filled in.
+Field 'Customer Item PCS' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:04 PM</td>
+					<td class='step-details'>Customer Item Pieces should be filled in.
+Field 'Customer Item PCS' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-46-02-976.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-46-02-976.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-46-02-976.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_69</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:46 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:46 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:46 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 23s+534ms</span>
+</div>
+	<div class='test-desc'>Verify Order Pcs must be greater then 0. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:34 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-34-533.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-34-533.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-34-533.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:38 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-38-128.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-38-128.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-38-128.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:38 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-38-606.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-38-606.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-38-606.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:43 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:43 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-43-303.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-43-303.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-43-303.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:44 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:44 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-44-034.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-44-034.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-44-034.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:44 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:44 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-44-535.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-44-535.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-44-535.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:45 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:47 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:47 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-47-618.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-47-618.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-47-618.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:49 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:49 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-49-392.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-49-392.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-49-392.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:46:52 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Order Pcs must be greater then 0. | Actual: Field 'Customer Item PCS' can only contain positive numbers.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:46:52 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-52-708.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-52-708.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-46-52-708.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:52 PM</td>
+					<td class='step-details'>Field 'Customer Item PCS' can only contain positive numbers.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:46:54 PM</td>
+					<td class='step-details'>Field 'Customer Item PCS' can only contain positive numbers.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-46-52-856.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-46-52-856.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-46-52-856.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_70</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:47 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:47 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:47 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+536ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Order Pcs' accepts numbers only. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:25 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-25-605.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-25-605.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-25-605.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:29 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-29-095.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-29-095.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-29-095.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:29 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-29-584.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-29-584.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-29-584.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:34 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:34 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-34-192.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-34-192.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-34-192.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:34 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:35 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-34-934.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-34-934.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-34-934.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:35 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:35 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-35-442.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-35-442.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-35-442.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:35 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:38 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:38 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-38-401.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-38-401.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-38-401.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:39 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:39 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-39-690.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-39-690.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-39-690.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:47:43 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Order Pcs' accepts numbers only. | Actual: Field 'RepairRemarks' must be filled in.
+Field 'Purity' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:47:43 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-43-021.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-43-021.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-47-43-021.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:43 PM</td>
+					<td class='step-details'>Field 'RepairRemarks' must be filled in.
+Field 'Purity' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:47:44 PM</td>
+					<td class='step-details'>Field 'RepairRemarks' must be filled in.
+Field 'Purity' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-47-43-187.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-47-43-187.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-47-43-187.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_71</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:48 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:48 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:48 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 26s+849ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Gross Order Qty' can only contain positive numbers. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:14 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-14-182.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-14-182.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-14-182.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:18 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-17-895.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-17-895.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-17-895.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:18 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-18-660.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-18-660.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-18-660.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:23 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:23 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-23-650.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-23-650.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-23-650.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:24 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:24 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-24-663.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-24-663.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-24-663.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:25 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:25 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-25-660.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-25-660.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-25-660.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:26 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:29 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:29 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-29-486.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-29-486.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-29-486.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:31 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:32 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-31-933.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-31-933.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-31-933.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:48:35 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Gross Order Qty' can only contain positive numbers. | Actual: Field 'Customer Item Gross Weight' can only contain positive numbers.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:48:35 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-35-428.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-35-428.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-48-35-428.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:35 PM</td>
+					<td class='step-details'>Field 'Customer Item Gross Weight' can only contain positive numbers.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:48:37 PM</td>
+					<td class='step-details'>Field 'Customer Item Gross Weight' can only contain positive numbers.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-48-35-675.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-48-35-675.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-48-35-675.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_72</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:49 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:49 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:49 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 26s+369ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Gross Order Qty' accepts numbers only. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:14 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-14-372.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-14-372.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-14-372.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:18 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-18-085.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-18-085.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-18-085.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:19 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-18-787.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-18-787.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-18-787.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:23 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:23 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-23-735.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-23-735.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-23-735.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:24 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:25 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-24-848.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-24-848.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-24-848.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:25 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:26 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-25-930.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-25-930.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-25-930.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:27 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:29 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:30 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-29-856.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-29-856.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-29-856.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:31 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:32 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-31-833.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-31-833.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-31-833.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:49:35 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Gross Order Qty' accepts numbers only. | Actual: Field 'Customer Item Gross Weight' accepts numbers only.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:49:35 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-35-353.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-35-353.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-49-35-353.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:35 PM</td>
+					<td class='step-details'>Field 'Customer Item Gross Weight' accepts numbers only.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:37 PM</td>
+					<td class='step-details'>Field 'Customer Item Gross Weight' accepts numbers only.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-49-35-613.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-49-35-613.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-49-35-613.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_73</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:50 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:50 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:50 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+596ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Gross Order Qty' must be filled in. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:12 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-12-257.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-12-257.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-12-257.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:15 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-15-815.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-15-815.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-15-815.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:16 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-16-327.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-16-327.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-16-327.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:21 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:21 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-21-208.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-21-208.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-21-208.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:22 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:22 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-22-009.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-22-009.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-22-009.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:22 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:23 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-22-814.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-22-814.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-22-814.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:23 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:26 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:26 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-26-298.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-26-298.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-26-298.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:28 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:28 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-28-034.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-28-034.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-28-034.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:50:31 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Gross Order Qty' must be filled in. | Actual: Field 'Customer Item Net Weight' must be filled in.
+Field 'Customer Item Gross Weight' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:50:31 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-31-411.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-31-411.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-50-31-411.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:31 PM</td>
+					<td class='step-details'>Field 'Customer Item Net Weight' must be filled in.
+Field 'Customer Item Gross Weight' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:50:33 PM</td>
+					<td class='step-details'>Field 'Customer Item Net Weight' must be filled in.
+Field 'Customer Item Gross Weight' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-50-31-554.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-50-31-554.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-50-31-554.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_74</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:51 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:51 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:51 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+936ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Net Order Qty' must be filled in. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:03 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-03-814.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-03-814.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-03-814.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:07 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-07-355.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-07-355.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-07-355.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:07 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-07-841.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-07-841.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-07-841.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:12 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:12 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-12-509.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-12-509.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-12-509.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:13 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:13 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-13-188.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-13-188.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-13-188.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:13 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:13 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-13-700.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-13-700.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-13-700.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:14 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:17 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:17 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-17-011.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-17-011.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-17-011.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:18 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:18 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-18-318.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-18-318.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-18-318.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:51:21 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Net Order Qty' must be filled in. | Actual: Repair order ordered!</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:51:21 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-21-651.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-21-651.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-21-651.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:21 PM</td>
+					<td class='step-details'>Repair order ordered!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:23 PM</td>
+					<td class='step-details'>Repair order ordered!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-51-21-819.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-51-21-819.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-51-21-819.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_75</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:51 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:51 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:52 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+240ms</span>
+</div>
+	<div class='test-desc'>Verify Net Order Quantity must be greater then 0. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:47 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-47-307.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-47-307.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-47-307.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:50 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-50-802.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-50-802.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-50-802.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:51 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-51-236.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-51-236.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-51-236.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:55 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:55 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-55-840.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-55-840.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-55-840.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:56 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:56 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-56-474.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-56-474.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-56-474.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:57 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:57 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-57-080.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-57-080.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-51-57-080.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:51:57 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:00 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:00 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-00-080.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-00-080.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-00-080.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:01 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:01 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-01-384.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-01-384.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-01-384.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:52:04 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Net Order Qty' can only contain positive numbers. | Actual: Repair order ordered!</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:52:04 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-04-663.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-04-663.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-04-663.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:04 PM</td>
+					<td class='step-details'>Repair order ordered!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:06 PM</td>
+					<td class='step-details'>Repair order ordered!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-52-04-803.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-52-04-803.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-52-04-803.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_76</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:52 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:52 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:52 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 25s+353ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Net Order Qty' accepts numbers only. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:34 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-34-641.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-34-641.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-34-641.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:38 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-38-366.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-38-366.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-38-366.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:39 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-38-935.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-38-935.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-38-935.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:43 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:44 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-43-801.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-43-801.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-43-801.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:44 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:44 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-44-671.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-44-671.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-44-671.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:45 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:45 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-45-498.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-45-498.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-45-498.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:46 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:49 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:49 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-49-170.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-49-170.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-49-170.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:51 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:51 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-51-190.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-51-190.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-51-190.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:52:54 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Net Order Qty' accepts numbers only. | Actual: Repair order ordered!</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:52:54 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-54-680.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-54-680.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-52-54-680.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:54 PM</td>
+					<td class='step-details'>Repair order ordered!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:52:56 PM</td>
+					<td class='step-details'>Repair order ordered!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-52-54-915.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-52-54-915.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-52-54-915.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_77</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:53 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:53 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:53 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 26s+908ms</span>
+</div>
+	<div class='test-desc'>Verify Order Rate must be greater then 0. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:31 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-31-536.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-31-536.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-31-536.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:35 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-35-192.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-35-192.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-35-192.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:36 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-35-927.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-35-927.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-35-927.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:40 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:40 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-40-740.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-40-740.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-40-740.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:41 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:41 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-41-680.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-41-680.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-41-680.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:42 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:42 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-42-570.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-42-570.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-42-570.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:43 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:46 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:46 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-46-551.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-46-551.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-46-551.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:48 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:49 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-48-981.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-48-981.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-48-981.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:53:52 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Order Rate must be greater then 0. | Actual: Repair order ordered!</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:53:53 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-52-981.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-52-981.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-53-52-981.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:53 PM</td>
+					<td class='step-details'>Repair order ordered!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:53:55 PM</td>
+					<td class='step-details'>Repair order ordered!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-53-53-280.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-53-53-280.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-53-53-280.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_78</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:54 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:54 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:54 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 25s+652ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Order Rate' accepts numbers only. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:33 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-33-019.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-33-019.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-33-019.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:36 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-36-775.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-36-775.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-36-775.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:37 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-37-564.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-37-564.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-37-564.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:43 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:43 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-43-021.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-43-021.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-43-021.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:44 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:44 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-44-144.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-44-144.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-44-144.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:45 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:45 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-45-203.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-45-203.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-45-203.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:46 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:48 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:48 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-48-754.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-48-754.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-48-754.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:50 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:50 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-50-258.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-50-258.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-50-258.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:54:53 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Order Rate' accepts numbers only. | Actual: Repair order ordered!</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:54:53 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-53-596.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-53-596.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-54-53-596.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:53 PM</td>
+					<td class='step-details'>Repair order ordered!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:54:55 PM</td>
+					<td class='step-details'>Repair order ordered!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-54-53-727.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-54-53-727.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-54-53-727.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_79</span>
+						<span class='test-time'>Sunday, January 19, 2025, 05:55 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sunday, January 19, 2025, 05:55 PM "("IST")"</span>
+	<span class='label end-time'>Sunday, January 19, 2025, 05:55 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 36s+635ms</span>
+</div>
+	<div class='test-desc'>Verify Net Order Quantity must be less than Gross Order Quantity </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:26 PM</td>
+					<td class='step-details'>Customer_No SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-26-424.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-26-424.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-26-424.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:30 PM</td>
+					<td class='step-details'>Sale Person SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-30-089.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-30-089.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-30-089.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:31 PM</td>
+					<td class='step-details'>Manual Order No. SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-30-828.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-30-828.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-30-828.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:35 PM</td>
+					<td class='step-details'>Item Id: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:36 PM</td>
+					<td class='step-details'>Item Id SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-35-784.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-35-784.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-35-784.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:36 PM</td>
+					<td class='step-details'>Variant Number: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:37 PM</td>
+					<td class='step-details'>Variant Number SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-36-993.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-36-993.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-36-993.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:38 PM</td>
+					<td class='step-details'>Customer Item PCS: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:38 PM</td>
+					<td class='step-details'>Customer Item PCS SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-38-201.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-38-201.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-38-201.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:39 PM</td>
+					<td class='step-details'>Customer Item Gross Weight: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:42 PM</td>
+					<td class='step-details'>repairRemarks: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:42 PM</td>
+					<td class='step-details'>repairRemarks SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-42-224.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-42-224.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-42-224.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:44 PM</td>
+					<td class='step-details'>Purity: Data Inserted</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:44 PM</td>
+					<td class='step-details'>Purity SS<img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-44-020.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-44-020.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-44-020.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:55:47 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Net Order Quantity must be less than Gross Order Quantity | Actual: Repair order ordered!</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:55:47 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-47-282.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-47-282.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-47-282.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:47 PM</td>
+					<td class='step-details'>Repair order ordered!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:55:48 PM</td>
+					<td class='step-details'>Repair order ordered!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-55-47-428.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-55-47-428.png' data-src='../extentReport/screenshot/SS_ReportsHelper19-Jan-2025_17-55-47-428.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>5:55:59 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : <b/> validationCustomerOrderRepair<br /><img data-featherlight='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-59-342.png' width='10%' src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-59-342.png' data-src='../extentReport/screenshot/20250119/SS_ReportsHelper_19-Jan-2025_17-55-59-342.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Smoke</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+							<span class='label fail'>15</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label red lighten-1 white-text'>Failed: 15</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:40 PM "("IST")"</td>
+										<td class='linked' test-id='2'>TC_64</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:42 PM "("IST")"</td>
+										<td class='linked' test-id='3'>TC_65</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:44 PM "("IST")"</td>
+										<td class='linked' test-id='4'>TC_66</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:44 PM "("IST")"</td>
+										<td class='linked' test-id='5'>TC_67</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:45 PM "("IST")"</td>
+										<td class='linked' test-id='6'>TC_68</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:46 PM "("IST")"</td>
+										<td class='linked' test-id='7'>TC_69</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:47 PM "("IST")"</td>
+										<td class='linked' test-id='8'>TC_70</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:48 PM "("IST")"</td>
+										<td class='linked' test-id='9'>TC_71</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:49 PM "("IST")"</td>
+										<td class='linked' test-id='10'>TC_72</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:50 PM "("IST")"</td>
+										<td class='linked' test-id='11'>TC_73</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:51 PM "("IST")"</td>
+										<td class='linked' test-id='12'>TC_74</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:51 PM "("IST")"</td>
+										<td class='linked' test-id='13'>TC_75</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:52 PM "("IST")"</td>
+										<td class='linked' test-id='14'>TC_76</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:53 PM "("IST")"</td>
+										<td class='linked' test-id='15'>TC_77</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:54 PM "("IST")"</td>
+										<td class='linked' test-id='16'>TC_78</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Sunday, January 19, 2025, 05:55 PM "("IST")"</td>
+										<td class='linked' test-id='17'>TC_79</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>17</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>274</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Sunday, January 19, 2025, 05:39 PM "("IST")"</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Sunday, January 19, 2025, 05:55 PM "("IST")"</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 16m 47s+876ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>QA Name</td>
+								<td>Kiran Dhanepkar</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Smoke</td>
+							<td>1</td>
+							<td>15</td>
+							<td>0</td>
+							<td>
+									6.25%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 15,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 15,
+				
+				passChild: 6,
+				failChild: 30,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 238,
+				exceptionsChild: 30,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

@@ -1,0 +1,1631 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='EEEE, MMMM dd, yyyy, hh:mm a "("zzz")"'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>CustomerOrderRepair</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>CustomerOrderRepair</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Friday, January 24, 2025, 07:46 PM "("IST")"</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Add</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='14.286%'><span class='strong'>2</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='85.714%'>12</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='32.374%'><span class='strong'>45</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='17.266%'>24</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='50.36%'>70</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Setup</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:46 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:46 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 07:46 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+435ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:46:10 PM</td>
+					<td class='step-details'>Working on chrome browser</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:46:12 PM</td>
+					<td class='step-details'>Working On : <b>https://d365-dev3385637a5c3f458893devaos.axcloud.dynamics.com/?cmp=CSPL&mi=DefaultDashboard<b/> URL.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_174</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:46 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:46 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 07:47 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 14s+468ms</span>
+</div>
+	<div class='test-desc'>Verify User is able complete whole QC Process (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:47:39 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:47:39 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-47-39-380.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-47-39-380.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-47-39-380.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:47:39 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:47:41 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-47-39-675.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-47-39-675.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-47-39-675.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_175</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:47 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:47 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 07:49 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 26s+543ms</span>
+</div>
+	<div class='test-desc'>Verify User is able to redirect Batch Registration Page
+by using following path  
+Module --> Jewellery --> Batch registration (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:49:08 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:49:08 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-49-08-147.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-49-08-147.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-49-08-147.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:49:08 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:49:09 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-49-08-378.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-49-08-378.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-49-08-378.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:49:09 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:49:10 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-49-09-983.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-49-09-983.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-49-09-983.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:49:10 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:49:11 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-49-10-178.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-49-10-178.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-49-10-178.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_176</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:49 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:49 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 07:50 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 43s+219ms</span>
+</div>
+	<div class='test-desc'>Verify given sections shown in Batch Registration Page  (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:50:16 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:50:16 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-16-724.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-16-724.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-16-724.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:50:16 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:50:18 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-16-913.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-16-913.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-16-913.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:50:18 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:50:19 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-18-845.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-18-845.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-18-845.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:50:19 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:50:20 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-19-003.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-19-003.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-19-003.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:50:55 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:50:55 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-55-786.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-55-786.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-50-55-786.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:50:55 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:50:57 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-55-978.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-55-978.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-50-55-978.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_177</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:51 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:51 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 07:52 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 42s+79ms</span>
+</div>
+	<div class='test-desc'>Verify batch registration Header of Batch Registration  (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:52:04 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:52:04 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-04-210.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-04-210.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-04-210.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:52:04 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:52:05 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-04-404.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-04-404.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-04-404.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:52:05 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:52:06 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-05-968.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-05-968.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-05-968.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:52:06 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:52:07 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-06-158.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-06-158.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-06-158.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:52:43 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:52:43 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-43-436.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-43-436.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-52-43-436.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:52:43 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:52:45 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-43-625.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-43-625.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-52-43-625.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_179</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:52 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:52 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 07:54 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 44s+614ms</span>
+</div>
+	<div class='test-desc'>Verify Rate (99.50% Purity) (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:53:53 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:53:53 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-53-53-797.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-53-53-797.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-53-53-797.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:53:53 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:53:55 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-53-53-986.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-53-53-986.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-53-53-986.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:53:55 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:53:55 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-53-55-599.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-53-55-599.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-53-55-599.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:53:55 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:53:57 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-53-55-803.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-53-55-803.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-53-55-803.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:54:35 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:54:35 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-54-35-320.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-54-35-320.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-54-35-320.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:54:35 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:54:37 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-54-35-506.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-54-35-506.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-54-35-506.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_180</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:54 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:54 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 07:56 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 47s+193ms</span>
+</div>
+	<div class='test-desc'>Verify Generate Line button (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:55:47 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:55:47 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-55-47-500.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-55-47-500.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-55-47-500.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:55:47 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:55:49 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-55-47-689.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-55-47-689.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-55-47-689.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:55:49 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:55:49 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-55-49-400.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-55-49-400.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-55-49-400.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:55:49 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:55:51 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-55-49-636.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-55-49-636.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-55-49-636.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:56:30 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:56:30 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-56-30-628.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-56-30-628.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-56-30-628.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:56:30 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:56:32 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-56-30-822.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-56-30-822.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-56-30-822.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_181</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:56 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:56 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 07:58 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 45s+971ms</span>
+</div>
+	<div class='test-desc'>Verify  Pre Tag Header  field (columns) under Batch registration Line (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:57:45 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:57:45 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-57-45-607.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-57-45-607.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-57-45-607.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:57:45 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:57:47 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-57-45-770.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-57-45-770.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-57-45-770.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:57:47 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:57:47 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-57-47-263.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-57-47-263.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-57-47-263.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:57:47 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:57:48 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-57-47-420.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-57-47-420.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-57-47-420.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:58:24 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>7:58:24 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-58-24-310.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-58-24-310.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-58-24-310.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:58:24 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:58:26 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-58-24-530.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-58-24-530.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-58-24-530.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_182</span>
+						<span class='test-time'>Friday, January 24, 2025, 07:58 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 07:58 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 08:00 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 43s+893ms</span>
+</div>
+	<div class='test-desc'>Verify  Pre Tag Lines  field (columns) under Batch registration Line (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:59:37 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:59:37 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-59-37-068.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-59-37-068.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-59-37-068.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:59:37 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:59:38 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-59-37-241.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-59-37-241.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-59-37-241.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:59:38 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:59:38 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-59-38-747.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-59-38-747.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_19-59-38-747.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:59:38 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>7:59:40 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-59-38-925.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-59-38-925.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_19-59-38-925.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:00:16 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:00:16 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-00-16-649.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-00-16-649.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-00-16-649.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:00:16 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:00:18 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-00-16-842.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-00-16-842.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-00-16-842.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_183</span>
+						<span class='test-time'>Friday, January 24, 2025, 08:00 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 08:00 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 08:01 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 35s+48ms</span>
+</div>
+	<div class='test-desc'>Verify PMC Tab under Batch Registration Lines (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:01:53 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:01:53 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-01-53-735.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-01-53-735.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-01-53-735.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:01:53 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:01:55 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-01-53-948.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-01-53-948.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-01-53-948.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_184</span>
+						<span class='test-time'>Friday, January 24, 2025, 08:02 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 08:02 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 08:03 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 42s+728ms</span>
+</div>
+	<div class='test-desc'>Verify Value calculation in PMC Tab (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:03:04 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:03:04 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-04-224.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-04-224.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-04-224.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:03:04 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:03:05 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-04-405.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-04-405.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-04-405.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:03:05 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:03:06 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-05-911.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-05-911.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-05-911.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:03:06 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:03:07 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-06-094.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-06-094.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-06-094.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:03:43 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:03:43 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-43-261.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-43-261.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-03-43-261.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:03:43 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:03:45 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-43-459.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-43-459.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-03-43-459.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_185</span>
+						<span class='test-time'>Friday, January 24, 2025, 08:03 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 08:03 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 08:05 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 41s+937ms</span>
+</div>
+	<div class='test-desc'>Verify Release Button (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:04:51 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:04:51 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-04-51-721.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-04-51-721.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-04-51-721.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:04:51 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:04:53 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-04-51-894.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-04-51-894.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-04-51-894.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:04:53 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:04:53 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-04-53-471.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-04-53-471.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-04-53-471.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:04:53 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:04:55 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-04-53-691.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-04-53-691.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-04-53-691.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:05:27 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:05:27 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-05-27-671.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-05-27-671.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-05-27-671.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:05:27 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:05:29 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-05-27-905.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-05-27-905.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-05-27-905.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_186</span>
+						<span class='test-time'>Friday, January 24, 2025, 08:05 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 08:05 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 08:07 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 39s+410ms</span>
+</div>
+	<div class='test-desc'>Verify Post button functionality (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:06:36 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:06:36 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-06-36-095.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-06-36-095.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-06-36-095.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:06:36 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:06:37 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-06-36-315.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-06-36-315.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-06-36-315.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:06:37 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:06:38 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-06-37-816.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-06-37-816.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-06-37-816.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:06:38 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:06:39 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-06-38-034.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-06-38-034.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-06-38-034.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:07:09 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:07:09 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-07-09-636.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-07-09-636.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-07-09-636.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:07:09 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:07:11 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-07-09-883.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-07-09-883.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-07-09-883.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_187</span>
+						<span class='test-time'>Friday, January 24, 2025, 08:07 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Friday, January 24, 2025, 08:07 PM "("IST")"</span>
+	<span class='label end-time'>Friday, January 24, 2025, 08:08 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 38s+340ms</span>
+</div>
+	<div class='test-desc'>Verify "Tag No" from Pre Tag Header (Gold , Silver & Platinum) </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Add</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:08:11 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Maxmimum Net Weight should be 625,000.00</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:08:11 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-11-287.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-11-287.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-11-287.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:08:11 PM</td>
+					<td class='step-details'>Maxmimum Net Weight should be 625,000.00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:08:13 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-11-483.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-11-483.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-11-483.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:08:13 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected:  | Actual: Today's Rate is not set for Job Work</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:08:13 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-13-073.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-13-073.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-13-073.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:08:13 PM</td>
+					<td class='step-details'>Today's Rate is not set for Job Work</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:08:14 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-13-216.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-13-216.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-13-216.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:08:44 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>8:08:45 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-44-983.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-44-983.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-44-983.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:08:45 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>8:08:46 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-45-183.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-45-183.png' data-src='../extentReport/screenshot/SS_ReportsHelper24-Jan-2025_20-08-45-183.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>8:08:53 PM</td>
+					<td class='step-details'><b>CASE PASSED IS : <b/> verifyMakingItemNo<br /><img data-featherlight='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-53-367.png' width='10%' src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-53-367.png' data-src='../extentReport/screenshot/20250124/SS_ReportsHelper_24-Jan-2025_20-08-53-367.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Add</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+							<span class='label fail'>12</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label red lighten-1 white-text'>Failed: 12</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Friday, January 24, 2025, 07:46 PM "("IST")"</td>
+										<td class='linked' test-id='2'>TC_174</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 07:47 PM "("IST")"</td>
+										<td class='linked' test-id='3'>TC_175</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 07:49 PM "("IST")"</td>
+										<td class='linked' test-id='4'>TC_176</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 07:51 PM "("IST")"</td>
+										<td class='linked' test-id='5'>TC_177</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 07:52 PM "("IST")"</td>
+										<td class='linked' test-id='6'>TC_179</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 07:54 PM "("IST")"</td>
+										<td class='linked' test-id='7'>TC_180</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 07:56 PM "("IST")"</td>
+										<td class='linked' test-id='8'>TC_181</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 07:58 PM "("IST")"</td>
+										<td class='linked' test-id='9'>TC_182</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 08:00 PM "("IST")"</td>
+										<td class='linked' test-id='10'>TC_183</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 08:02 PM "("IST")"</td>
+										<td class='linked' test-id='11'>TC_184</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 08:03 PM "("IST")"</td>
+										<td class='linked' test-id='12'>TC_185</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 08:05 PM "("IST")"</td>
+										<td class='linked' test-id='13'>TC_186</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Friday, January 24, 2025, 08:07 PM "("IST")"</td>
+										<td class='linked' test-id='14'>TC_187</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>14</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>139</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Friday, January 24, 2025, 07:46 PM "("IST")"</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Friday, January 24, 2025, 08:08 PM "("IST")"</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 22m 46s+863ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>QA Name</td>
+								<td>Kiran Dhanepkar</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Add</td>
+							<td>1</td>
+							<td>12</td>
+							<td>0</td>
+							<td>
+									7.692%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 12,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 12,
+				
+				passChild: 45,
+				failChild: 24,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 70,
+				exceptionsChild: 24,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>

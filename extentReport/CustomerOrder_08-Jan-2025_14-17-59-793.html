@@ -1,0 +1,3034 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='EEEE, MMMM dd, yyyy, hh:mm a "("zzz")"'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>CustomerOrder</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>CustomerOrder</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Wednesday, January 08, 2025, 02:17 PM "("IST")"</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Smoke</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='68.571%'><span class='strong'>24</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='31.429%'>11</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='41.121%'><span class='strong'>88</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='13.551%'>29</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='45.327%'>97</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Setup</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:18 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:18 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:18 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 35s+73ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:18:03 PM</td>
+					<td class='step-details'>Working on chrome browser</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:18:04 PM</td>
+					<td class='step-details'>Working On : <b>https://d365-dev3385637a5c3f458893devaos.axcloud.dynamics.com/?cmp=CSPL&mi=DefaultDashboard<b/> URL.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:18:35 PM</td>
+					<td class='step-details'>Navigate to page successfully<img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-18-34-824.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-18-34-824.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-18-34-824.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_01</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:18 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:18 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:19 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 48s+817ms</span>
+</div>
+	<div class='test-desc'>Verify Add Gold ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:19:17 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:19:17 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-19-17-051.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-19-17-051.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-19-17-051.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:19:18 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-19-17-242.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-19-17-242.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-19-17-242.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:19:27 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Customer order Confirmed! | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:19:27 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-19-27-328.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-19-27-328.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-19-27-328.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:19:27 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:19:28 PM</td>
+					<td class='step-details'>Customer order Confirmed!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-19-27-500.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-19-27-500.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-19-27-500.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_02</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:19 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:19 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:20 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 48s+314ms</span>
+</div>
+	<div class='test-desc'>Verify Add silver ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:20:13 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:20:14 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-20-13-947.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-20-13-947.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-20-13-947.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:20:15 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-20-14-143.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-20-14-143.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-20-14-143.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:20:23 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Customer order Confirmed! | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:20:24 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-20-23-908.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-20-23-908.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-20-23-908.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:20:24 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:20:25 PM</td>
+					<td class='step-details'>Customer order Confirmed!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-20-24-119.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-20-24-119.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-20-24-119.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_03</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:20 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:20 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:21 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 48s+66ms</span>
+</div>
+	<div class='test-desc'>Verify Add Gold Bullion </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:21:10 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:21:10 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-21-10-284.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-21-10-284.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-21-10-284.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:21:12 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-21-10-475.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-21-10-475.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-21-10-475.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:21:20 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Customer order Confirmed! | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:21:20 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-21-20-416.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-21-20-416.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-21-20-416.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:21:20 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:21:22 PM</td>
+					<td class='step-details'>Customer order Confirmed!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-21-20-622.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-21-20-622.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-21-20-622.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_04</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:21 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:21 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:22 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 48s+648ms</span>
+</div>
+	<div class='test-desc'>Verify Add Platinum ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:22:07 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:22:07 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-22-07-258.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-22-07-258.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-22-07-258.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:22:09 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-22-07-446.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-22-07-446.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-22-07-446.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:22:17 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Customer order Confirmed! | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:22:17 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-22-17-489.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-22-17-489.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-22-17-489.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:22:17 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:22:19 PM</td>
+					<td class='step-details'>Customer order Confirmed!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-22-17-669.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-22-17-669.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-22-17-669.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_05</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:22 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:22 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:23 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 48s+270ms</span>
+</div>
+	<div class='test-desc'>Verify Add Sterling Silver ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:23:04 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:23:04 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-23-04-116.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-23-04-116.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-23-04-116.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:23:05 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-23-04-338.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-23-04-338.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-23-04-338.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:23:14 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Customer order Confirmed! | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:23:14 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-23-14-122.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-23-14-122.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-23-14-122.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:23:14 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:23:15 PM</td>
+					<td class='step-details'>Customer order Confirmed!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-23-14-333.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-23-14-333.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-23-14-333.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_06</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:23 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:23 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:24 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 48s+204ms</span>
+</div>
+	<div class='test-desc'>Verify Add Silver Bullion ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:24:00 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:24:00 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-00-473.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-00-473.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-00-473.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:24:02 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-00-682.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-00-682.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-00-682.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:24:10 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Customer order Confirmed! | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:24:10 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-10-451.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-10-451.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-10-451.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:24:10 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:24:12 PM</td>
+					<td class='step-details'>Customer order Confirmed!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-10-632.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-10-632.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-10-632.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_07</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:24 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:24 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:25 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 44s+427ms</span>
+</div>
+	<div class='test-desc'>Verify Add MRP ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:24:52 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:24:52 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-52-766.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-52-766.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-24-52-766.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:24:54 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-52-953.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-52-953.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-24-52-953.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:02 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Customer order Confirmed! | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:03 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-02-777.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-02-777.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-02-777.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:25:03 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:25:04 PM</td>
+					<td class='step-details'>Customer order Confirmed!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-03-012.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-03-012.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-03-012.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_08</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:25 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:25 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:26 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 7s+182ms</span>
+</div>
+	<div class='test-desc'>Verify Add Forming ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:45 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:45 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-45-342.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-45-342.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-45-342.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:25:47 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-45-549.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-45-549.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-45-549.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:55 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Customer order Confirmed! | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:25:55 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-55-396.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-55-396.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-25-55-396.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:25:55 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:25:57 PM</td>
+					<td class='step-details'>Customer order Confirmed!<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-55-553.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-55-553.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-25-55-553.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:26:19 PM</td>
+					<td class='step-details'>Navigate to page successfully<img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-26-19-284.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-26-19-284.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-26-19-284.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_07</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:26 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:26 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:27 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 10s+373ms</span>
+</div>
+	<div class='test-desc'>Verify without enter Field 'Sales Person' </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:27:31 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Sales Person' must be filled in. | Actual: Field 'Sales Person' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:27:31 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-27-31-482.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-27-31-482.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-27-31-482.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:27:31 PM</td>
+					<td class='step-details'>Field 'Sales Person' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:27:33 PM</td>
+					<td class='step-details'>Field 'Sales Person' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-27-31-692.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-27-31-692.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-27-31-692.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_08</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:27 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:27 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:29 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 39s+203ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Variant number' must be filled in. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:29:18 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Making Rate' must be filled in. | Actual: Field 'Making Rate' must be filled in.
+Field 'Variant number' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:29:19 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-29-18-964.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-29-18-964.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-29-18-964.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:29:19 PM</td>
+					<td class='step-details'>Field 'Making Rate' must be filled in.
+Field 'Variant number' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:29:20 PM</td>
+					<td class='step-details'>Field 'Making Rate' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-29-19-183.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-29-19-183.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-29-19-183.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_09</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:29 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:29 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:31 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 38s+903ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Purity' must be filled in. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:31:05 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Purity' must be filled in. | Actual: Field 'Purity' must be filled in.
+Field 'Order Rate' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:31:05 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-31-05-714.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-31-05-714.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-31-05-714.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:31:05 PM</td>
+					<td class='step-details'>Field 'Purity' must be filled in.
+Field 'Order Rate' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:31:07 PM</td>
+					<td class='step-details'>Field 'Purity' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-31-05-977.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-31-05-977.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-31-05-977.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_10</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:31 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:31 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:32 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 38s+655ms</span>
+</div>
+	<div class='test-desc'>Verify without enter Field 'Order Pcs' </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:32:52 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Order Pcs' must be filled in. | Actual: Field 'Order Pcs' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:32:53 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-32-52-980.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-32-52-980.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-32-52-980.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:32:53 PM</td>
+					<td class='step-details'>Field 'Order Pcs' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:32:54 PM</td>
+					<td class='step-details'>Field 'Order Pcs' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-32-53-186.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-32-53-186.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-32-53-186.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_11</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:33 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:33 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:34 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 50s+22ms</span>
+</div>
+	<div class='test-desc'>Verify Order Pcs must be greater then 0. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:34:16 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Order Pcs must be greater then 0. | Actual: Order Pcs must be greater then 0.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:34:16 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-34-16-014.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-34-16-014.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-34-16-014.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:34:16 PM</td>
+					<td class='step-details'>Order Pcs must be greater then 0.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:34:17 PM</td>
+					<td class='step-details'>Order Pcs must be greater then 0.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-34-16-203.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-34-16-203.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-34-16-203.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:34:52 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:34:52 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-34-52-573.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-34-52-573.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-34-52-573.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:34:52 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:34:54 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-34-52-730.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-34-52-730.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-34-52-730.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_12</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:35 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:35 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:36 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 47s+945ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Order Pcs' accepts numbers only. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:36:11 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Order Pcs' accepts numbers only. | Actual: Field 'Order Pcs' accepts numbers only.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:36:11 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-36-11-327.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-36-11-327.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-36-11-327.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:36:11 PM</td>
+					<td class='step-details'>Field 'Order Pcs' accepts numbers only.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:36:13 PM</td>
+					<td class='step-details'>Field 'Order Pcs' accepts numbers only.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-36-11-563.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-36-11-563.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-36-11-563.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:36:48 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:36:48 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-36-48-249.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-36-48-249.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-36-48-249.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:36:48 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:36:50 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-36-48-449.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-36-48-449.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-36-48-449.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_13</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:36 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:36 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:38 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 48s+127ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Gross Order Qty' can only contain positive numbers. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:38:07 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Gross Order Qty' can only contain positive numbers. | Actual: Net Order Quantity must be less than Gross Order Quantity
+Field 'Gross Order Qty' can only contain positive numbers.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:38:07 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-38-07-108.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-38-07-108.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-38-07-108.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:38:07 PM</td>
+					<td class='step-details'>Net Order Quantity must be less than Gross Order Quantity
+Field 'Gross Order Qty' can only contain positive numbers.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:38:08 PM</td>
+					<td class='step-details'>Field 'Gross Order Qty' can only contain positive numbers.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-38-07-306.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-38-07-306.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-38-07-306.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:38:44 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:38:44 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-38-44-055.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-38-44-055.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-38-44-055.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:38:44 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:38:45 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-38-44-276.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-38-44-276.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-38-44-276.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_14</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:38 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:38 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:40 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 44s+831ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Gross Order Qty' accepts numbers only. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:40:02 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Gross Order Qty' accepts numbers only. | Actual: Net Order Quantity must be less than Gross Order Quantity
+Field 'Gross Order Qty' accepts numbers only.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:40:02 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-40-02-064.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-40-02-064.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-40-02-064.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:40:02 PM</td>
+					<td class='step-details'>Net Order Quantity must be less than Gross Order Quantity
+Field 'Gross Order Qty' accepts numbers only.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:40:03 PM</td>
+					<td class='step-details'>Field 'Gross Order Qty' accepts numbers only.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-40-02-194.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-40-02-194.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-40-02-194.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:40:36 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:40:36 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-40-36-419.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-40-36-419.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-40-36-419.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:40:36 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:40:38 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-40-36-614.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-40-36-614.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-40-36-614.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_15</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:40 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:40 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:42 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 36s+882ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Gross Order Qty' must be filled in. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:42:18 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Gross Order Qty' must be filled in. | Actual: Field 'Gross Order Qty' must be filled in.
+Field 'Net Order Qty' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:42:19 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-42-18-811.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-42-18-811.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-42-18-811.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:42:19 PM</td>
+					<td class='step-details'>Field 'Gross Order Qty' must be filled in.
+Field 'Net Order Qty' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:42:20 PM</td>
+					<td class='step-details'>Field 'Gross Order Qty' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-42-19-043.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-42-19-043.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-42-19-043.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_16</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:42 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:42 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:44 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 38s+639ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Net Order Qty' must be filled in. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:44:05 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Net Order Qty' must be filled in. | Actual: Field 'Net Order Qty' must be filled in.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:44:05 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-44-05-261.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-44-05-261.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-44-05-261.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:44:05 PM</td>
+					<td class='step-details'>Field 'Net Order Qty' must be filled in.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:44:07 PM</td>
+					<td class='step-details'>Field 'Net Order Qty' must be filled in.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-44-05-902.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-44-05-902.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-44-05-902.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_17</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:44 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:44 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:45 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 43s+708ms</span>
+</div>
+	<div class='test-desc'>Verify Net Order Quantity must be greater then 0. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:45:25 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Net Order Qty' can only contain positive numbers. | Actual: Field 'Net Order Qty' can only contain positive numbers.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:45:26 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-45-25-924.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-45-25-924.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-45-25-924.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:45:26 PM</td>
+					<td class='step-details'>Field 'Net Order Qty' can only contain positive numbers.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:45:27 PM</td>
+					<td class='step-details'>Field 'Net Order Qty' can only contain positive numbers.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-45-26-111.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-45-26-111.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-45-26-111.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:45:57 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:45:58 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-45-57-908.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-45-57-908.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-45-57-908.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:45:58 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:45:59 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-45-58-111.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-45-58-111.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-45-58-111.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_18</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:46 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:46 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:47 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 49s+511ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Net Order Qty' accepts numbers only. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:47:18 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Field 'Net Order Qty' accepts numbers only. | Actual: Field 'Net Order Qty' accepts numbers only.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:47:18 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-47-18-242.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-47-18-242.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-47-18-242.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:47:18 PM</td>
+					<td class='step-details'>Field 'Net Order Qty' accepts numbers only.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:47:20 PM</td>
+					<td class='step-details'>Field 'Net Order Qty' accepts numbers only.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-47-18-468.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-47-18-468.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-47-18-468.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:47:55 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:47:55 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-47-55-658.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-47-55-658.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-47-55-658.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:47:55 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:47:57 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-47-55-848.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-47-55-848.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-47-55-848.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_19</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:48 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:48 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:49 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 17s+427ms</span>
+</div>
+	<div class='test-desc'>Verify Order Rate must be greater then 0. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:48:40 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:48:41 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-40-978.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-40-978.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-40-978.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:48:42 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-41-178.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-41-178.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-41-178.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:48:47 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Order Rate must be greater then 0. | Actual: Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:48:48 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-47-978.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-47-978.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-47-978.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:48:48 PM</td>
+					<td class='step-details'>Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:48:49 PM</td>
+					<td class='step-details'>Line Generated.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-48-202.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-48-202.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-48-202.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:48:50 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Order Rate must be greater then 0. | Actual: Stone Weight is not equal in Line No - 1.00.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:48:50 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-50-049.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-50-049.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-48-50-049.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:48:50 PM</td>
+					<td class='step-details'>Stone Weight is not equal in Line No - 1.00.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:48:51 PM</td>
+					<td class='step-details'>Stone Weight is not equal in Line No - 1.00.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-50-336.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-50-336.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-48-50-336.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:49:22 PM</td>
+					<td class='step-details'><span class='label white-text red'>An exception occurred while checking notification presence</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:49:22 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-49-22-033.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-49-22-033.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-49-22-033.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:49:22 PM</td>
+					<td class='step-details'>Exception occurred while checking notification presence<img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-49-22-229.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-49-22-229.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-49-22-229.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_20</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:49 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:49 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:50 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 45s+278ms</span>
+</div>
+	<div class='test-desc'>Verify Field 'Order Rate' accepts numbers only. </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:50:07 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:50:07 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-50-07-069.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-50-07-069.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-50-07-069.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:50:08 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-50-07-224.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-50-07-224.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-50-07-224.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:50:14 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Field 'Order Rate' accepts numbers only. | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:50:14 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-50-14-072.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-50-14-072.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-50-14-072.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:50:14 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:50:15 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-50-14-290.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-50-14-290.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-50-14-290.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_21</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:50 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:50 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:52 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 49s+118ms</span>
+</div>
+	<div class='test-desc'>Verify Net Order Quantity must be less than Gross Order Quantity </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:51:34 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Net Order Quantity must be less than Gross Order Quantity | Actual: Net Order Quantity must be less than Gross Order Quantity</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:51:34 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-51-34-398.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-51-34-398.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-51-34-398.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:51:34 PM</td>
+					<td class='step-details'>Net Order Quantity must be less than Gross Order Quantity</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:51:36 PM</td>
+					<td class='step-details'>Net Order Quantity must be less than Gross Order Quantity<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-51-34-583.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-51-34-583.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-51-34-583.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:52:11 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:52:12 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-52-11-856.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-52-11-856.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-52-11-856.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:52:12 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:52:13 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-52-12-079.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-52-12-079.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-52-12-079.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_22</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:52 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:52 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:53 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 14s+88ms</span>
+</div>
+	<div class='test-desc'>Verify confirm order without generate line </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:52:58 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line generated successfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:52:58 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-52-58-560.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-52-58-560.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-52-58-560.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:53:00 PM</td>
+					<td class='step-details'>Line generated successfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-52-58-780.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-52-58-780.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-52-58-780.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:53:05 PM</td>
+					<td class='step-details'><span class='label white-text red'>No Match: Expected does not contain Actual | Expected: Net Weight is not equal in Line No - 1.00. | Actual: Customer order Confirmed!
+Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:53:06 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-05-831.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-05-831.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-05-831.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:53:06 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:53:07 PM</td>
+					<td class='step-details'>Customer order Confirmed!
+Line Generated.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-06-016.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-06-016.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-06-016.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:53:36 PM</td>
+					<td class='step-details'>Navigate to page successfully<img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-36-064.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-36-064.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-36-064.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_23</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:53 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:53 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:53 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+866ms</span>
+</div>
+	<div class='test-desc'>Verify Navigation of customer order-Gold </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:53:41 PM</td>
+					<td class='step-details'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-39-594.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-39-594.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-39-594.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:53:41 PM</td>
+					<td class='step-details'><span class='label white-text green'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:53:41 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-41-114.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-41-114.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-41-114.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_24</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:53 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:53 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:53 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+8ms</span>
+</div>
+	<div class='test-desc'>Verify Navigation of customer order-Silver </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:53:58 PM</td>
+					<td class='step-details'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-56-835.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-56-835.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-53-56-835.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:53:58 PM</td>
+					<td class='step-details'><span class='label white-text green'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:53:58 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-58-434.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-58-434.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-53-58-434.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='28'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_25</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+946ms</span>
+</div>
+	<div class='test-desc'>Verify Navigation of customer order-Gold Bullion </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:15 PM</td>
+					<td class='step-details'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-14-090.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-14-090.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-14-090.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:15 PM</td>
+					<td class='step-details'><span class='label white-text green'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:15 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-15-680.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-15-680.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-15-680.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_26</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+39ms</span>
+</div>
+	<div class='test-desc'>Verify Navigation of customer order-Platinum </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:31 PM</td>
+					<td class='step-details'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-29-969.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-29-969.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-29-969.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:31 PM</td>
+					<td class='step-details'><span class='label white-text green'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:31 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-31-552.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-31-552.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-31-552.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_27</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:54 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+374ms</span>
+</div>
+	<div class='test-desc'>Verify Navigation of customer order-Sterling Silver </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:54:49 PM</td>
+					<td class='step-details'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-47-447.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-47-447.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-54-47-447.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:49 PM</td>
+					<td class='step-details'><span class='label white-text green'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:54:50 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-49-986.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-49-986.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-54-49-986.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_28</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:55 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:55 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:55 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+46ms</span>
+</div>
+	<div class='test-desc'>Verify Navigation of customer order-Silver Bullion </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:55:08 PM</td>
+					<td class='step-details'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-06-672.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-06-672.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-06-672.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:55:08 PM</td>
+					<td class='step-details'><span class='label white-text green'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:55:08 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-08-347.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-08-347.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-08-347.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_29</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:55 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:55 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:55 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+4ms</span>
+</div>
+	<div class='test-desc'>Verify Navigation of customer order-Mrp </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:55:24 PM</td>
+					<td class='step-details'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-22-884.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-22-884.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-22-884.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:55:24 PM</td>
+					<td class='step-details'><span class='label white-text green'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:55:24 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-24-497.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-24-497.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-24-497.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_30</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:55 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:55 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:56 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+956ms</span>
+</div>
+	<div class='test-desc'>Verify Navigation of customer order-Forming </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:55:40 PM</td>
+					<td class='step-details'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-38-473.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-38-473.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-55-38-473.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:55:40 PM</td>
+					<td class='step-details'><span class='label white-text green'>Customer order navigation sucessfully with mentioned  fields are displayed 1. delete Id 2.confirm 3. tagReserve 4. Cancel :Is Passed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:55:40 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-40-061.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-40-061.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-55-40-061.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:56:09 PM</td>
+					<td class='step-details'>Navigate to page successfully<img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-56-09-092.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-56-09-092.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-56-09-092.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_31</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:56 PM "("IST")"</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:56 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 02:57 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 56s+58ms</span>
+</div>
+	<div class='test-desc'>Verify Add Gold ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:56:49 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line is Generated Sucessfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:56:49 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-56-49-420.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-56-49-420.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-56-49-420.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:56:51 PM</td>
+					<td class='step-details'>Line is Generated Sucessfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-56-49-617.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-56-49-617.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-56-49-617.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:57:04 PM</td>
+					<td class='step-details'><span class='label white-text green'>After delete Order is not displayed</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:57:05 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-04-906.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-04-906.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-04-906.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:57:06 PM</td>
+					<td class='step-details'>After Delete Order is not displayed<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-05-095.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-05-095.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-05-095.png'></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:57:06 PM</td>
+					<td class='step-details'><span class='label white-text green'>Match Found: Expected contains Actual | Expected: Line Generated. | Actual: Line Generated.</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:57:06 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-06-711.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-06-711.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-06-711.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:57:06 PM</td>
+					<td class='step-details'>Line Generated.</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:57:08 PM</td>
+					<td class='step-details'>Line Generated.<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-06-900.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-06-900.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-06-900.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>TC_32</span>
+						<span class='test-time'>Wednesday, January 08, 2025, 02:57 PM "("IST")"</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Wednesday, January 08, 2025, 02:57 PM "("IST")"</span>
+	<span class='label end-time'>Wednesday, January 08, 2025, 03:00 PM "("IST")"</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 57s+530ms</span>
+</div>
+	<div class='test-desc'>Verify Add silver ornament </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:57:53 PM</td>
+					<td class='step-details'><span class='label white-text green'>Line is Generated Sucessfully</span></td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:57:53 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-53-097.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-53-097.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-57-53-097.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:57:54 PM</td>
+					<td class='step-details'>Line is Generated Sucessfully<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-53-255.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-53-255.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-57-53-255.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:59:34 PM</td>
+					<td class='step-details'><span class='label white-text red'>No notification found</span></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:59:34 PM</td>
+					<td class='step-details'><img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-59-34-071.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-59-34-071.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_14-59-34-071.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:59:34 PM</td>
+					<td class='step-details'>No notification found</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:59:36 PM</td>
+					<td class='step-details'>No notification found<img data-featherlight='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-59-34-592.png' width='10%' src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-59-34-592.png' data-src='../extentReport/screenshot/SS_ReportsHelper08-Jan-2025_14-59-34-592.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>3:00:13 PM</td>
+					<td class='step-details'><b>CASE FAILED IS addCustomerData<b/></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>3:00:13 PM</td>
+					<td class='step-details'><pre>java.lang.RuntimeException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='SystemDefinedNewButton']"}
+  (Session info: chrome=131.0.6778.264)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bba501e097f3b1f39ffe089645e61661, findElement {using=name, value=SystemDefinedNewButton}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.264, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60150}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60150/devtoo..., se:cdpVersion: 131.0.6778.264, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bba501e097f3b1f39ffe089645e61661
+	at com.sharedutils.ReportsHelper.tearDown(ReportsHelper.java:264)
+	at com.d365.utils.MasterClass.postMethodHandler(MasterClass.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+	at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>3:00:13 PM</td>
+					<td class='step-details'>no such element: Unable to locate element: {"method":"css selector","selector":"*[name='SystemDefinedNewButton']"}
+  (Session info: chrome=131.0.6778.264)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bba501e097f3b1f39ffe089645e61661, findElement {using=name, value=SystemDefinedNewButton}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.264, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60150}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60150/devtoo..., se:cdpVersion: 131.0.6778.264, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bba501e097f3b1f39ffe089645e61661<img data-featherlight='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_15-00-13-057.png' width='10%' src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_15-00-13-057.png' data-src='../extentReport/screenshot/20250108/SS_ReportsHelper_08-Jan-2025_15-00-13-057.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Smoke</span>
+						<span class='category-status right'>
+							<span class='label pass'>23</span>
+							<span class='label fail'>11</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 23</span>
+							<span class='label red lighten-1 white-text'>Failed: 11</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:18 PM "("IST")"</td>
+										<td class='linked' test-id='2'>TC_01</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:19 PM "("IST")"</td>
+										<td class='linked' test-id='3'>TC_02</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:20 PM "("IST")"</td>
+										<td class='linked' test-id='4'>TC_03</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:21 PM "("IST")"</td>
+										<td class='linked' test-id='5'>TC_04</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:22 PM "("IST")"</td>
+										<td class='linked' test-id='6'>TC_05</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:23 PM "("IST")"</td>
+										<td class='linked' test-id='7'>TC_06</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:24 PM "("IST")"</td>
+										<td class='linked' test-id='8'>TC_07</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:25 PM "("IST")"</td>
+										<td class='linked' test-id='9'>TC_08</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:26 PM "("IST")"</td>
+										<td class='linked' test-id='10'>TC_07</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:27 PM "("IST")"</td>
+										<td class='linked' test-id='11'>TC_08</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:29 PM "("IST")"</td>
+										<td class='linked' test-id='12'>TC_09</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:31 PM "("IST")"</td>
+										<td class='linked' test-id='13'>TC_10</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:33 PM "("IST")"</td>
+										<td class='linked' test-id='14'>TC_11</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:35 PM "("IST")"</td>
+										<td class='linked' test-id='15'>TC_12</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:36 PM "("IST")"</td>
+										<td class='linked' test-id='16'>TC_13</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:38 PM "("IST")"</td>
+										<td class='linked' test-id='17'>TC_14</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:40 PM "("IST")"</td>
+										<td class='linked' test-id='18'>TC_15</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:42 PM "("IST")"</td>
+										<td class='linked' test-id='19'>TC_16</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:44 PM "("IST")"</td>
+										<td class='linked' test-id='20'>TC_17</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:46 PM "("IST")"</td>
+										<td class='linked' test-id='21'>TC_18</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:48 PM "("IST")"</td>
+										<td class='linked' test-id='22'>TC_19</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:49 PM "("IST")"</td>
+										<td class='linked' test-id='23'>TC_20</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:50 PM "("IST")"</td>
+										<td class='linked' test-id='24'>TC_21</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:52 PM "("IST")"</td>
+										<td class='linked' test-id='25'>TC_22</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:53 PM "("IST")"</td>
+										<td class='linked' test-id='26'>TC_23</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:53 PM "("IST")"</td>
+										<td class='linked' test-id='27'>TC_24</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:54 PM "("IST")"</td>
+										<td class='linked' test-id='28'>TC_25</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:54 PM "("IST")"</td>
+										<td class='linked' test-id='29'>TC_26</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:54 PM "("IST")"</td>
+										<td class='linked' test-id='30'>TC_27</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:55 PM "("IST")"</td>
+										<td class='linked' test-id='31'>TC_28</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:55 PM "("IST")"</td>
+										<td class='linked' test-id='32'>TC_29</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:55 PM "("IST")"</td>
+										<td class='linked' test-id='33'>TC_30</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:56 PM "("IST")"</td>
+										<td class='linked' test-id='34'>TC_31</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Wednesday, January 08, 2025, 02:57 PM "("IST")"</td>
+										<td class='linked' test-id='35'>TC_32</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.RuntimeException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Wednesday, January 08, 2025, 02:57 PM "("IST")"</td>
+                                                        <td class='linked' test-id='35'>TC_32</td>
+                                                        <td><pre><pre>java.lang.RuntimeException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='SystemDefinedNewButton']"}
+  (Session info: chrome=131.0.6778.264)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bba501e097f3b1f39ffe089645e61661, findElement {using=name, value=SystemDefinedNewButton}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.264, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60150}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60150/devtoo..., se:cdpVersion: 131.0.6778.264, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bba501e097f3b1f39ffe089645e61661
+	at com.sharedutils.ReportsHelper.tearDown(ReportsHelper.java:264)
+	at com.d365.utils.MasterClass.postMethodHandler(MasterClass.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+	at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+	at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>35</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>214</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Wednesday, January 08, 2025, 02:17 PM "("IST")"</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Wednesday, January 08, 2025, 03:00 PM "("IST")"</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 42m 13s+677ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>QA Name</td>
+								<td>Kiran Dhanepkar</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Smoke</td>
+							<td>23</td>
+							<td>11</td>
+							<td>0</td>
+							<td>
+									67.647%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 24,
+				failParent: 11,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 11,
+				
+				passChild: 88,
+				failChild: 29,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 97,
+				exceptionsChild: 29,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
