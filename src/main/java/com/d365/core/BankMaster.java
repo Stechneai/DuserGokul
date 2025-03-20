@@ -25,7 +25,7 @@ public class BankMaster extends MasterClass {
 		reportHelper.generateLog(test, " " + description + ": ");
 		reportHelper.generateLogWithScreenshot(test, description + " SS");
 
-		genericHelper.clickWithjavascriptExecutor(bankMasterPage.btnSave());
+		genericHelper.clickWithJavascriptExecutor(bankMasterPage.btnSave());
 		handleValidationBM();
 	}
 
@@ -41,8 +41,8 @@ public class BankMaster extends MasterClass {
 		// Adding a new bank master record
 		genericHelper.sendKeysWithjavascriptExecutor(bankMasterPage.txtBankName(), bankName);
 		genericHelper.sendKeysWithjavascriptExecutor(bankMasterPage.txtDescription(), description);
-		genericHelper.clickWithjavascriptExecutor(bankMasterPage.btnDelete());
-		genericHelper.clickWithjavascriptExecutor(bankMasterPage.btnConfirmDelete());
+		genericHelper.clickWithJavascriptExecutor(bankMasterPage.btnDelete());
+		genericHelper.clickWithJavascriptExecutor(bankMasterPage.btnConfirmDelete());
 
 	}
 

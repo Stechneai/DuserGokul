@@ -4,6 +4,7 @@ import java.util.List;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
+import com.d365.core.TT26462PoRateUnfix;
 import com.d365.utils.MasterClass;
 import com.sharedutils.MasterDto;
 import com.sharedutils.ReportsHelper;
@@ -23,11 +24,11 @@ public class CopyRunTT26462UnfixPORateType extends MasterClass
  
 			try { 
 				test = reportHelper.createTestCase(test, extentReports, masterDto);
-				poRateUnfix.verifyPoFRateTypefield(masterDto);   
+				TT26462PoRateUnfix.verifyPoFRateTypefield(masterDto);   
 				checkNotificationPresenceAndHandle(masterDto);
 			} catch (Throwable e) 
 			{ 
-			 getResults();
+			 getResults(masterDto);
 				
 			} finally
 			{
