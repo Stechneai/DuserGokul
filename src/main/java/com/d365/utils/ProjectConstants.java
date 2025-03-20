@@ -18,4 +18,5 @@ public interface ProjectConstants {
 //	public final String currentDir = System.getProperty("user.dir");
 //	public final String extentReportSSPath = "./extentReport/screenshot/";
 //	public final String reportPath = "./extentReport/"; 
+
 }
