@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -33,6 +35,7 @@ import com.d365.core.BatchRegistration;
 import com.d365.core.CustomerOrder;
 import com.d365.core.CustomerOrderRepair;
 import com.d365.core.ItemTypeMaster;
+import com.d365.core.MonthlySavingSchemeDefaulterList;
 //import com.d365.core.ItemMaster;
 import com.d365.core.OfflineTagging;
 import com.d365.core.PoCheck;
@@ -51,10 +54,13 @@ import com.d365.pagelayer.HomePage;
 import com.d365.pagelayer.ItemMasterPage;
 import com.d365.pagelayer.ItemTypeMasterPage;
 import com.d365.pagelayer.LoginPage;
+import com.d365.pagelayer.MonthlySavingSchemeDefaulterListPage;
 import com.d365.pagelayer.OfflineTaggingPage;
 import com.d365.pagelayer.OfflineTaggingPageLot;
 import com.d365.pagelayer.OnHandListPageLot;
+import com.d365.pagelayer.PendingVendorInvoicesPage;
 import com.d365.pagelayer.PoCheckPage;
+import com.d365.pagelayer.PostProductReceiptPage;
 import com.d365.pagelayer.ProvisionalParcelPage;
 import com.d365.pagelayer.PurchaseOrderPageObject;
 import com.d365.pagelayer.ReprintingOfLabelPage;
@@ -123,10 +129,15 @@ public class ProjectFunctions implements ProjectConstants {
 	public static ProvisionalParcelPage provisionalParcelPage;
 	public static BatchRegistrationPages batchRegistrationPages;
 	public static BatchRegistration batchRegistration;
+	public static PostProductReceiptPage postproductreceiptpage;
+
+	public static PendingVendorInvoicesPage pendingVendorInvoicesPage;
 
 	public static ItemTypeMaster itemTypeMaster;
 	public static ReprintingOfLabel reprintingoflabel;
 	public static ReprintingOfLabelPage reprintingoflabelpage;
+	public static MonthlySavingSchemeDefaulterList monthlySavingSchemeDefaulterList;
+	public static MonthlySavingSchemeDefaulterListPage monthlySavingSchemeDefaulterListPage;
 
 	public void pageInitialiazation(WebDriver driver) {
 
@@ -161,8 +172,11 @@ public class ProjectFunctions implements ProjectConstants {
 		provisionalParcelPage = new ProvisionalParcelPage();
 		provisionalParcel = new ProvisionalParcel();
 		batchRegistrationPages = new BatchRegistrationPages();
+		postproductreceiptpage = new PostProductReceiptPage();
+        pendingVendorInvoicesPage = new PendingVendorInvoicesPage();
 		batchRegistration = new BatchRegistration();
-
+		monthlySavingSchemeDefaulterList=new MonthlySavingSchemeDefaulterList();
+		monthlySavingSchemeDefaulterListPage=new MonthlySavingSchemeDefaulterListPage();
 		offlineTagging = new OfflineTagging();
 		itemTypeMasterPage = new ItemTypeMasterPage();
 		itemTypeMaster = new ItemTypeMaster();
@@ -1281,5 +1295,13 @@ public class ProjectFunctions implements ProjectConstants {
 		} catch (Exception e) {
 			System.out.println("Failed: " + e.getMessage());
 		}
+	}
+	
+	public static String convertDateFormatJava8(String inputDate) {
+	    DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+	    DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
+
+	    LocalDate date = LocalDate.parse(inputDate, inputFormatter);
+	    return date.format(outputFormatter);
 	}
 }
