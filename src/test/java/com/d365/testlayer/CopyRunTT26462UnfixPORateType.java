@@ -24,7 +24,7 @@ public class CopyRunTT26462UnfixPORateType extends MasterClass
  
 			try { 
 				test = reportHelper.createTestCase(test, extentReports, masterDto);
-				TT26462PoRateUnfix.verifyPoFRateTypefield(masterDto);   
+				poRateUnfix.verifyPoFRateTypefield(masterDto);   
 				checkNotificationPresenceAndHandle(masterDto);
 			} catch (Throwable e) 
 			{ 

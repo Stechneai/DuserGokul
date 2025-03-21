@@ -23,6 +23,8 @@ import org.testng.asserts.SoftAssert;
 import com.d365.core.Rng;
 import com.d365.core.SchemeMaturityReport;
 import com.d365.core.SizeMaster;
+import com.d365.core.TT26462PoRateUnfix;
+import com.d365.core.TT29026provisionalParcelDuplicateEntry;
 import com.d365.core.Transfer;
 import com.d365.core.TransferOrder;
 import com.d365.core.UrdAddData;
@@ -73,10 +75,12 @@ import com.d365.pagelayer.MonthlySavingSchemeDefaulterListPage;
 import com.d365.pagelayer.OfflineTaggingPage;
 import com.d365.pagelayer.OfflineTaggingPageLot;
 import com.d365.pagelayer.OnHandListPageLot;
+import com.d365.pagelayer.PORateTypePages;
 import com.d365.pagelayer.PendingVendorInvoicesPage;
 import com.d365.pagelayer.PoCheckPage;
+import com.d365.pagelayer.PostProductPage;
 import com.d365.pagelayer.PostProductReceiptPage;
-import com.d365.pagelayer.ProvisionalParcelPage;
+import com.d365.pagelayer.ProvisionalP;
 import com.d365.pagelayer.PurchaseOrderPageObject;
 import com.d365.pagelayer.QcSetupMasterPage;
 import com.d365.pagelayer.ReprintingOfLabelPage;
@@ -95,6 +99,9 @@ public class ProjectFunctions implements ProjectConstants {
 	public ReportsHelper reportHelper = new ReportsHelper();
 	public ScreenShotHelper ssHelper = new ScreenShotHelper();
 	public static MasterDto masterDto = new MasterDto();
+	
+
+
 
 	public static ExtentReports extentReports;
 	public static ExtentTest test;
@@ -112,6 +119,10 @@ public class ProjectFunctions implements ProjectConstants {
 
 	public static AgentMaster agentmaster;
 	public static AgentMasterPage agentmasterpage;
+	
+
+	
+	
 	public SoftAssert softAssert = new SoftAssert();
 
 	protected static boolean isLoggedIn = false;
@@ -140,10 +151,10 @@ public class ProjectFunctions implements ProjectConstants {
 	public static AllSalesOrderLot allsalesorderlot;
 	public static OnHandListPageLot onhandlistpagelot;
 	public static PoCheck poCheck;
-	public static PoCheckPage poCheckPage;
+	
 	public static ProvisionalParcel provisionalParcel;
-	public static ProvisionalParcelPage provisionalParcelPage;
-	public static BatchRegistrationPages batchRegistrationPages;
+	
+	
 	public static BatchRegistration batchRegistration;
 	public static PostProductReceiptPage postproductreceiptpage;
 	public static BankMasterPage bankMasterPage;
@@ -173,6 +184,14 @@ public class ProjectFunctions implements ProjectConstants {
 	public static FranchiseeReportPage franchiseereportpage;
 	public static SchemeMaturityReport schemematurityreport;
 	public static SchememMaturityReportpage schememmaturityreportpage;
+	
+	public static BatchRegistrationPages batchRegistrationPages;
+	public static 	PostProductPage postProductPage;
+	public static TT26462PoRateUnfix  poRateUnfix;
+	public static PORateTypePages  pORateTypePages ;
+	public static ProvisionalP provisionalP;
+	public static PoCheckPage poCheckPage;
+	public static TT29026provisionalParcelDuplicateEntry provisionalParcelDuplicateEntry ;
 
 	public void pageInitialiazation(WebDriver driver) {
 
@@ -203,13 +222,9 @@ public class ProjectFunctions implements ProjectConstants {
 		allsalesorderlot = new AllSalesOrderLot();
 		onhandlistpagelot = new OnHandListPageLot();
 		poCheck = new PoCheck();
-		poCheckPage = new PoCheckPage();
-		provisionalParcelPage = new ProvisionalParcelPage();
-		provisionalParcel = new ProvisionalParcel();
-		batchRegistrationPages = new BatchRegistrationPages();
-		postproductreceiptpage = new PostProductReceiptPage();
+	
 		pendingVendorInvoicesPage = new PendingVendorInvoicesPage();
-		batchRegistration = new BatchRegistration();
+		
 		monthlySavingSchemeDefaulterList = new MonthlySavingSchemeDefaulterList();
 		monthlySavingSchemeDefaulterListPage = new MonthlySavingSchemeDefaulterListPage();
 		offlineTagging = new OfflineTagging();
@@ -236,6 +251,18 @@ public class ProjectFunctions implements ProjectConstants {
 		schemematurityreport = new SchemeMaturityReport();
 		schememmaturityreportpage = new SchememMaturityReportpage();
 		loginpage = new LoginPage();
+		
+		
+		
+		
+		batchRegistrationPages = new BatchRegistrationPages();
+		 postProductPage = new PostProductPage();
+		  poRateUnfix = new TT26462PoRateUnfix();
+		  pORateTypePages = new PORateTypePages();
+		 provisionalP = new ProvisionalP();
+		 poCheckPage = new PoCheckPage();
+		 provisionalParcelDuplicateEntry = new TT29026provisionalParcelDuplicateEntry(); 
+		
 	}
 
 	public void loginPage(WebDriver driver2, String username, String password) throws InterruptedException, Exception {
@@ -2244,5 +2271,43 @@ public class ProjectFunctions implements ProjectConstants {
 			throw new IllegalArgumentException("Invalid field name: " + fieldName);
 		}
 	}
+	
+	public void getResults() throws IOException, InterruptedException {
+		String expectedMessage = getValueOrDefault(masterDto.getAttributeValue("Expected message"));
+ 
+		try {
+			WebElement duplicateErrorMsg = provisionalP.msgDuplicateError();
+			WebElement invalidMsg = provisionalP.msgInvalidError(); 
+ 
+			if (invalidMsg.isDisplayed()) 
+			{
+				handleInvalidMessage();
+			} 
+			else if (duplicateErrorMsg.isDisplayed()) 
+			{
+				handleDuplicateMessage(duplicateErrorMsg, expectedMessage);
+			} 
+			
+			else 
+			{
+				checkNotificationPresenceAndHandle(masterDto);
+				driver.navigate().refresh();
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("Error elements not found: " + e.getMessage());
+		}
+		checkNotificationPresenceAndHandle(masterDto);                
+		driver.navigate().refresh();
+	}
+ 
+
+ 
+
+ 
+
+
+
+	
+	
 
 }
