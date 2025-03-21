@@ -13,6 +13,8 @@ public interface ProjectConstants {
 	public String excelPath = "./public/data/";
 	public String reprintingOfLabel = "ReprintingOfLabeling.xlsx";
 	public String hmtype = "HmTypeP2P.xlsx";
+	public String pdcreport="PDCSheet.xlsx";
+	public String defaultmaturitylist="MaturityDefaulterList.xlsx";
 	public final String propertyFile = "./testResources/appData.properties";
 	public final String configFile = "./testResources/config.properties";
 //	public final String currentDir = System.getProperty("user.dir");

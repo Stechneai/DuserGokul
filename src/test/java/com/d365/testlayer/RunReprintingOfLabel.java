@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.d365.utils.MasterClass;
 import com.sharedutils.MasterDto;
 
-public class TestReprintingOfLabel extends MasterClass {
+public class RunReprintingOfLabel extends MasterClass {
 	ITestResult result;
 
 	@Test(enabled = false, groups = { "admin", "Jewellery", "ReprintingOfLabeling", "Functionality" })

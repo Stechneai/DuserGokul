@@ -8,10 +8,10 @@ import org.testng.annotations.Test;
 import com.d365.utils.MasterClass;
 import com.sharedutils.MasterDto;
 
-public class TestMonthlySavingSchemeDefaulterList extends MasterClass {
+public class RunMonthlySavingSchemeDefaulterList extends MasterClass {
 	ITestResult result;  
 	
-	@Test(enabled = true, groups = { "admin", "Jewellery", "BatchRegistration", "Validation" })
+	@Test(enabled = true, groups = { "admin", "Jewellery", "MonthlySavingDefaulterList", "Validation" })
 	public void validateDefaulterListReport() throws Throwable {
 
 		List<MasterDto> masterDtos = excelHelper.getTestData(defaultmaturitylist, "Sheet1");

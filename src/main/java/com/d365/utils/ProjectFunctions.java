@@ -38,6 +38,7 @@ import com.d365.core.ItemTypeMaster;
 import com.d365.core.MonthlySavingSchemeDefaulterList;
 //import com.d365.core.ItemMaster;
 import com.d365.core.OfflineTagging;
+import com.d365.core.PDCReport;
 import com.d365.core.PoCheck;
 import com.d365.core.ProvisionalParcel;
 import com.d365.core.ReprintingOfLabel;
@@ -58,6 +59,7 @@ import com.d365.pagelayer.MonthlySavingSchemeDefaulterListPage;
 import com.d365.pagelayer.OfflineTaggingPage;
 import com.d365.pagelayer.OfflineTaggingPageLot;
 import com.d365.pagelayer.OnHandListPageLot;
+import com.d365.pagelayer.PDCReportPage;
 import com.d365.pagelayer.PendingVendorInvoicesPage;
 import com.d365.pagelayer.PoCheckPage;
 import com.d365.pagelayer.PostProductReceiptPage;
@@ -132,6 +134,9 @@ public class ProjectFunctions implements ProjectConstants {
 	public static PostProductReceiptPage postproductreceiptpage;
 
 	public static PendingVendorInvoicesPage pendingVendorInvoicesPage;
+	public static PDCReport pdcReport;
+	public static PDCReportPage pdcReportPage;
+	
 
 	public static ItemTypeMaster itemTypeMaster;
 	public static ReprintingOfLabel reprintingoflabel;
@@ -182,6 +187,8 @@ public class ProjectFunctions implements ProjectConstants {
 		itemTypeMaster = new ItemTypeMaster();
 		reprintingoflabel = new ReprintingOfLabel();
 		reprintingoflabelpage = new ReprintingOfLabelPage();
+		pdcReport=new PDCReport();
+		pdcReportPage=new PDCReportPage();
 		SoftAssert softAssert = new SoftAssert();
 		actions = new Actions(driver);
 
