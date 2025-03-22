@@ -40,6 +40,7 @@ public class ItemTypeMaster extends MasterClass {
 		genericHelper.clearAndSendKeysAndEnter(itemTypeMasterPage.txtPrimaryItem(), primaryitem);
 
 		genericHelper.clearAndSendKeysAndEnter(itemTypeMasterPage.txtHmItem(), hmitem);
+		reportHelper.generateLogFullScreenSS(test, "Hm Item is selected ");
 
 		genericHelper.clickWithJavascriptExecutor(itemTypeMasterPage.btnSave());
 
@@ -167,6 +168,7 @@ public class ItemTypeMaster extends MasterClass {
 				|| !actualhmitemvalue.trim().equalsIgnoreCase(hmitem.trim())) {
 			reportHelper.onTestFailure(test,
 					"HM Item value is incorrect. Expected: [" + hmitem + "] but found: [" + actualhmitemvalue + "]");
+			reportHelper.generateLogFullScreenSS(test, "HM Item Value is incorrect.");
 		} else {
 			reportHelper.onTestSuccess(test, "HM Item value is correctly selected.");
 			reportHelper.generateLogFullScreenSS(test, "HM Item validation succeeded.");
@@ -222,10 +224,12 @@ public class ItemTypeMaster extends MasterClass {
 		if (!hmItemField.isEnabled() || hmItemField.getAttribute("readonly") != null) {
 			System.out.println("The HM Item field is not editable.");
 			reportHelper.onTestFailure(test, "HM Item field is not editable.");
+			reportHelper.generateLogFullScreenSS(test, "HM Item field is not editable.");
 			return;
 		} else {
 			System.out.println("The HM Item field is  editable.");
 			reportHelper.onTestSuccess(test, "HM Item field is  editable.");
+			reportHelper.generateLogFullScreenSS(test, "HM Item field is  editable.");
 			return;
 		}
 

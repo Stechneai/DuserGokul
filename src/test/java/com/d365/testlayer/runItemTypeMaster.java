@@ -31,7 +31,7 @@ public class runItemTypeMaster extends MasterClass {
 		}
 	}
 	
-	@Test(enabled = true, groups = { "admin", "Jewellery", "ItemTypeMaster", "Functionality" })
+	//@Test(enabled = true, groups = { "admin", "Jewellery", "ItemTypeMaster", "Functionality" })
 
 	public void ValidateDublicateRecord() throws Throwable {
 

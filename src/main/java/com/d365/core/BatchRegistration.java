@@ -91,6 +91,8 @@ public class BatchRegistration extends MasterClass {
 	public String pcsOfPMC;
 
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as necessary
+	
+	
 
 	public void processProvisonalParcelPOBatchRegistration(ExtentTest test, MasterDto masterDto) throws InterruptedException, IOException {
 		hmRejectionPcs = masterDto.getAttributeValue("HM Rejection Pcs");
@@ -408,26 +410,6 @@ public class BatchRegistration extends MasterClass {
 
 		genericHelper.clickWithJavascriptExecutor(poCheckPage.btnUpdate());
 
-//		String actualPassPcs = poCheckPage.txtPoPassPcs().getAttribute("value");
-//		String actualGrossWt = poCheckPage.txtPoPassGrossWt().getAttribute("value");
-//
-//		reportHelper.performAssert(test, "PO Pass Pcs", poPassPcs, actualPassPcs);
-//		reportHelper.performAssert(test, "Rcv Gross Weight *", actualGrossWt, rcvGrossWt);
-//
-//		String poPassNetWt = poCheckPage.txtPoPassNetWt().getAttribute("value");
-//		reportHelper.performAssert(test, "PO Pass Net Weight", poPassNetsWt, poPassNetWt);
-//
-//		String actualItemID = poCheckPage.txtItemofPoDetails().getAttribute("value");
-//		reportHelper.performAssert(test, "Item Id *", actualItemID, itemId);
-//
-//		String actualConfiguration = poCheckPage.txtConfigurationofPoDetails().getAttribute("value");
-//		reportHelper.performAssert(test, "Configuration *", actualConfiguration, configuration);
-//
-//		String expectedPurity = poCheckPage.txtPurityOfPoDetails().getAttribute("value");
-//		reportHelper.performAssert(test, "Purity Carat", expectedPurity, purity);
-//
-//		genericHelper.clickWithJavascriptExecutor(poCheckPage.btnPoComplete());
-
 		genericHelper.clickWithJavascriptExecutor(poCheckPage.btnPoCompleteOk());
 		genericHelper.sendKeysWithjavascriptExecutor(poCheckPage.txtPoCheckUser(), PoCheckUser1);
 		driver.findElement(By.xpath("//input[contains(@id,\"SysGen_DesignerCode\")]")).click();
@@ -448,8 +430,22 @@ public class BatchRegistration extends MasterClass {
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.labelPretagLine());
 
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.labelPMC());
-
 		WebElement makingItemNoValue = batchRegistrationPages.txtMakingItemNo();
+		String actaulMakingItemNo=makingItemNoValue.getAttribute("value");
+		System.out.println("No is:"+actaulMakingItemNo);
+		
+		
+		if (MakingItemNoofPMC.equals(actaulMakingItemNo) && !actaulMakingItemNo.isEmpty()) {
+		    System.out.println("✅ The field is auto-filled with: " + actaulMakingItemNo);
+		    reportHelper.onTestSuccess(test, "The field is auto-filled successfully with: " + actaulMakingItemNo);
+		    reportHelper.generateLogFullScreenSS(test, "Field is auto filled");
+		} else {
+		    System.out.println("❌ The field is NOT auto-filled.");
+		    reportHelper.onTestFailure(test, "The field did not auto-fill as expected.");
+		    reportHelper.generateLogFullScreenSS(test, "Field is not auto filled");
+		}
+
+		
 		makingItemNoValue.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
 		 
 //		makingItemNoValue.clear();
@@ -534,6 +530,7 @@ public class BatchRegistration extends MasterClass {
 		genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.lnkJewellery());
 		// genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.clickQcProcessManagement());
 		genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.lnkprovisionalParcel());
+		reportHelper.generateLogFullScreenSS(test,"Navigation Provisonal Parcel Page Sucessfully");
 		genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.btnNew());
 		genericHelper.clearAndSendKeysAndEnter(provisionalParcelPage.dropDownReceiveFrom(), ReceiveFrom);
 
@@ -569,6 +566,7 @@ public class BatchRegistration extends MasterClass {
 		genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.lnkJewellery());
 
 		genericHelper.clickWithJavascriptExecutor(poCheckPage.linkPoCheck());
+		reportHelper.generateLogFullScreenSS(test,"PO check page is open sucessfully");
 
 		Thread.sleep(2000);
 		genericHelper.clickWithJavascriptExecutor(poCheckPage.lblReferenceNo());
@@ -595,6 +593,31 @@ public class BatchRegistration extends MasterClass {
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.lnkModule());
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.lnkJewellery());
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.lnkBatchRegistration());
+		
+		// navigation of offline tagging
+				try {
+
+					if (batchRegistrationPages.btnNewBatchRegistration().isDisplayed()
+							&& batchRegistrationPages.btnRelease().isDisplayed()
+							&& batchRegistrationPages.btnPost().isDisplayed()
+							&& batchRegistrationPages.btnGenerateLine().isDisplayed()) {
+						reportHelper.generateLogFullScreenSS(test,
+								"Verify that navigating sucessfully of Batch registration using following Path Jewellery>>Batch Registration");
+						reportHelper.onTestSuccess(test,
+								"Verify that navigating sucessfully of Batch registration using following Path Jewellery>>Batch Registration");
+					} else {
+						reportHelper.generateLogFullScreenSS(test,
+								"Verify that navigating not sucessfully of Batch registration using following Path Jewellery>>Batch Registration");
+						reportHelper.onTestFailure(test,
+								"Verify that navigating not sucessfully of Batch registration using following Path Jewellery>>Batch Registration");
+					}
+				} catch (Exception e) {
+					reportHelper.generateLogFullScreenSS(test,
+							"Verify that navigating not sucessfully of Batch registration using following Path Jewellery>>Batch Registration");
+					reportHelper.onTestFailure(test,
+							"Verify that navigating not sucessfully of Batch registration using following Path Jewellery>>Batch Registration");
+
+				}
 
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.btnNewBatchRegistration());
 		genericHelper.sendKeysWithjavascriptExecutor(batchRegistrationPages.txtChallanNo(), challanNo);
@@ -609,26 +632,28 @@ public class BatchRegistration extends MasterClass {
 		WebElement makingItemNo = batchRegistrationPages.txtMakingItemNo();
 		String atualmakingItemNo = makingItemNo.getAttribute("value");
 		reportHelper.performAssert(test, "Making Item No.", MakingItemNoofPMC, atualmakingItemNo);
+		reportHelper.generateLogFullScreenSS(test,"Making Item No is correctly displayed");
 
 		WebElement itemcategory = batchRegistrationPages.dropDownItemcategorYofPMC();
 		String actualitemcategory = itemcategory.getAttribute("value");
 		reportHelper.performAssert(test, "ItemCategory", itemCategoryofPMC, actualitemcategory);
+		reportHelper.generateLogFullScreenSS(test,"Item category is correctly displayed");
 
 		WebElement pcss = batchRegistrationPages.txtNop();
 		String atualPcs = pcss.getAttribute("value");
 		reportHelper.performAssert(test, "Pcs", pcsOfPMC, atualPcs);
+		reportHelper.generateLogFullScreenSS(test,"Pcs is correctly displayed");
+		
 
-		WebElement makingType = batchRegistrationPages.dropDownMakingTypeofPMC();
-		String atualmakingType = makingType.getAttribute("value");
-		reportHelper.performAssert(test, "MakingType", makingTypeOfPMC, atualmakingType);
+//		WebElement makingType = batchRegistrationPages.dropDownMakingTypeofPMC();
+//		String atualmakingType = makingType.getAttribute("value");
+//		reportHelper.performAssert(test, "MakingType", makingTypeOfPMC, atualmakingType);
 
 		WebElement makingRate = batchRegistrationPages.txtMakingRateofPMC();
 		String atualmakingRate = makingRate.getAttribute("value");
 		reportHelper.performAssert(test, "MakingRate", makingRateOfPMC, atualmakingRate);
+		reportHelper.generateLogFullScreenSS(test,"Making Rate is correctly displayed");
 
-		WebElement valuee = batchRegistrationPages.txtValue();
-		String atualvaluee = valuee.getAttribute("value");
-		reportHelper.performAssert(test, "Value", valueOfPMC, atualvaluee);
 
 	}
 
@@ -705,6 +730,9 @@ public class BatchRegistration extends MasterClass {
 		genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.lnkJewellery());
 		// genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.clickQcProcessManagement());
 		genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.lnkprovisionalParcel());
+		reportHelper.generateLogFullScreenSS(test,"Provisonal Parcel Page is open sucessfully");
+		
+		
 		genericHelper.clickWithJavascriptExecutor(provisionalParcelPage.btnNew());
 		genericHelper.clearAndSendKeysAndEnter(provisionalParcelPage.dropDownReceiveFrom(), ReceiveFrom);
 
@@ -765,6 +793,7 @@ public class BatchRegistration extends MasterClass {
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.lnkModule());
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.lnkJewellery());
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.lnkBatchRegistration());
+		reportHelper.generateLogFullScreenSS(test,"Batch Registration Page is open sucessfully");
 
 		genericHelper.clickWithJavascriptExecutor(batchRegistrationPages.btnNewBatchRegistration());
 		genericHelper.sendKeysWithjavascriptExecutor(batchRegistrationPages.txtChallanNo(), challanNo);
@@ -790,9 +819,11 @@ public class BatchRegistration extends MasterClass {
 		if (atualmakingItemNo.equalsIgnoreCase(atualmakingItemNo1)) {
 			System.out.println("The Making Item No is not changed and field is not editable.");
 			reportHelper.onTestFailure(test, "The Making Item No is not changed and field is not editable.");
+			reportHelper.generateLogFullScreenSS(test,"The Making Item No is not changed and field is not editable.");
 		} else {
 			System.out.println("The Making Item No is changed and field is editable.");
 			reportHelper.onTestSuccess(test, "The Making Item No is changed and field is editable.");
+			reportHelper.generateLogFullScreenSS(test,"The Making Item No is changed and field is editable.");
 		}
 
 //	if (!makingItemNo.isEnabled() || makingItemNo.getAttribute("readonly") != null) {

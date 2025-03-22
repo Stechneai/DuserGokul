@@ -394,6 +394,154 @@ public class RunReprintingOfLabel extends MasterClass {
 			}
 		}
 	}
+   @Test(enabled = true, groups = { "admin", "Jewellery", "ReprintingOfLabeling", "Validation" })
+ 	public void negativeRateOrnament() throws Throwable {
+ 		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "NegativeRateChanegO");
+ 		for (MasterDto masterDto : masterDtos) {
+ 			try {
+ 				test = reportHelper.createTestCase(test, extentReports, masterDto);
+ 				reprintingoflabel.negativeRateOrnament(test, masterDto);
+ 				checkNotificationPresenceAndHandle(masterDto);
+ 			} catch (Exception e) {
+ 				getResults(masterDto);
+ 			} finally {
+ 				reportHelper.generateExcelReport(test, result, masterDto);
+ 			}
+ 		}
+ 	}
+   @Test
+	public void rateOrnamentFields() throws Throwable {
+ 		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "RateOrnamentFields");
+ 		for (MasterDto masterDto : masterDtos) {
+ 			try {
+ 				test = reportHelper.createTestCase(test, extentReports, masterDto);
+ 				reprintingoflabel.rateOrnamentFields(test, masterDto);
+ 				//checkNotificationPresenceAndHandle(masterDto);
+ 			} catch (Exception e) {
+ 				getResults(masterDto);
+ 			} finally {
+ 				reportHelper.generateExcelReport(test, result, masterDto);
+ 			}
+ 		}
+ 	}
+   @Test
+	public void itemidOrnamentFields() throws Throwable {
+ 		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "OrnamentItemIdField");
+ 		for (MasterDto masterDto : masterDtos) {
+ 			try {
+ 				test = reportHelper.createTestCase(test, extentReports, masterDto);
+ 				reprintingoflabel.itemidOrnamentFields(test, masterDto);
+ 				//checkNotificationPresenceAndHandle(masterDto);
+ 			} catch (Exception e) {
+ 				getResults(masterDto);
+ 			} finally {
+ 				reportHelper.generateExcelReport(test, result, masterDto);
+ 			}
+ 		}
+ 	}
+	//@Test
+	public void itemidMRPSterlingSilverFields() throws Throwable {
+ 		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "MRPItemIdField");
+ 		for (MasterDto masterDto : masterDtos) {
+ 			try {
+ 				test = reportHelper.createTestCase(test, extentReports, masterDto);
+ 				reprintingoflabel.itemidMRPSterlingSilverFields(test, masterDto);
+ 				//checkNotificationPresenceAndHandle(masterDto);
+ 			} catch (Exception e) {
+ 				getResults(masterDto);
+ 			} finally {
+ 				reportHelper.generateExcelReport(test, result, masterDto);
+ 			}
+ 		}
+ 	}
+//	@Test
+	public void addRateMRPSterlingSilver() throws Throwable {
+ 		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "RateChangeMRPSterlingSilver");
+ 		for (MasterDto masterDto : masterDtos) {
+ 			try {
+ 				test = reportHelper.createTestCase(test, extentReports, masterDto);
+ 				reprintingoflabel.addRateMRPSterlingSilver(test, masterDto);
+ 				//checkNotificationPresenceAndHandle(masterDto);
+ 			} catch (Exception e) {
+ 				getResults(masterDto);
+ 			} finally {
+ 				reportHelper.generateExcelReport(test, result, masterDto);
+ 			}
+ 		}
+ 	}
+//	@Test
+public void negativeRateMRPSterlingSilver() throws Throwable {
+ 		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "NegativeRateRevisionMRP");
+ 		for (MasterDto masterDto : masterDtos) {
+ 			try {
+ 				test = reportHelper.createTestCase(test, extentReports, masterDto);
+ 				reprintingoflabel.negativeRateMRPSterlingSilver(test, masterDto);
+ 				checkNotificationPresenceAndHandle(masterDto);
+ 			} catch (Exception e) {
+ 				getResults(masterDto);
+ 			} finally {
+ 				reportHelper.generateExcelReport(test, result, masterDto);
+ 			}
+ 		}
+ 	}
+	//@Test
+	public void validateRateMRPSterlingSilver() throws Throwable {
+ 		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "ValidateRateRevision");
+ 		for (MasterDto masterDto : masterDtos) {
+ 			try {
+ 				test = reportHelper.createTestCase(test, extentReports, masterDto);
+ 				reprintingoflabel.validateRateMRPSterlingSilver(test, masterDto);
+ 				checkNotificationPresenceAndHandle(masterDto);
+ 			} catch (Exception e) {
+ 				getResults(masterDto);
+ 			} finally {
+ 				reportHelper.generateExcelReport(test, result, masterDto);
+ 			}
+ 		}
+ 	}
+	//@Test
+	public void postRateMRPSterlingSilver() throws Throwable {
+ 		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "PostRateRevision");
+ 		for (MasterDto masterDto : masterDtos) {
+ 			try {
+ 				test = reportHelper.createTestCase(test, extentReports, masterDto);
+ 				reprintingoflabel.postRateMRPSterlingSilver(test, masterDto);
+ 				checkNotificationPresenceAndHandle(masterDto);
+ 			} catch (Exception e) {
+ 				getResults(masterDto);
+ 			} finally {
+ 				reportHelper.generateExcelReport(test, result, masterDto);
+ 			}
+ 		}
+ 	}
+   @Test(enabled = true, groups = { "admin", "Jewellery", "ReprintingOfLabeling", "Validation" })
+	public void validateRepritingdropdownList() throws Throwable {
+		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "PurposeReprintinglabeldropdown");
+		for (MasterDto masterDto : masterDtos) {
+			try {
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+				reprintingoflabel.validateReprintingDropdownList(test, masterDto);
+			} catch (Exception e) {
+				getResults(masterDto);
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
+			}
+		}
+	}
+   @Test(enabled = true, groups = { "admin", "Jewellery", "ReprintingOfLabeling", "Validation" })
+	public void validateAttributeChangeDropdownList() throws Throwable {
+		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "DropdownAttributeChange");
+		for (MasterDto masterDto : masterDtos) {
+			try {
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+				reprintingoflabel.validateAttributeChangeDropdownList(test, masterDto);
+			} catch (Exception e) {
+				getResults(masterDto);
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
+			}
+		}
+	}
 
 	}
 

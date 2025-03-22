@@ -5,8 +5,8 @@ public interface ProjectConstants {
 	public String qaName = "Kiran Dhanepkar";
 //	public String CustomerOrderDocTitle = "RNG";
 //	public String CustomerOrderReportName = "Customer Order";
-	public String docTitle = "ItemTypeMaster";
-	public String reportName = "ItemTypeMaster";
+	public String docTitle = "ReprintingOfLabel";
+	public String reportName = "ReprintingOfLabel";
 	public String username = "kiran.dhanepkar@techneai.com";
 	public String password = "1994@Kiru";
 

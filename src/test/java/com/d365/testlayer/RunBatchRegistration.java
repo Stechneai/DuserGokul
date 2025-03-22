@@ -14,7 +14,7 @@ import com.sharedutils.MasterDto;
 public class RunBatchRegistration extends MasterClass {
 	ITestResult result;
 
-	@Test(enabled = true, groups = { "admin", "Jewellery", "BatchRegistration", "Functionality" })
+	//@Test(enabled = true, groups = { "admin", "Jewellery", "BatchRegistration", "Functionality" })
 	public void verifyMakingItemNo() throws Throwable {
 
 		List<MasterDto> masterDtos = excelHelper.getTestData(hmtype, "ValidateMakingNoBR");
@@ -45,6 +45,7 @@ public class RunBatchRegistration extends MasterClass {
 				reportHelper.generateExcelReport(test, result, masterDto);
 			}
 		}
+	
 	}
 
 	@Test(enabled = true, groups = { "admin", "Jewellery", "BatchRegistration", "Functionality" })

@@ -337,6 +337,19 @@ public class ReprintingOfLabelPage extends MasterClass {
 	public WebElement labelGetSubsmithName() {
 		return  (subsmithn);
 	}
+	@FindBy(xpath = "//div[text()='Sub smith']")
+	private WebElement subsmithnreprintingline;
+
+	public WebElement labelGetSubsmithReprintLine() {
+		return  (subsmithnreprintingline);
+	}
+	
+	@FindBy(xpath = "//input[contains(@id,'TA_ReprintingLines_Subsmith_') and contains(@id,'input')]")
+	private WebElement subsmithnreprintinglinetxt;
+
+	public WebElement txtSubsmithReprintLine() {
+		return  (subsmithnreprintinglinetxt);
+	}
 
 	@FindBy(xpath = "//label[text()='Attribute Change']")
 	private WebElement attributechangen;
@@ -365,5 +378,28 @@ public class ReprintingOfLabelPage extends MasterClass {
 	public WebElement txtGetValue() {
 		return  (valuet);
 	}
+	//div[@class='lookupButton' and @data-dyn-helptext='(Alt+Down)']
+	//div[@class='lookupButton' and @data-dyn-qtip-title='Open']
+	@FindBy(xpath = "(//div[contains(@class, 'lookupButton')])[4]")
+	private WebElement reprintingicon;
+
+	public WebElement iconReprintigOfLabel() {
+		return  (reprintingicon);
+	}
+	////ul[contains(@class, 'comboBox-list')]/li[text()='Only Reprinting of Label']--Specific value from dropdown
+	@FindBy(xpath = "(//ul[contains(@class, 'comboBox-list') and contains(@class, 'sysPopup')])[2]")
+	private WebElement valuesreprintingdropdown;
+
+	public WebElement txtPurposeofReprintingDropdown() {
+		return  (valuesreprintingdropdown);
+	}
+	@FindBy(xpath = "(//div[@class='lookupButton' and @title='Open'])[5]")
+	private WebElement attributeicon;
+
+	public WebElement iconAttributeChange() {
+		return  (attributeicon);
+	}
+	
+	
 
 }
