@@ -35,7 +35,7 @@ public class ProvisionalParcel extends MasterClass {
 	public String StoneConfiguration;
 	public String ExpectedErrorMessage;
 	public WebElement errrMsg;
-
+	public String poratetype;
 	
 	
 	//---Validate fields Purity,Rcv Pcs,Minimum Wt , maximum Wt , Rcv Net wt
@@ -57,6 +57,7 @@ public class ProvisionalParcel extends MasterClass {
 		rcvStoneWt=masterDto.getAttributeValue("RCV Stone Weight");
 		StoneName = masterDto.getAttributeValue("Stone Name"); 
 		StoneConfiguration=masterDto.getAttributeValue("Stone Configuration");
+		poratetype = masterDto.getAttributeValue("PoRateType");
 		
 		
 		
@@ -78,6 +79,7 @@ public class ProvisionalParcel extends MasterClass {
 		genericHelper.clearAndSendKeysAndEnter(provisionalParcelPage.dropDownWareHouse(), wareHouse);
 		String expectedWarehouse = provisionalParcelPage.dropDownWareHouse().getAttribute("value");
 		reportHelper.performAssert(test, "Warehouse *", wareHouse, expectedWarehouse);
+		genericHelper.clearAndSendKeysAndEnter(provisionalParcelPage.txtEnterPoRateType(), "poratetype");
 		
 		
 		genericHelper.scrollingTillWebElement(provisionalParcelPage.btnNewParcelReceive());

@@ -3,29 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.d365.testlayer.RunReprintingOfLabel">
+      <class name="com.d365.testlayer.runTransfer">
         <methods>
           <include name="preSuiteHandler"/>
           <include name="postSuiteHandler"/>
-          <include name="validateRepritingdropdownList"/>
-          <include name="negativeSubsmith"/>
-          <include name="validate"/>
-          <include name="validateSingleSelectionDropdownLocation"/>
-          <include name="post"/>
-          <include name="validateDeisgnCode"/>
-          <include name="validateHmPcs"/>
+          <include name="newTransfer"/>
           <include name="postMethodHandler"/>
-          <include name="postDesigncode"/>
-          <include name="rateOrnamentFields"/>
-          <include name="validateAttributeChangeDropdownList"/>
-          <include name="ornamentValidateField"/>
-          <include name="validateF"/>
-          <include name="negativeOrnament"/>
-          <include name="selectDropdownLocation"/>
-          <include name="withoutEnterSubsmith"/>
-          <include name="negativeRateOrnament"/>
         </methods>
-      </class> <!-- com.d365.testlayer.RunReprintingOfLabel -->
+      </class> <!-- com.d365.testlayer.runTransfer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

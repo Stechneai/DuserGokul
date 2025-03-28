@@ -15,7 +15,9 @@ import java.util.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.d365.utils.MasterClass;
+import com.sharedutils.MasterDto;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,37 +25,69 @@ import java.util.List;
 
 
 public class TransferOrder extends MasterClass {
-	public void addTransferOrderBranchAndStateWithValidTag() throws Exception {
+	public void addTransferOrderBranchAndStateWithValidTag(ExtentTest test, MasterDto masterDto) throws Exception {
 		
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterFromWarehouse(),
+		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+		
+
+		try {
+
+			if (transferOrderPage.btnNewTransferOrder().isDisplayed()
+					&& transferOrderPage.btnTransferOrderIcon().isDisplayed()
+					&& transferOrderPage.btnShip().isDisplayed()
+					&& transferOrderPage.btnReceive().isDisplayed()) {
+				reportHelper.generateLogFullScreenSS(test,
+						"Nvigating sucessfully of Transfer order page using following path Inventory management>>Outbound orders>>Transfer order:Is Passed");
+				reportHelper.onTestSuccess(test,
+						"Navigating sucessfully of Transfer order page using following path Inventory management>>Outbound orders>>Transfer order:Is Passed");
+			} else {
+				reportHelper.generateLogFullScreenSS(test,
+						"Navigating not sucessfully of Transfer page using following path Inventory management>>Outbound orders>>Transfer order :Is Failed");
+				reportHelper.onTestFailure(test,
+						"Navigating not sucessfully of Transfer page using following path Inventory management>>Outbound orders>>Transfer order : Is Failed");
+			}
+		} catch (Exception e) {
+			reportHelper.generateLogFullScreenSS(test,
+					"Navigating not sucessfully of Transfer page using following path Inventory management>>Outbound orders>>Transfer order");
+			reportHelper.onTestFailure(test,
+					"Navigating not sucessfully of Transfer page using following path Inventory management>>Outbound orders>>Transfer order");
+
+		}
+//		genericHelper.clickWithJavascriptExecutor(transferOrderPage.lnkInventorymanagement());
+//		
+//		genericHelper.clickWithJavascriptExecutor(transferOrderPage.lnkTransferOrder());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
+
+		
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtFromWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("From Warehouse")));
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterToWarehouse(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtToWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("To Warehouse")));
 
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransferType(),
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransferType(),
 				masterDto.getAttributeValue("Transfer Type"));
 
 		reportHelper.generateLogFullScreenSS(test, "Succesfully select transfer type");
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransferOrderIcon());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransferOrderIcon());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTagScan());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTagScan());
 
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransTag(),
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransTag(),
 				masterDto.getAttributeValue("Scan Tag"));
 		Thread.sleep(2000);
-		transferorderpage.clickOtherclick().click();
+		transferOrderPage.btnOtherclick().click();
 		reportHelper.generateLogFullScreenSS(test, "Release tag  scan sucessfully");
 		Thread.sleep(2000);
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransGenerateLine());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransGenerateLine());
 		Thread.sleep(2000);
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickship());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipTransfer());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkSButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShip());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipTransfer());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkS());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkRButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkR());
 		
 		checkNotificationPresenceAndHandle(masterDto);
 		
@@ -63,24 +97,24 @@ public class TransferOrder extends MasterClass {
 		String tsite = StringUtils.defaultIfBlank(masterDto.getAttributeValue("TransferSite"), "");
 
 
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickModules());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkModules());
 		// genericHelper.clickWithJavascriptExecutor(atp.clickModules());
 		Thread.sleep(2000);
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickJewellery());
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickAllTags());
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickOkButton());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkJewellery());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkAllTags());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.btnOk());
 		Thread.sleep(1000);
 
-		WebElement batchn = alltagpage.clickBatchNo();
+		WebElement batchn = allTagPage.btnBatchNo();
 		genericHelper.scrollingTillWebElement(batchn);
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickBatchNo());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.btnBatchNo());
 
-		alltagpage.enterBatchNo().sendKeys(tag);
+		allTagPage.txtbatchno().sendKeys(tag);
 		Thread.sleep(4000);
-		alltagpage.clickApply().click();
+		allTagPage.btnApply().click();
 		Thread.sleep(2000);
 		
-		WebElement site=alltagpage.getCurrentSite();
+		WebElement site=allTagPage.txtCurrentSite();
 		String wsite=site.getAttribute("value");
 		System.out.println("Get Site is:"+wsite);
 		
@@ -90,31 +124,32 @@ public class TransferOrder extends MasterClass {
 		} else {
 			reportHelper.onTestFailure(test, "Transfer Tag to specified location"  +tsite+  "is not sucessfully: ");
 		}
-
-		
 		// driver.navigate().refresh();
 
 	}
 
-	public void addTransferOrderBranchAndStateWithValidBulkTag() throws Exception {
+	public void addTransferOrderBranchAndStateWithValidBulkTag(ExtentTest test, MasterDto masterDto) throws Exception {
+		
+		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+    	genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
 
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterFromWarehouse(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtFromWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("From Warehouse")));
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterToWarehouse(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtToWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("To Warehouse")));
 		Thread.sleep(2000);
 
-		if (transferorderpage.validateTransferStatus().isDisplayed()) {
+		if (transferOrderPage.btnValidateTransferStatus().isDisplayed()) {
 			reportHelper.generateLogFullScreenSS(test, "Initially Transfer Type name is Created");
 		} else {
 			reportHelper.generateLogFullScreenSS(test, "Initially Transfer Type name is not  'Created'");
 
 		}
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterTransferType(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtTransferType(),
 				masterDto.getAttributeValue("Transfer Type"));
 		reportHelper.generateLogFullScreenSS(test, "Succesfully select transfer type");
 		Thread.sleep(2000);
-		String type = transferorderpage.validateTransferOrder().getAttribute("title");
+		String type = transferOrderPage.btnValidateTransferOrder().getAttribute("title");
 		// String type1=
 		// transferorderpage.validateStockTransfer().getAttribute("title");
 
@@ -127,46 +162,46 @@ public class TransferOrder extends MasterClass {
 			reportHelper.generateLogFullScreenSS(test, "Tag Transfer is state to state");
 		}
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransferOrderIcon());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransferOrderIcon());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTagScan());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTagScan());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickToggleButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnToggleButton());
 
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransTag(),
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransTag(),
 				masterDto.getAttributeValue("Scan Tag"));
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransGenerateLine());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransGenerateLine());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickship());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipTransfer());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkSButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShip());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipTransfer());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkS());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkRButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkR());
 		
 		String tag = StringUtils.defaultIfBlank(masterDto.getAttributeValue("Scan Tag"), "");
 		String tsite = StringUtils.defaultIfBlank(masterDto.getAttributeValue("TransferSite"), "");
 
 
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickModules());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkModules());
 		// genericHelper.clickWithJavascriptExecutor(atp.clickModules());
 		Thread.sleep(2000);
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickJewellery());
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickAllTags());
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickOkButton());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkJewellery());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkAllTags());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.btnOk());
 		Thread.sleep(1000);
 
-		WebElement batchn = alltagpage.clickBatchNo();
+		WebElement batchn = allTagPage.btnBatchNo();
 		genericHelper.scrollingTillWebElement(batchn);
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickBatchNo());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.btnBatchNo());
 
-		alltagpage.enterBatchNo().sendKeys(tag);
+		allTagPage.txtbatchno().sendKeys(tag);
 		Thread.sleep(4000);
-		alltagpage.clickApply().click();
+		allTagPage.btnApply().click();
 		Thread.sleep(2000);
 		
-		WebElement site=alltagpage.getCurrentSite();
+		WebElement site=allTagPage.txtCurrentSite();
 		String wsite=site.getAttribute("value");
 		System.out.println("Get Site is:"+wsite);
 		
@@ -181,105 +216,111 @@ public class TransferOrder extends MasterClass {
 		// driver.navigate().refresh();
 	}
 
-	public void addTransferOrderGCTag() throws Exception {
+	public void addTransferOrderGCTag(ExtentTest test, MasterDto masterDto) throws Exception {
 
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterFromWarehouse(),
+		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtFromWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("From Warehouse")));
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterToWarehouse(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtToWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("To Warehouse")));
 
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransferType(),
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransferType(),
 				masterDto.getAttributeValue("Transfer Type"));
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransferOrderIcon());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickGcScan());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransferOrderIcon());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnGcScan());
 
 		// genericHelper.clickWithJavascriptExecutor(transferorderpage.clickGcNew());
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterFrombatch(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtFrombatch(),
 				masterDto.getAttributeValue("From Batch"));
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTobatch(),
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTobatch(),
 				masterDto.getAttributeValue("To Batch"));
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickScan());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnScan());
 		Thread.sleep(2000);
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickGenerate());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnGenerate());
 
 		// genericHelper.clickWithJavascriptExecutor(transferorderpage.clickToggleButton());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickship());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipTransfer());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkSButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShip());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipTransfer());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkS());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkRButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkR());
 
 	}
 
-	public void addTransferOrderDocumentScan() throws Exception {
+	public void addTransferOrderDocumentScan(ExtentTest test, MasterDto masterDto) throws Exception {
+		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+    	genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
 
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterFromWarehouse(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtFromWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("From Warehouse")));
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterToWarehouse(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtToWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("To Warehouse")));
 
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransferType(),
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransferType(),
 				masterDto.getAttributeValue("Transfer Type"));
 		reportHelper.generateLogFullScreenSS(test, "Succesfully select transfer type");
 		Thread.sleep(2000);
-		transferorderpage.enterTransferTagType().clear();
-		transferorderpage.enterTransferTagType().sendKeys(masterDto.getAttributeValue("Transfer Tag Type"), Keys.ENTER);
+		transferOrderPage.txtTransferTagType().clear();
+		transferOrderPage.txtTransferTagType().sendKeys(masterDto.getAttributeValue("Transfer Tag Type"), Keys.ENTER);
 		Thread.sleep(2000);
 		try {
 
-			if (transferorderpage.enterTransferTagType().isDisplayed()) {
+			if (transferOrderPage.txtTransferTagType().isDisplayed()) {
 				reportHelper.generateLogFullScreenSS(test, "Document scan is selected");
 			}
 		} catch (NoSuchElementException | TimeoutException e) { // Handle exceptions
 			reportHelper.generateLogFullScreenSS(test, "Document scan is not selected or took too long.");
 		}
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickSearchButton());
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransferid(),
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnSearchButton());
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransferid(),
 				masterDto.getAttributeValue("Document Id"));
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkButton());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransferOrderIcon());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransferOrderIcon());
 		// genericHelper.doubleClickOn(transferorderpage.clickship());
-		transferorderpage.clickship().click();
+		transferOrderPage.btnShip().click();
 		// Thread.sleep(2000);
-		transferorderpage.clickShipTransfer().click();
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkSButton());
+		transferOrderPage.btnShipTransfer().click();
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkS());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkRButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkR());
 
 	}
 
-	public void addTransferOrderOldMetalCopy() throws Exception {
+	public void addTransferOrderOldMetalCopy(ExtentTest test, MasterDto masterDto) throws Exception {
+		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+    	genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
 
 		// Step 1: Set From Warehouse
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterFromWarehouse(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtFromWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("From Warehouse")));
 
 		// Step 2: Set To Warehouse
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterToWarehouse(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtToWarehouse(),
 				getValueOrDefault(masterDto.getAttributeValue("To Warehouse")));
 
 		// Step 3: Select Transfer Type with JS
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransferType(),
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransferType(),
 				masterDto.getAttributeValue("Transfer Type"));
 		reportHelper.generateLogFullScreenSS(test, "Successfully selected transfer type");
 
 		// Step 4: Set Transfer Tag Type
-		transferorderpage.enterTransferTagType().clear();
-		transferorderpage.enterTransferTagType().sendKeys(masterDto.getAttributeValue("Transfer Tag Type"), Keys.ENTER);
+		transferOrderPage.txtTransferTagType().clear();
+		transferOrderPage.txtTransferTagType().sendKeys(masterDto.getAttributeValue("Transfer Tag Type"), Keys.ENTER);
 		Thread.sleep(2000);
 
 		// Step 5: Validate if Old Metal Copy is selected
 		try {
-			if (transferorderpage.enterTransferTagType().isDisplayed()) {
+			if (transferOrderPage.txtTransferTagType().isDisplayed()) {
 				reportHelper.generateLogFullScreenSS(test, "Old metal copy is selected");
 			}
 		} catch (NoSuchElementException | TimeoutException e) {
@@ -287,7 +328,7 @@ public class TransferOrder extends MasterClass {
 		}
 
 		// Step 6: Search
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickSearchButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnSearchButton());
 //		transferorderpage.enterDate().click();
 //		Thread.sleep(3000);
 
@@ -305,15 +346,15 @@ public class TransferOrder extends MasterClass {
 	//	String formattedFromDate = (fromDateStr != null && !fromDateStr.trim().isEmpty()) ? formatDate(fromDateStr): "";
 		String formattedToDate = (toDateStr != null && !toDateStr.trim().isEmpty()) ? formatDate(toDateStr) : "";
  
-		genericHelper.scrollingTillWebElement(transferorderpage.enterDate());
+		genericHelper.scrollingTillWebElement(transferOrderPage.txtDate());
 		//genericHelper.clearAndSendKeysWithJavascriptExecutor(transferorderpage.enterDate(), formattedFromDate);
-		genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterDate(), formattedToDate);
+		genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtDate(), formattedToDate);
 		
 		Thread.sleep(2000);
 		
 	// Step 7: Enter Product Group
 		
-		genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterProductGroup(),
+		genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtProductGroup(),
 				getValueOrDefault(masterDto.getAttributeValue("Product Group")));
 		reportHelper.generateLog(test, "Product group entered");
 		System.out.println("Entered product group");
@@ -323,15 +364,15 @@ public class TransferOrder extends MasterClass {
 //		genericHelper.actions.sendKeys(Keys.TAB);
 //		genericHelper.actions.sendKeys(Keys.TAB);
 //		genericHelper.actions.sendKeys(Keys.ENTER);
-		transferorderpage.clickOkButton().click();
+		transferOrderPage.btnOkButton().click();
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickship());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipTransfer());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkSButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShip());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipTransfer());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkS());
 
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipReceive());
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkRButton());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipReceive());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkR());
 
 	}
 	public static String convertExcelSerialDate(double excelDate) {
@@ -360,7 +401,9 @@ public class TransferOrder extends MasterClass {
 		}
 	}
 
-	public void validateData() throws Exception {
+	public void validateData(ExtentTest test, MasterDto masterDto) throws Exception {
+		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+    	genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
 	    // Fetch values from `masterDto`
 	    String shipMessage = StringUtils.defaultIfBlank(masterDto.getAttributeValue("ValidateSMessage"), "");
 	    String receiveMessage = StringUtils.defaultIfBlank(masterDto.getAttributeValue("ValidateRMessage"), "");
@@ -368,14 +411,14 @@ public class TransferOrder extends MasterClass {
 	    System.out.println("Expected Ship Date: " + expectedDate);
 
 	    // Populate "From Warehouse" and "To Warehouse" fields
-	    genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterFromWarehouse(),
+	    genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtFromWarehouse(),
 	            getValueOrDefault(masterDto.getAttributeValue("From Warehouse")));
-	    genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterToWarehouse(),
+	    genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtToWarehouse(),
 	            getValueOrDefault(masterDto.getAttributeValue("To Warehouse")));
 
 	    try {
 	        // Validate Ship Date
-	        WebElement shipDateElement = transferorderpage.validateShipDate();
+	        WebElement shipDateElement = transferOrderPage.lblValidateShipDate();
 	        String shipDateText = shipDateElement.getAttribute("title"); // Example: "12/7/2024"
 
 	        // Parse and compare dates
@@ -399,31 +442,31 @@ public class TransferOrder extends MasterClass {
 	    }
 
 	    // Enter "Transfer Type"
-	    genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransferType(),
+	    genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransferType(),
 	            masterDto.getAttributeValue("Transfer Type"));
 
 	    // Perform Tag Scan
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransferOrderIcon());
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTagScan());
-	    genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransTag(),
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransferOrderIcon());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTagScan());
+	    genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransTag(),
 	            masterDto.getAttributeValue("Scan Tag"));
 
 	    Thread.sleep(2000);
-	    transferorderpage.clickOtherclick().click();
+	    transferOrderPage.btnOtherclick().click();
 	    Thread.sleep(2000);
 
 	    // Generate Transfer Lines
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransGenerateLine());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransGenerateLine());
 	    Thread.sleep(2000);
 
 
 	    // Perform Ship operation
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickship());
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipTransfer());
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkSButton());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShip());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipTransfer());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkS());
 
 	    // Validate Ship Message
-	    WebElement shipMessageElement = transferorderpage.validateShipMessage();
+	    WebElement shipMessageElement = transferOrderPage.lblValidateShipMessage();
 	    String actualShipMessage = shipMessageElement.getText();
 	    if (actualShipMessage.equalsIgnoreCase(shipMessage)) {
 	        reportHelper.generateLogFullScreenSS(test, "Ship functionality is completed");
@@ -434,12 +477,12 @@ public class TransferOrder extends MasterClass {
 	    Thread.sleep(2000);
 
 	    // Perform Receive operation
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickReceive());
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickShipReceive());
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickOkRButton());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnReceive());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnShipReceive());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnOkR());
 
 	    // Validate Receive Message
-	    WebElement receiveMessageElement = transferorderpage.validateShipMessage();
+	    WebElement receiveMessageElement = transferOrderPage.lblValidateShipMessage();
 	    String actualReceiveMessage = receiveMessageElement.getText();
 	    if (actualReceiveMessage.equalsIgnoreCase(receiveMessage)) {
 	        reportHelper.generateLogFullScreenSS(test, "Receive functionality is completed");
@@ -447,7 +490,10 @@ public class TransferOrder extends MasterClass {
 	        reportHelper.generateLogFullScreenSS(test, "Receive functionality is not started");
 	    }
 	}
-	public void validateNegativeTagData() throws Exception {
+	public void validateNegativeTagData(ExtentTest test, MasterDto masterDto) throws Exception {
+		
+		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+    	genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
 	    // Fetch values from `masterDto`
 	    String shipMessage = StringUtils.defaultIfBlank(masterDto.getAttributeValue("ValidateSMessage"), "");
 	    String receiveMessage = StringUtils.defaultIfBlank(masterDto.getAttributeValue("ValidateRMessage"), "");
@@ -455,23 +501,23 @@ public class TransferOrder extends MasterClass {
 	    System.out.println("Expected Ship Date: " + expectedDate);
 
 	    // Populate "From Warehouse" and "To Warehouse" fields
-	    genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterFromWarehouse(),
+	    genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtFromWarehouse(),
 	            getValueOrDefault(masterDto.getAttributeValue("From Warehouse")));
-	    genericHelper.clearAndSendKeysAndEnter(transferorderpage.enterToWarehouse(),
+	    genericHelper.clearAndSendKeysAndEnter(transferOrderPage.txtToWarehouse(),
 	            getValueOrDefault(masterDto.getAttributeValue("To Warehouse")));
 
 	    // Enter "Transfer Type"
-	    genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransferType(),
+	    genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransferType(),
 	            masterDto.getAttributeValue("Transfer Type"));
 
 	    // Perform Tag Scan
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTransferOrderIcon());
-	    genericHelper.clickWithJavascriptExecutor(transferorderpage.clickTagScan());
-	    genericHelper.sendKeysWithjavascriptExecutor(transferorderpage.enterTransTag(),
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTransferOrderIcon());
+	    genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnTagScan());
+	    genericHelper.sendKeysWithjavascriptExecutor(transferOrderPage.txtTransTag(),
 	            masterDto.getAttributeValue("Scan Tag"));
 
 	    Thread.sleep(2000);
-	    transferorderpage.clickOtherclick().click();
+	    transferOrderPage.btnOtherclick().click();
 	    Thread.sleep(2000);
 	    checkNotificationPresenceAndHandle(masterDto);
 
@@ -494,30 +540,30 @@ public class TransferOrder extends MasterClass {
 //		//checkNotificationPresenceAndHandle(masterDto);
 
 	}
-	public void AllTagCheck() throws IOException, InterruptedException {
+	public void AllTagCheck(ExtentTest test, MasterDto masterDto) throws IOException, InterruptedException {
 
 		String tag = StringUtils.defaultIfBlank(masterDto.getAttributeValue("Scan Tag"), "");
 		String tsite = StringUtils.defaultIfBlank(masterDto.getAttributeValue("TransferSite"), "");
 
 
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickModules());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkModules());
 		// genericHelper.clickWithJavascriptExecutor(atp.clickModules());
 		Thread.sleep(2000);
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickJewellery());
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickAllTags());
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickOkButton());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkJewellery());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.lnkAllTags());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.btnOk());
 		Thread.sleep(1000);
 
-		WebElement batchn = alltagpage.clickBatchNo();
+		WebElement batchn = allTagPage.btnBatchNo();
 		genericHelper.scrollingTillWebElement(batchn);
-		genericHelper.clickWithJavascriptExecutor(alltagpage.clickBatchNo());
+		genericHelper.clickWithJavascriptExecutor(allTagPage.btnBatchNo());
 
-		alltagpage.enterBatchNo().sendKeys(tag);
+		allTagPage.txtbatchno().sendKeys(tag);
 		Thread.sleep(4000);
-		alltagpage.clickApply().click();
+		allTagPage.btnApply().click();
 		Thread.sleep(2000);
 		
-		WebElement site=alltagpage.getCurrentSite();
+		WebElement site=allTagPage.txtCurrentSite();
 		String wsite=site.getAttribute("value");
 		System.out.println("Get Site is:"+wsite);
 		

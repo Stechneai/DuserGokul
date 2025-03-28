@@ -33,7 +33,7 @@ public class MasterClass extends ProjectFunctions {
 		String browser = "chrome";
 		driver = genericHelper.startBrowser(browser);
 		pageInitialiazation(driver);
-		String url = propertyHelper.readDataFromPropertyFile(GlobalConstants.CONFIG_FILE, "UAT");
+		String url = propertyHelper.readDataFromPropertyFile(GlobalConstants.CONFIG_FILE, "UATT");
 		genericHelper.navigateToURL(test, url);
 		login();
 	}

@@ -24,7 +24,7 @@ public class runItemTypeMaster extends MasterClass {
 				itemTypeMaster.addHmItemData(test, masterDto);
 			//	checkNotificationPresenceAndHandle(masterDto);
 			} catch (Exception e) {
-				getResults(masterDto);
+				getResults(masterDto);	
 			} finally {
 				reportHelper.generateExcelReport(test, result, masterDto);
 			}

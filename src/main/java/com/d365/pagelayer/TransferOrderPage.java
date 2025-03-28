@@ -15,107 +15,107 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Invent Transfer Barcode']")
 	private WebElement tagscanotherclick;
 
-	public WebElement clickOtherclick() {
+	public WebElement btnOtherclick() {
 		return tagscanotherclick;
 	}
 
 	@FindBy(xpath = "//button[@title='Expand all']")
 	private WebElement expnd;
 
-	public WebElement expandAll() {
+	public WebElement btnExpandAll() {
 		return expnd;
 	}
 
 	@FindBy(name = "Close")
-	WebElement errorClose;
+	WebElement btnErrorClose;
 
-	public WebElement errorCloseButton() {
-		return errorClose;
+	public WebElement btnErrorClose() {
+		return btnErrorClose;
 	}
 
 	@FindBy(xpath = "//button[contains(@role,'button') and contains(@title,'Messages in list.')]")
-	WebElement expandNotification;
+	WebElement btnExpandNotification;
 
-	public WebElement expandNotificationBtn() {
-		return expandNotification;
+	public WebElement btnExpandNotification() {
+		return btnExpandNotification;
 	}
 
 	@FindBy(xpath = "//Span[@class='workspace-image GroupedList-symbol']")
-	private WebElement module;
+	private WebElement btnModule;
 
-	public WebElement clickModule() {
-		return module;
+	public WebElement btnModule() {
+		return btnModule;
 	}
 
 	@FindBy(xpath = "//a[text()='Inventory management']")
-	private WebElement inventorymanagement;
+	private WebElement lnkInventorymanagement;
 
-	public WebElement clickInventoryManagement() {
-		return inventorymanagement;
+	public WebElement lnkInventorymanagement() {
+		return lnkInventorymanagement;
 
 	}
 
 	@FindBy(xpath = "//a[text()='Home']")
-	private WebElement home;
+	private WebElement btnHome;
 
-	public WebElement clickHome() {
-		return home;
+	public WebElement btnHome() {
+		return btnHome;
 
 	}
 
-	@FindBy(xpath = "//a[text()='Transfer order']")
+	@FindBy(xpath = "(//a[text()='Transfer order'])[2]")
 	private WebElement transferorder;
 
-	public WebElement clickTransferOrder() {
+	public WebElement lnkTransferOrder() {
 		return transferorder;
 	}
 
 	@FindBy(name = "SystemDefinedNewButton")
 	private WebElement newtransferoder;
 
-	public WebElement clickNewTransferOrder() {
+	public WebElement btnNewTransferOrder() {
 		return newtransferoder;
 	}
 
 	@FindBy(name = "LineViewHeader_InventLocationIdFrom")
 	private WebElement fromwarehouse;
 
-	public WebElement enterFromWarehouse() {
+	public WebElement txtFromWarehouse() {
 		return fromwarehouse;
 	}
 
 	@FindBy(name = "LineViewHeader_InventLocationIdTo")
 	private WebElement towarehouse;
 
-	public WebElement enterToWarehouse() {
+	public WebElement txtToWarehouse() {
 		return towarehouse;
 	}
 
 	@FindBy(xpath = "//span[text()='Transfer order']")
 	private WebElement transferordericon;
 
-	public WebElement clickTransferOrderIcon() {
+	public WebElement btnTransferOrderIcon() {
 		return transferordericon;
 	}
 
 	@FindBy(xpath = "//span[text()='Tag Scan']")
 	private WebElement tagscan;
 
-	public WebElement clickTagScan() {
+	public WebElement btnTagScan() {
 		return tagscan;
 	}
 
 	@FindBy(name = "SeTag")
 	private WebElement tagno;
 
-	public WebElement enterTransTag() {
+	public WebElement txtTransTag() {
 		return tagno;
 	}
 
 	@FindBy(xpath = "//span[text()='Generate Line']")
 	private WebElement transgenerateline;
 
-	public WebElement clickTransGenerateLine() {
+	public WebElement btnTransGenerateLine() {
 		return transgenerateline;
 
 	}
@@ -123,7 +123,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "(//span[text()='Lines'])[2]")
 	private WebElement lines;
 
-	public WebElement clickLines() {
+	public WebElement btnLines() {
 		return lines;
 
 	}
@@ -131,7 +131,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Ship']")
 	private WebElement ship;
 
-	public WebElement clickship() {
+	public WebElement btnShip() {
 		return ship;
 
 	}
@@ -139,7 +139,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Ship transfer order']")
 	private WebElement shiptransfer;
 
-	public WebElement clickShipTransfer() {
+	public WebElement btnShipTransfer() {
 		return shiptransfer;
 
 	}
@@ -147,14 +147,14 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='OK']")
 	private WebElement oksbutton;
 
-	public WebElement clickOkSButton() {
+	public WebElement btnOkS() {
 		return oksbutton;
 	}
 
 	@FindBy(xpath = "(//span[text()='Receive'])[1]")
 	private WebElement receive;
 
-	public WebElement clickReceive() {
+	public WebElement btnReceive() {
 		return receive;
 
 	}
@@ -162,7 +162,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "(//span[text()='Receive'])[2]")
 	private WebElement shipreceive;
 
-	public WebElement clickShipReceive() {
+	public WebElement btnShipReceive() {
 		return shipreceive;
 
 	}
@@ -170,21 +170,21 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//input[@value='All']")
 	private WebElement receiveall;
 
-	public WebElement enterReceiveAll() {
+	public WebElement txtReceiveAll() {
 		return receiveall;
 	}
 
 	@FindBy(xpath = "//span[text()='OK']")
 	private WebElement okrbutton;
 
-	public WebElement clickOkRButton() {
+	public WebElement btnOkR() {
 		return okrbutton;
 	}
 
 	@FindBy(name = "LineViewHeader_TransferType_IN_TransferType_IN") // enter transfer order or stock transfer
 	private WebElement transfertype;
 
-	public WebElement enterTransferType() {
+	public WebElement txtTransferType() {
 		return transfertype;
 
 	}
@@ -192,7 +192,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "(//input[@title='Transfer order'])[1]") // enter transfer order or stock transfer
 	private WebElement transferordertype;
 
-	public WebElement validateTransferOrder() {
+	public WebElement btnValidateTransferOrder() {
 		return transferordertype;
 
 	}
@@ -200,7 +200,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//input[@title='Stock transfer']") // enter transfer order or stock transfer
 	private WebElement stocktransfertype;
 
-	public WebElement validateStockTransfer() {
+	public WebElement btnValidateStockTransfer() {
 		return stocktransfertype;
 
 	}
@@ -208,28 +208,28 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(name = "LineViewHeader_TransferStatus_TransferStatus") // verify transfer status
 	private WebElement transferstatus;
 
-	public WebElement validateTransferStatus() {
+	public WebElement btnValidateTransferStatus() {
 		return transferstatus;
 
 	}
 	@FindBy(xpath = "//span[text()='Operation completed']") // verify transfer status
 	private WebElement smessage;
 
-	public WebElement validateShipMessage() {
+	public WebElement lblValidateShipMessage() {
 		return smessage;
 
 	}
 	@FindBy(xpath = "//span[text()='Operation completed']") // verify transfer status
 	private WebElement rmessage;
 
-	public WebElement validateReceiveMesssage() {
+	public WebElement lblValidateReceiveMesssage() {
 		return rmessage;
 
 	}
 	@FindBy(name = "LineViewHeader_ShipDate") // verify transfer date
 	private WebElement sdate;
 
-	public WebElement validateShipDate() {
+	public WebElement lblValidateShipDate() {
 		return sdate;
 
 	}
@@ -238,7 +238,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "(//span[text()='Transfer order history'])[2]")
 	private WebElement transferorderhistory;
 
-	public WebElement clickTransferOrderHistory() {
+	public WebElement btnTransferOrderHistory() {
 		return transferorderhistory;
 
 	}
@@ -246,7 +246,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='E-Invoice']")
 	private WebElement einvoice;
 
-	public WebElement clickEInvoice() {
+	public WebElement btnEInvoice() {
 		return einvoice;
 
 	}
@@ -254,7 +254,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='E-Way bill']")
 	private WebElement ewaybill;
 
-	public WebElement clickEwayBill() {
+	public WebElement btnEwayBill() {
 		return ewaybill;
 
 	}
@@ -262,7 +262,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "(//span[text()='Add'])[2]")
 	private WebElement add;
 
-	public WebElement clickAddButtonl() {
+	public WebElement btnAddButtonl() {
 		return add;
 
 	}
@@ -270,7 +270,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[contains(@id,'AcxBarcodeScanning_') and contains (@id,'_SeBulkTagMarking_toggle')]")
 	private WebElement togglebutton;
 
-	public WebElement clickToggleButton() {
+	public WebElement btnToggleButton() {
 		return togglebutton;
 
 	}
@@ -278,7 +278,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='GC Scan']")
 	private WebElement gcscan;
 
-	public WebElement clickGcScan() {
+	public WebElement btnGcScan() {
 		return gcscan;
 
 	}
@@ -286,7 +286,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(name = "SystemDefinedNewButton")
 	private WebElement gcnew;
 
-	public WebElement clickGcNew() {
+	public WebElement btnGcNew() {
 		return gcnew;
 
 	}
@@ -294,7 +294,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(name = "FromBatch")
 	private WebElement frombatch;
 
-	public WebElement enterFrombatch() {
+	public WebElement txtFrombatch() {
 		return frombatch;
 
 	}
@@ -302,7 +302,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(name = "ToBatch")
 	private WebElement tobatch;
 
-	public WebElement enterTobatch() {
+	public WebElement txtTobatch() {
 		return tobatch;
 
 	}
@@ -310,7 +310,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Scan']")
 	private WebElement scan;
 
-	public WebElement clickScan() {
+	public WebElement btnScan() {
 		return scan;
 
 	}
@@ -318,7 +318,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Generate']")
 	private WebElement generate;
 
-	public WebElement clickGenerate() {
+	public WebElement btnGenerate() {
 		return generate;
 
 	}
@@ -326,7 +326,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "Operation completed")
 	private WebElement validmsg;
 
-	public WebElement checkValidMessage() {
+	public WebElement lblCheckValidMessage() {
 		return validmsg;
 
 	}
@@ -334,7 +334,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Tag is not current location or TagStatus must be released']")
 	private WebElement invalidmsg;
 
-	public WebElement checkInValidMessage() {
+	public WebElement lblCheckInValidMessage() {
 		return invalidmsg;
 
 	}
@@ -342,7 +342,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//button[@title='2 Messages in list.']")
 	private WebElement clickarrow;
 
-	public WebElement clickArrow() {
+	public WebElement btnArrow() {
 		return clickarrow;
 
 	}
@@ -350,7 +350,7 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Field 'From warehouse' must be filled in.']")
 	private WebElement emptyfromwarehouse;
 
-	public WebElement emptyFromWarehouseMessage() {
+	public WebElement lblEmptyFromWarehouseMessage() {
 		return emptyfromwarehouse;
 
 	}
@@ -358,105 +358,105 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(xpath = "//span[contains(@id, 'SystemDefinedSaveButton_label')]")
 	private WebElement Save_B;
 
-	public WebElement saveButton() {
+	public WebElement btnSave() {
 		return Save_B;
 	}
 
 	@FindBy(xpath = "//button[contains(@class, 'messageBar-button') and contains(@data-dyn-controlname, 'MessageBarClose') and contains(@aria-label, 'Close')]")
 	private WebElement noteButton;
 
-	public WebElement notificationCloseButton() {
+	public WebElement btnNotificationClose() {
 		return noteButton;
 	}
 
 	@FindBy(xpath = "(//button[@data-dyn-controlname='MessageBarToggle' and @class='messageBar-button messageBar-collapseButton'])[2]")
 	private WebElement noteOpenButton;
 
-	public WebElement notificationOpenButton() {
+	public WebElement btnNotificationOpen() {
 		return noteOpenButton;
 	}
 
 	@FindBy(xpath = "//span[contains(@id,'SysBoxForm_')and contains(@id,'_Ok_label')]")
 	private WebElement cnfBtn;
 
-	public WebElement confirmPOPupButton() {
+	public WebElement btnConfirmPOPup() {
 		return cnfBtn;
 	}
 
 	@FindBy(name = "BtnSearch")
 	private WebElement searchBtn;
 
-	public WebElement clickSearchButton() {
+	public WebElement btnSearchButton() {
 		return searchBtn;
 	}
 
 	@FindBy(name = "Fld2_1")
 	private WebElement transferid;
 
-	public WebElement enterTransferid() {
+	public WebElement txtTransferid() {
 		return transferid;
 	}
 
 	@FindBy(name = "OkButton")
 	private WebElement okb;
 
-	public WebElement clickOkButton() {
+	public WebElement btnOkButton() {
 		return okb;
 	}
 
-	@FindBy(name = "LineViewHeader_TransferId")
+	@FindBy(name = "LineViewHeader_TransferId")  //viewTranferNumber
 	private WebElement transfernumber;
 
-	public WebElement viewTranferNumber() {
+	public WebElement lblTranferNumber() {
 		return transfernumber;
 	}
 
 	@FindBy(name = "InventTransferTable_TransferType")
 	private WebElement transfertagtype;
 
-	public WebElement enterTransferTagType() {
+	public WebElement txtTransferTagType() {
 		return transfertagtype;
 	}
 
 	@FindBy(xpath = "(//div[text()='Transfer number'])[1]")
 	private WebElement transfernumberheader;
 
-	public WebElement clickTransferNumberHeader() {
+	public WebElement btnTransferNumberHeader() {
 		return transfernumberheader;
 	}
 
 	@FindBy(name = "FilterField_MainGrid_TransferId_TransferId_Input_0")
 	private WebElement itemsearch;
 
-	public WebElement searchSendTransferNumber() {
+	public WebElement btnSearchSendTransferNumber() {
 		return itemsearch;
 	}
 
 	@FindBy(name = "MainGrid_TransferId_ApplyFilters")
 	private WebElement apply;
 
-	public WebElement clickApplyButton() {
+	public WebElement btnApplyButton() {
 		return apply;
 	}
 
 	@FindBy(id = "//input[@id='MainGrid_TransferId_35394_0_0_input']")
 	private WebElement clicksearchnumber;
 
-	public WebElement clickSearchNumber() {
+	public WebElement btnSearchNumber() {
 		return clicksearchnumber;
 	}
 
 	@FindBy(name = "Fld2_1")
 	private WebElement productgroup;
 
-	public WebElement enterProductGroup() {
+	public WebElement txtProductGroup() {
 		return productgroup;
 	}
 
 	@FindBy(name = "Fld3_1")
 	private WebElement date;
 
-	public WebElement enterDate() {
+	public WebElement txtDate() {
 		return date;
 	}
 
@@ -465,16 +465,14 @@ public class TransferOrderPage extends MasterClass {
 	@FindBy(name = "//ul[contains(@id,'inventtransferorder_4_LineViewHeader_TransferType_IN_TransferType_IN_list')]/li[1]")
 	private WebElement ele0;
 
-	public WebElement getEle0() {
+	public WebElement lblEle0() {
 		return ele0;
 	}
 
 	@FindBy(name = "//ul[contains(@id,'inventtransferorder_4_LineViewHeader_TransferType_IN_TransferType_IN_list')]/li[2]")
 	private WebElement ele1;
 
-	public WebElement getEle1() {
+	public WebElement lblEle1() {
 		return ele1;
 	}
-
-
 }

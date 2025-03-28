@@ -12,38 +12,38 @@ public class TransferPage extends MasterClass {
 	}
 
 	@FindBy(xpath = "//Span[@class='workspace-image GroupedList-symbol']")
-	private WebElement module;
+	private WebElement lnkmodule;
 
-	public WebElement clickModule() {
-		return module;
+	public WebElement lnkmodule() {
+		return lnkmodule;
 	}
 
 	@FindBy(xpath = "//span[contains(@id, 'SystemDefinedSaveButton_label')]")
-	private WebElement Save_B;
+	private WebElement btnSave;
 
-	public WebElement saveButton() {
-		return Save_B;
+	public WebElement btnSave() {
+		return btnSave;
 	}
 
-	@FindBy(xpath = "//button[contains(@role,'button') and contains(@title,'Messages in list.')]")
-	WebElement expandNotification;
+	@FindBy(xpath = "//button[contains(@role,'button') and contains(@title,'Messages in list.')]")  //expandNotification
+	WebElement btnExpandNotification;
 
-	public WebElement expandNotificationBtn() {
-		return expandNotification;
+	public WebElement btnExpandNotification() {
+		return btnExpandNotification;
 	}
 
 	@FindBy(name = "Close")
-	WebElement errorClose;
+	WebElement btnErrorClose;
 
-	public WebElement errorCloseButton() {
-		return errorClose;
+	public WebElement btnErrorClose() {
+		return btnErrorClose;
 	}
 
 	@FindBy(xpath = "(//button[@data-dyn-controlname='MessageBarToggle' and @class='messageBar-button messageBar-collapseButton'])[2]")
-	private WebElement noteOpenButton;
+	private WebElement btnNotificationOpen;
 
-	public WebElement notificationOpenButton() {
-		return noteOpenButton;
+	public WebElement btnNotificationOpen() {
+		return btnNotificationOpen;
 	}
 
 //	@FindBy(xpath = "//a[text()='Jewellery']")
@@ -54,58 +54,58 @@ public class TransferPage extends MasterClass {
 //	}
 
 	@FindBy(xpath = "//a[text()='Inventory management']")
-	private WebElement inventorymanagement;
+	private WebElement lnkInventorymanagement;
 
-	public WebElement clickInventoryManagement() {
-		return inventorymanagement;
+	public WebElement lnkInventorymanagement() {
+		return lnkInventorymanagement;
 
 	}
 
 	@FindBy(xpath = "//a[text()='Transfer']")
-	private WebElement transfer;
+	private WebElement lnktTransfer;
 
-	public WebElement clickTransfer() {
-		return transfer;
+	public WebElement lnktTransfer() {
+		return lnktTransfer;
 
 	}
 
 	@FindBy(name = "SystemDefinedNewButton")
-	private WebElement neworder;
+	private WebElement btnNeworder;
 
-	public WebElement clickNewOrder() {
-		return neworder;
+	public WebElement btnNeworder() {
+		return btnNeworder;
 
 	}
 
 	@FindBy(name = "RetailStoreInventory_InventSiteId")
-	private WebElement site;
+	private WebElement txtSite;
 
-	public WebElement enterSite() {
-		return site;
+	public WebElement txtSite() {
+		return txtSite;
 
 	}
 
 	@FindBy(xpath = "//input[@name='RetailStoreInventory_InventLocationId']")
-	private WebElement warehouse;
+	private WebElement txtWarehouse;
 
-	public WebElement enterWarehouse() {
-		return warehouse;
+	public WebElement txtWarehouse() {
+		return txtWarehouse;
 
 	}
 
 	@FindBy(xpath = "//span[text()='OK']")
-	private WebElement ok;
+	private WebElement btnOk;
 
-	public WebElement clickOk() {
-		return ok;
+	public WebElement btnOk() {
+		return btnOk;
 
 	}
 
 	@FindBy(xpath = "//span[text()='Tag Scanning']")
-	private WebElement tagscanning;
+	private WebElement btnTagScanning;
 
-	public WebElement clickTagScanning() {
-		return tagscanning;
+	public WebElement btnTagScanning() {
+		return btnTagScanning;
 
 	}
 //	@FindBy(xpath="//span[contains(@id,'AcxBarcodeScanning_') and contains (@id,'_SeBulkTagMarking_toggle')]")
@@ -116,34 +116,34 @@ public class TransferPage extends MasterClass {
 //
 //	}
 
-	@FindBy(name = "SeTag")
+	@FindBy(name = "SeTag")  //enterTag
 	private WebElement releasetag;
 
-	public WebElement enterTag() {
+	public WebElement txtEnterTag() {
 		return releasetag;
 
 	}
 
 	@FindBy(name = "SeInventLocation")
-	private WebElement location;
+	private WebElement txtLocation;
 
-	public WebElement enterLocation() {
-		return location;
+	public WebElement txtLocation() {
+		return txtLocation;
 
 	}
 
 	@FindBy(xpath = "//input[@name='SewMSLocationId']")
-	private WebElement counter;
+	private WebElement txtCounter;
 
-	public WebElement enterCounter() {
-		return counter;
+	public WebElement txtCounter() {
+		return txtCounter;
 
 	}
 
 	@FindBy(xpath = "//span[text()='Generate Line']")
 	private WebElement generateline;
 
-	public WebElement clickGenerateLine() {
+	public WebElement btnGenerateLine() {
 		return generateline;
 
 	}
@@ -151,39 +151,39 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Validate']")
 	private WebElement validate;
 
-	public WebElement clickValidate() {
+	public WebElement btnValidate() {
 		return validate;
 
 	}
 
 	@FindBy(xpath = "//span[text()='OK']")
-	private WebElement validateok;
+	private WebElement btnValidateOk;
 
-	public WebElement clickValidateOk() {
-		return validateok;
+	public WebElement btnValidateOk() {
+		return btnValidateOk;
 
 	}
 
 	@FindBy(xpath = "//span[text()='Release']")
-	private WebElement tagrelease;
+	private WebElement btnTagrelease;
 
-	public WebElement clickReleased() {
-		return tagrelease;
+	public WebElement btnTagrelease() {
+		return btnTagrelease;
 
 	}
 
 	@FindBy(xpath = "//input[@name='InventJournalTable_ScanningStatus']")
-	private WebElement scanningstatus;
+	private WebElement txtScanningStatus;
 
-	public WebElement enterScanningStatus() {
-		return scanningstatus;
+	public WebElement txtScanningStatus() {
+		return txtScanningStatus;
 
 	}
 
 	@FindBy(xpath = "//span[text()='Post']")
 	private WebElement post;
 
-	public WebElement clickPost() {
+	public WebElement btnPost() {
 		return post;
 
 	}
@@ -191,21 +191,21 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='OK']")
 	private WebElement postok;
 
-	public WebElement clickPostOK() {
+	public WebElement btnPostOK() {
 		return postok;
 	}
 
 	@FindBy(xpath = "//span[contains(text(),'Journal:')]")
 	private WebElement message;
 
-	public WebElement checkValidMessage() {
+	public WebElement lblCheckValidMessage() {
 		return message;
 	}
 
 	@FindBy(xpath = "//a[text()='Home']")
 	private WebElement home;
 
-	public WebElement clickHome() {
+	public WebElement btnHome() {
 		return home;
 
 	}
@@ -213,7 +213,7 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Lines']")
 	private WebElement lines;
 
-	public WebElement clickLines() {
+	public WebElement btnLines() {
 		return lines;
 
 	}
@@ -221,7 +221,7 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//input[@aria-label='Vehicle No.']")
 	private WebElement vehicleno;
 
-	public WebElement enterVehicleNo() {
+	public WebElement txtVehicleNo() {
 		return vehicleno;
 
 	}
@@ -229,7 +229,7 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//input[@aria-label='Document No.']")
 	private WebElement documentno;
 
-	public WebElement enterDocumentNo() {
+	public WebElement txtDocumentNo() {
 		return documentno;
 
 	}
@@ -237,7 +237,7 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//input[@aria-label='Document date']")
 	private WebElement documentdate;
 
-	public WebElement enterDocumentDate() {
+	public WebElement txtDocumentDate() {
 		return documentdate;
 
 	}
@@ -245,7 +245,7 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//input[@aria-label='Document date']")
 	private WebElement vehicletype;
 
-	public WebElement enterVehicleType() {
+	public WebElement txtVehicleType() {
 		return vehicletype;
 
 	}
@@ -253,7 +253,7 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//span[contains(@id,'AcxBarcodeScanning_') and contains (@id,'_SeBulkTagMarking_toggle')]")
 	private WebElement togglebutton;
 
-	public WebElement clickToggleButton() {
+	public WebElement txtToggleButton() {
 		return togglebutton;
 
 	}
@@ -262,7 +262,7 @@ public class TransferPage extends MasterClass {
 	// @FindBy(xpath="(//input[@title='InvT'])[3]")
 	private WebElement name;
 
-	public WebElement checkName() {
+	public WebElement txtCheckName() {
 		return name;
 
 	}
@@ -270,7 +270,7 @@ public class TransferPage extends MasterClass {
 	@FindBy(name = "InventJournalTable_JournalNameId")
 	private WebElement description;
 
-	public WebElement checkDescription() {
+	public WebElement txtCheckDescription() {
 		return description;
 
 	}
@@ -278,7 +278,7 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//span[text()='Tag is not from selected location or Tag is not release status']")
 	private WebElement invalidtag;
 
-	public WebElement checkInvalidTag() {
+	public WebElement txtInvalidTag() {
 		return invalidtag;
 
 	}
@@ -286,14 +286,14 @@ public class TransferPage extends MasterClass {
 	@FindBy(xpath = "//label[text()='Invent Location *']")
 	private WebElement labellocation;
 
-	public WebElement labelLocation() {
+	public WebElement lblLocation() {
 		return labellocation;
 
 	}
 	@FindBy(name = "//input[contains(@id, 'InventJournalTrans_Qty') and contains(@id, '_input')]")
 	private WebElement qty;
 
-	public WebElement getQuantity() {
+	public WebElement txtQuantity() {
 		return qty;
 	}
 	
@@ -301,25 +301,25 @@ public class TransferPage extends MasterClass {
 	@FindBy(name = "//input[contains(@id, 'InventJournalTrans_FineWeight') and contains(@id, '_input')]")
 	private WebElement finewt;
 
-	public WebElement getFineWeight() {
+	public WebElement txtFineWeight() {
 		return finewt;
 	}
 	@FindBy(name = "//input[contains(@id, 'InventJournalTrans_AcxNetWeight') and contains(@id, '_input')]")
 	private WebElement netwt;
 
-	public WebElement getNetWeight() {
+	public WebElement txtNetWeight() {
 		return netwt;
 	}
 	@FindBy(name = "//input[contains(@id, 'InventJournalTrans_Purity') and contains(@id, '_input')]")
 	private WebElement purity;
 
-	public WebElement getPurity() {
+	public WebElement txtPurity() {
 		return purity;
 	}
 	@FindBy(name = "//input[contains(@id, 'InventJournalTrans_PurchaseCost') and contains(@id, '_input')]")
 	private WebElement purcost;
 
-	public WebElement getPurchaseCost() {
+	public WebElement txtPurchaseCost() {
 		return purcost;
 	}
 

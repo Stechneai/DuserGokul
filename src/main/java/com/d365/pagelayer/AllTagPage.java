@@ -14,57 +14,57 @@ public class AllTagPage extends MasterClass{
 	}
 
 	@FindBy(xpath = "//span[@data-dyn-title='Modules']")
-	private WebElement module;
+	private WebElement lnkmodule;
 
-	public WebElement clickModules() {
-		return module;
+	public WebElement lnkModules() {
+		return lnkmodule;
 	}
 
 	@FindBy(xpath = "//a[text()='Jewellery']") // add
 	private WebElement jewellery;
 
-	public WebElement clickJewellery() {
+	public WebElement lnkJewellery() {
 		return jewellery;
 	}
 	@FindBy(xpath = "//a[text()='All Tags']") // add
 	private WebElement alltags;
 
-	public WebElement clickAllTags() {
+	public WebElement lnkAllTags() {
 		return alltags;
 	}
 	@FindBy(xpath="//span[text()='OK']")
 	private WebElement okbutton;	
-	public WebElement clickOkButton()
+	public WebElement btnOk()
 	{
 		return okbutton;
 	}
 	@FindBy(xpath="//input[contains(@id,\"AcxPreTagHeader_TagNo_3158_0_0_\")]")
 	private WebElement gettagno;	
-	public WebElement getTagNo()
+	public WebElement txtTagNo()
 	{
 		return gettagno;
 	}
 	@FindBy(xpath="//div[text()='Batch No']")
 	private WebElement batchno;	
-	public WebElement clickBatchNo()
+	public WebElement btnBatchNo()
 	{
 		return batchno;
 	}
 	@FindBy(name="FilterField_MainGrid_InventBatchId_InventBatchId_Input_0")
-	private WebElement enterbatchno;	
-	public WebElement enterBatchNo()
+	private WebElement txtbatchno;	
+	public WebElement txtbatchno()
 	{
-		return enterbatchno;
+		return txtbatchno;
 	}
 	@FindBy(xpath="//span[@id='__MainGrid_InventBatchId_ApplyFilters_label']")
 	private WebElement apply;	
-	public WebElement clickApply()
+	public WebElement btnApply()
 	{
 		return apply;
 	}	
 	@FindBy(xpath="//div[text()='Stone Weight(CT)']")
 	private WebElement stoneweight;	
-	public WebElement getStoneWeightName()
+	public WebElement lblStoneWeightName()
 	{
 		return stoneweight;
 	}
@@ -77,25 +77,25 @@ public class AllTagPage extends MasterClass{
 //	}
 	@FindBy(xpath="//input[contains(@id, 'MainGrid_TagType') and contains(@id, '_input')]")
 	private WebElement tagtype;	
-	public WebElement getStatusName()
+	public WebElement txtStatusName()
 	{
 		return tagtype;
 	}
 	@FindBy(xpath="//input[contains(@id, 'MainGrid_InventSiteId') and contains(@id, '_input')]")
 	private WebElement csite;	
-	public WebElement getCurrentSite()
+	public WebElement txtCurrentSite()
 	{
 		return csite;
 	}
 	@FindBy(xpath="//div[text()='Location']")
 	private WebElement locationf;	
-	public WebElement scrollLocation()
+	public WebElement txtScrollLocation()
 	{
 		return locationf;
 	}
 	@FindBy(xpath="//input[contains(@id, 'MainGrid_wMSLocationId') and contains(@id, '_input')]")
 	private WebElement location;	
-	public WebElement getLocation()
+	public WebElement txtLocation()
 	{
 		return location;
 	}

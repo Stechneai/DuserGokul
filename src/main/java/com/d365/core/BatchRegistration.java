@@ -410,6 +410,8 @@ public class BatchRegistration extends MasterClass {
 
 		genericHelper.clickWithJavascriptExecutor(poCheckPage.btnUpdate());
 
+		genericHelper.clickWithJavascriptExecutor(poCheckPage.btnPoComplete());
+		
 		genericHelper.clickWithJavascriptExecutor(poCheckPage.btnPoCompleteOk());
 		genericHelper.sendKeysWithjavascriptExecutor(poCheckPage.txtPoCheckUser(), PoCheckUser1);
 		driver.findElement(By.xpath("//input[contains(@id,\"SysGen_DesignerCode\")]")).click();
@@ -437,11 +439,11 @@ public class BatchRegistration extends MasterClass {
 		
 		if (MakingItemNoofPMC.equals(actaulMakingItemNo) && !actaulMakingItemNo.isEmpty()) {
 		    System.out.println("✅ The field is auto-filled with: " + actaulMakingItemNo);
-		    reportHelper.onTestSuccess(test, "The field is auto-filled successfully with: " + actaulMakingItemNo);
+		    reportHelper.onTestFailure(test, "The field is auto-filled successfully with: " + actaulMakingItemNo);
 		    reportHelper.generateLogFullScreenSS(test, "Field is auto filled");
 		} else {
 		    System.out.println("❌ The field is NOT auto-filled.");
-		    reportHelper.onTestFailure(test, "The field did not auto-fill as expected.");
+		    reportHelper.onTestSuccess(test, "The field did not auto-fill as expected.");
 		    reportHelper.generateLogFullScreenSS(test, "Field is not auto filled");
 		}
 

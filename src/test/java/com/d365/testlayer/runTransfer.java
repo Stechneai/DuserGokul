@@ -1,136 +1,110 @@
 package com.d365.testlayer;
 
 
+import java.util.List;
 import java.util.Map;
 
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import com.d365.utils.MasterClass;
+import com.sharedutils.MasterDto;
 
 
 public class runTransfer extends MasterClass {
-   @Test
-	public void transferRun() throws Exception
-	{
-	loginPage(driver, username, password);
-	//	transfer.newTransfer();
-	//	transfer.newBulkTransfer();
-	//	transfer.newValidate();
-	//	transfer.newValidateCounter();
-	}
-	@Test(groups = { "Admin", "Inventory Management", "Transfer", "Functionality" }) 
+	ITestResult result;
+//   @Test
+//	public void transferRun() throws Exception
+//	{
+////	loginPage(driver, username, password);
+//	//	transfer.newTransfer();
+//	//	transfer.newBulkTransfer();
+//	//	transfer.newValidate();
+//	//	transfer.newValidateCounter();
+//	}
+	
+	
+	@Test(priority=1, groups = { "Admin", "Inventory Management", "Transfer", "Functionality" }) 
    public void newTransfer() throws InterruptedException, Exception {
+		login();
 		
-		navigateToPage(transferpage.clickInventoryManagement(), transferpage.clickTransfer());
+		navigateToPage(transferPage.lnkInventorymanagement(), transferPage.lnktTransfer());
 		
-		for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "Transfer.xlsx",
-				"TransferTag"); rowIndex++) {
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "Transfer.xlsx", "TransferTag",
-					rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			// System.out.println("data " + masterDto.getAttributeValue("Site"));
-
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferModuleSheet, "TransferTag");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transfer.addTagTransfer();
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+
+				transfer.addTagTransfer(test, masterDto);
 				checkNotificationPresenceAndHandle(masterDto);
-
-			} catch (Exception e) {
+			}  catch (Exception e) {
 				getResults(masterDto);
-
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
-
 		}
 	}
-	@Test(groups = { "Admin", "Inventory Management", "Transfer", "Funtionality" }) 
+	
+	@Test(priority=2, groups = { "Admin", "Inventory Management", "Transfer", "Funtionality" }) 
 	public void newBulkTransfer() throws InterruptedException, Exception {
-		loginPage(driver, username, password);
-		navigateToPage(transferpage.clickInventoryManagement(), transferpage.clickTransfer());
-
-		for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "Transfer.xlsx",
-				"TransferBulk"); rowIndex++) {
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "Transfer.xlsx", "TransferBulk",
-					rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			// System.out.println("data " + masterDto.getAttributeValue("Site"));
-
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+		
+		login();
+		navigateToPage(transferPage.lnkInventorymanagement(), transferPage.lnktTransfer());
+		
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferModuleSheet, "TransferBulk");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transfer.addBulkTagTransfer();
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+
+				transfer.addBulkTagTransfer(test, masterDto);
 				checkNotificationPresenceAndHandle(masterDto);
 			} catch (Exception e) {
 				getResults(masterDto);
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
-
-		}
+		}		
 	}
-	@Test(groups = { "Admin", "Inventory Management", "Transfer", "Validation" }) 
+	
+	@Test(priority=3, groups = { "Admin", "Inventory Management", "Transfer", "Validation" })
 	public void newValidate() throws InterruptedException, Exception {
 		loginPage(driver, username, password);
-		
-       for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "Transfer.xlsx",
-				"NavigationValidate"); rowIndex++) {
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "Transfer.xlsx", "NavigationValidate",
-					rowIndex);
-			System.out.println("Order " + orderData);
 
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			// System.out.println("data " + masterDto.getAttributeValue("Site"));
-
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferModuleSheet, "NavigationValidate");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transfer.validateNavigation();
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+
+				transfer.validateNavigation(test, masterDto);
 				checkNotificationPresenceAndHandle(masterDto);
 			} catch (Exception e) {
 				getResults(masterDto);
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
-
 		}
 	}
-	@Test(groups = { "Admin", "Inventory Management", "Transfer", "Validation" }) 
+
+	@Test(priority=4, groups = { "Admin", "Inventory Management", "Transfer", "Validation" }) 
 	public void newValidateCounter() throws InterruptedException, Exception {
 		loginPage(driver, username, password);
 		
-       for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "Transfer.xlsx",
-				"TransferTagValidate"); rowIndex++) {
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "Transfer.xlsx", "TransferTagValidate",
-					rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			// System.out.println("data " + masterDto.getAttributeValue("Site"));
-
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferModuleSheet, "TransferTagValidate");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transfer.validateTagCounter();
-			//	checkNotificationPresenceAndHandle(masterDto);
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+				
+				transfer.validateTagCounter(test, masterDto);
+				checkNotificationPresenceAndHandle(masterDto);
 			} catch (Exception e) {
 				getResults(masterDto);
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
-
 		}
 	}
-
-	
-
 }

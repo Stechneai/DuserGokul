@@ -1,66 +1,35 @@
 package com.d365.testlayer;
 
+import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import com.d365.core.TransferOrder;
 import com.d365.utils.MasterClass;
+import com.sharedutils.MasterDto;
 
 public class runTransferOrder extends MasterClass {
-
-	@Test
-	public void newTransferOrder() throws InterruptedException, Exception {
-		loginPage(driver, username, password);
-	}
+	ITestResult result;
 	@Test(groups = { "Admin", "Inventory Management", "TransferOrder", "Functionality" })
-	public void addTagTransferOrder() throws Exception {
-		// Navigate to the Transfer Order page
-		
+	public void addBulkTagTransferOrder() throws Exception {
+	//	navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
 
 		try {
-			for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "TransferData.xlsx",
-					"TransferOTag"); rowIndex++) {
-				navigateToPage(transferorderpage.clickInventoryManagement(), transferorderpage.clickTransferOrder());
+			List<MasterDto> masterDtos = excelHelper.getTestData(transferOrderModuleSheet, "TransferOTag");
+			
 				// Click to create a new transfer order
-				genericHelper.clickWithJavascriptExecutor(transferorderpage.clickNewTransferOrder());
+				//genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
 
-				try {
-
-					if (transferorderpage.clickNewTransferOrder().isDisplayed()
-							&& transferorderpage.clickTransferOrderIcon().isDisplayed()
-							&& transferorderpage.clickship().isDisplayed()
-							&& transferorderpage.clickReceive().isDisplayed()) {
-						reportHelper.generateLogFullScreenSS(test,
-								"Nvigating sucessfully of Transfer order page using following path Inventory management>>Outbound orders>>Transfer order:Is Passed");
-						reportHelper.onTestSuccess(test,
-								"Navigating sucessfully of Transfer order page using following path Inventory management>>Outbound orders>>Transfer order:Is Passed");
-					} else {
-						reportHelper.generateLogFullScreenSS(test,
-								"Navigating not sucessfully of Transfer page using following path Inventory management>>Outbound orders>>Transfer order :Is Failed");
-						reportHelper.onTestFailure(test,
-								"Navigating not sucessfully of Transfer page using following path Inventory management>>Outbound orders>>Transfer order : Is Failed");
-					}
-				} catch (Exception e) {
-					reportHelper.generateLogFullScreenSS(test,
-							"Navigating not sucessfully of Transfer page using following path Inventory management>>Outbound orders>>Transfer order");
-					reportHelper.onTestFailure(test,
-							"Navigating not sucessfully of Transfer page using following path Inventory management>>Outbound orders>>Transfer order");
-
-				}
-				Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "TransferData.xlsx",
-						"TransferOTag", rowIndex);
-				System.out.println("Order: " + orderData);
-
+				
 				// Set attributes from the Excel data
-				for (Map.Entry<String, String> entry : orderData.entrySet()) {
-					masterDto.setAttribute(entry.getKey(), entry.getValue());
-				}
-
+				for (MasterDto masterDto : masterDtos) {
+	
 				test = reportHelper.createTestCase(test, extentReports, masterDto);
 				try {
-					transferorder.addTransferOrderBranchAndStateWithValidTag();
+					transferOrder.addTransferOrderBranchAndStateWithValidTag(test, masterDto);
 				//	transferorder.AllTagCheck();
 				//	checkNotificationPresenceAndHandle(masterDto);
 				} catch (Exception e) {
@@ -77,183 +46,112 @@ public class runTransferOrder extends MasterClass {
 			reportHelper.generateLog(test, "AssertionError: " + a.getMessage());
 			reportHelper.generateLogWithScreenshot(test, "AssertionError: " + a.getMessage());
 		}
-	}
-	@Test(groups = { "Admin", "Inventory Management", "TransferOrder", "Functionality" })
-	public void addBulkTagTransferOrder() throws Exception {
-
-		
-		for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "TransferData.xlsx",
-				"TransferOBulk"); rowIndex++) {
-			// System.out.println("row count " + excelHelper.rowCountExcel(excelPath +
-			// "TransferData.xlsx", "Sheet1"));
-			navigateToPage(transferorderpage.clickInventoryManagement(), transferorderpage.clickTransferOrder());
-			genericHelper.clickWithJavascriptExecutor(transferorderpage.clickNewTransferOrder());
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "TransferData.xlsx",
-					"TransferOBulk", rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
-
-			try {
-				transferorder.addTransferOrderBranchAndStateWithValidBulkTag();
-                // transferorder.AllTagCheck();
-				//checkNotificationPresenceAndHandle(masterDto);
-			} catch (Exception e) {
-				getResults(masterDto);
-			} catch (AssertionError a) {
-
-				reportHelper.onTestFailure(test, "Exception: " + a.getMessage());
-				reportHelper.generateLog(test, "AssertionError: " + a.getMessage());
-				reportHelper.generateLogWithScreenshot(test, "AssertionError: " + a.getMessage());
-				driver.navigate().refresh();
-			}
-		}
 
 	}
+	
 	@Test(groups = { "Admin", "Inventory Management", "TransferOrder", "Functionality" })
 	public void addGCScanTagTransferOrder() throws Exception {
 
-		navigateToPage(transferorderpage.clickInventoryManagement(), transferorderpage.clickTransferOrder());
-		for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "TransferData.xlsx",
-				"GCScan"); rowIndex++) {
-			// System.out.println("row count " + excelHelper.rowCountExcel(excelPath +
-			// "TransferData.xlsx", "Sheet1"));
-			genericHelper.clickWithJavascriptExecutor(transferorderpage.clickNewTransferOrder());
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "TransferData.xlsx", "GCScan",
-					rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+//		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+//		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnNewTransferOrder());
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferOrderModuleSheet, "GCScan");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transferorder.addTransferOrderGCTag();
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+
+				transferOrder.addTransferOrderGCTag(test, masterDto);
 				checkNotificationPresenceAndHandle(masterDto);
-
-			} catch (Exception e) {
-				getResults(masterDto);
-
+			} catch (Throwable e) {
+				e.printStackTrace();
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
-
 		}
-
 	}
+	
 	@Test(groups = { "Admin", "Inventory Management", "TransferOrder", "Functionality" })
 	public void addDocumentScan() throws Exception {
 
-		navigateToPage(transferorderpage.clickInventoryManagement(), transferorderpage.clickTransferOrder());
-		for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "TransferData.xlsx",
-				"DocumentScan"); rowIndex++) {
-			// System.out.println("row count " + excelHelper.rowCountExcel(excelPath +
-			// "TransferData.xlsx", "Sheet1"));
-			genericHelper.clickWithJavascriptExecutor(transferorderpage.clickNewTransferOrder());
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "TransferData.xlsx",
-					"DocumentScan", rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+		//navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+		
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferOrderModuleSheet, "Add");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transferorder.addTransferOrderDocumentScan();
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+
+				transferOrder.addTransferOrderDocumentScan(test, masterDto);
 				checkNotificationPresenceAndHandle(masterDto);
-			} catch (Exception e) {
-				getResults(masterDto);
+			} catch (Throwable e) {
+				e.printStackTrace();
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
 		}
 	}
+	
 	@Test(groups = { "Admin", "Inventory Management", "TransferOrder", "Functionality" })
 	public void addOldMetalCopy() throws Exception {
 
-		navigateToPage(transferorderpage.clickInventoryManagement(), transferorderpage.clickTransferOrder());
-
-		for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "TransferData.xlsx",
-				"Sheet1"); rowIndex++) {
-			// System.out.println("row count " + excelHelper.rowCountExcel(excelPath +
-			// "TransferData.xlsx", "Sheet1"));
-			genericHelper.clickWithJavascriptExecutor(transferorderpage.clickNewTransferOrder());
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "TransferData.xlsx",
-					"Sheet1", rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+		//navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+		
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferOrderModuleSheet, "Sheet1");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transferorder.addTransferOrderOldMetalCopy();
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+
+				transferOrder.addTransferOrderOldMetalCopy(test, masterDto);
 				checkNotificationPresenceAndHandle(masterDto);
-			} catch (Exception e) {
-				getResults(masterDto);
+			} catch (Throwable e) {
+				e.printStackTrace();
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
 		}
 
 	}
+	
 	@Test(groups = { "Admin", "Inventory Management", "TransferOrder", "Validation" })
 	public void validateDateReceiveShipFunctionality() throws Exception {
 
-		navigateToPage(transferorderpage.clickInventoryManagement(), transferorderpage.clickTransferOrder());
-
-		for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "TransferData.xlsx",
-				"Validate"); rowIndex++) {
-			
-			genericHelper.clickWithJavascriptExecutor(transferorderpage.clickNewTransferOrder());
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "TransferData.xlsx",
-					"Validate", rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+		//navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+		
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferOrderModuleSheet, "Validate");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transferorder.validateData();
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+
+				transferOrder.validateData(test, masterDto);
 				checkNotificationPresenceAndHandle(masterDto);
-			} catch (Exception e) {
-				getResults(masterDto);
+			} catch (Throwable e) {
+				e.printStackTrace();
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
 		}
 	}
+	
 	@Test(groups = { "Admin", "Inventory Management", "TransferOrder", "Functionality/Validation" })
 	public void validateNegativeTagTransferTag() throws Exception {
 
-		navigateToPage(transferorderpage.clickInventoryManagement(), transferorderpage.clickTransferOrder());
-
-		for (int rowIndex = 1; rowIndex <= excelHelper.rowCountExcel(excelPath + "TransferData.xlsx",
-				"TagBulkNegativeTestCase"); rowIndex++) {
-			
-			genericHelper.clickWithJavascriptExecutor(transferorderpage.clickNewTransferOrder());
-			Map<String, String> orderData = excelHelper.readExcelDataAndMap(excelPath + "TransferData.xlsx",
-					"TagBulkNegativeTestCase", rowIndex);
-			System.out.println("Order " + orderData);
-
-			for (Map.Entry<String, String> entry : orderData.entrySet()) {
-
-				masterDto.setAttribute(entry.getKey(), entry.getValue());
-			}
-			test = reportHelper.createTestCase(test, extentReports, masterDto);
+//		navigateToPage(transferOrderPage.lnkInventorymanagement(), transferOrderPage.lnkTransferOrder());
+		
+		List<MasterDto> masterDtos = excelHelper.getTestData(transferOrderModuleSheet, "TagBulkNegativeTestCase");
+		for (MasterDto masterDto : masterDtos) {
 
 			try {
-				transferorder.validateNegativeTagData();
-	         //	checkNotificationPresenceAndHandle(masterDto);
-			} catch (Exception e) {
-				getResults(masterDto);
+				test = reportHelper.createTestCase(test, extentReports, masterDto);
+
+				transferOrder.validateNegativeTagData(test, masterDto);
+				checkNotificationPresenceAndHandle(masterDto);
+			} catch (Throwable e) {
+				e.printStackTrace();
+			} finally {
+				reportHelper.generateExcelReport(test, result, masterDto);
 			}
 		}
-
 	}
 }

@@ -1,5 +1,8 @@
 package com.d365.core;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import org.apache.commons.lang3.StringUtils;
@@ -12,7 +15,7 @@ import com.sharedutils.MasterDto;
 public class MonthlySavingSchemeDefaulterList extends MasterClass {
 
 	public void validateDefaulterListReport(ExtentTest test, MasterDto masterDto)
-			throws InterruptedException, IOException {
+			throws InterruptedException, IOException, AWTException {
 		String store = StringUtils.defaultIfBlank(masterDto.getAttributeValue("Store"), "");
 		String schemetype = StringUtils.defaultIfBlank(masterDto.getAttributeValue("SchemeType"), "");
 		String fromdate = StringUtils.defaultIfBlank(masterDto.getAttributeValue("FromDate"), "");
@@ -57,8 +60,15 @@ public class MonthlySavingSchemeDefaulterList extends MasterClass {
 		 //genericHelper.clickWithJavascriptExecutor(monthlySavingSchemeDefaulterListPage.btnDownload());
 		//monthlySavingSchemeDefaulterListPage.btnDownload().click();
 
-		Runtime.getRuntime().exec("C:/Users/lenovo/Downloads/downloadClick.exe");
+		//Runtime.getRuntime().exec("C:/Users/lenovo/Downloads/downloadClick.exe");
 		genericHelper.clickWithJavascriptExecutor(monthlySavingSchemeDefaulterListPage.btnDownload());
+		 // Use Robot Class to handle system pop-ups
+        Robot robot = new Robot();
+
+        // Simulate pressing the "Enter" key to confirm download
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
 
 		
 		WebElement cuscode1 = monthlySavingSchemeDefaulterListPage.txtCustomerCode1();

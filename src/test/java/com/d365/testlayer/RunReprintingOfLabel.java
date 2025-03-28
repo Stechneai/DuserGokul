@@ -439,7 +439,7 @@ public class RunReprintingOfLabel extends MasterClass {
  			}
  		}
  	}
-	//@Test
+	@Test
 	public void itemidMRPSterlingSilverFields() throws Throwable {
  		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "MRPItemIdField");
  		for (MasterDto masterDto : masterDtos) {
@@ -454,7 +454,7 @@ public class RunReprintingOfLabel extends MasterClass {
  			}
  		}
  	}
-//	@Test
+	@Test
 	public void addRateMRPSterlingSilver() throws Throwable {
  		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "RateChangeMRPSterlingSilver");
  		for (MasterDto masterDto : masterDtos) {
@@ -463,13 +463,13 @@ public class RunReprintingOfLabel extends MasterClass {
  				reprintingoflabel.addRateMRPSterlingSilver(test, masterDto);
  				//checkNotificationPresenceAndHandle(masterDto);
  			} catch (Exception e) {
- 				getResults(masterDto);
+ 				//getResults(masterDto);
  			} finally {
  				reportHelper.generateExcelReport(test, result, masterDto);
  			}
  		}
  	}
-//	@Test
+	@Test
 public void negativeRateMRPSterlingSilver() throws Throwable {
  		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "NegativeRateRevisionMRP");
  		for (MasterDto masterDto : masterDtos) {
@@ -484,7 +484,7 @@ public void negativeRateMRPSterlingSilver() throws Throwable {
  			}
  		}
  	}
-	//@Test
+	@Test
 	public void validateRateMRPSterlingSilver() throws Throwable {
  		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "ValidateRateRevision");
  		for (MasterDto masterDto : masterDtos) {
@@ -499,7 +499,7 @@ public void negativeRateMRPSterlingSilver() throws Throwable {
  			}
  		}
  	}
-	//@Test
+	@Test
 	public void postRateMRPSterlingSilver() throws Throwable {
  		List<MasterDto> masterDtos = excelHelper.getTestData(reprintingOfLabel, "PostRateRevision");
  		for (MasterDto masterDto : masterDtos) {

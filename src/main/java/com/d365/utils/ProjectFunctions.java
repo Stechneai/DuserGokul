@@ -89,10 +89,6 @@ public class ProjectFunctions implements ProjectConstants {
 
 	public static Rng rng;
 	public static RngPage rngpage;
-	public static TransferPage transferpage;
-	public static Transfer transfer;
-	public static TransferOrderPage transferorderpage;
-	public static TransferOrder transferorder;
 	public static AllTagPage alltagpage;
 	public static ItemTypeMasterPage itemTypeMasterPage;
 
@@ -143,6 +139,11 @@ public class ProjectFunctions implements ProjectConstants {
 	public static ReprintingOfLabelPage reprintingoflabelpage;
 	public static MonthlySavingSchemeDefaulterList monthlySavingSchemeDefaulterList;
 	public static MonthlySavingSchemeDefaulterListPage monthlySavingSchemeDefaulterListPage;
+	public static TransferOrderPage transferOrderPage;
+	public static TransferPage transferPage;
+	public static Transfer transfer;
+	public static TransferOrder transferOrder;
+	public static AllTagPage allTagPage;
 
 	public void pageInitialiazation(WebDriver driver) {
 
@@ -156,13 +157,12 @@ public class ProjectFunctions implements ProjectConstants {
 		purchaseOrder = new PurchaseOrderPageObject();
 		rng = new Rng();
 		rngpage = new RngPage(driver);
-		transferpage = new TransferPage();
-		transfer = new Transfer();
-		transferorderpage = new TransferOrderPage();
-		transferorder = new TransferOrder();
+		transferOrderPage = new TransferOrderPage();
+		transferPage = new TransferPage();
+		
 		agentmaster = new AgentMaster();
 		agentmasterpage = new AgentMasterPage();
-		alltagpage = new AllTagPage();
+		
 		customerOrder = new CustomerOrder();
 		customerOrderPage = new CustomerOrderPage(driver);
 		offlineTaggingPage = new OfflineTaggingPage();
@@ -188,7 +188,10 @@ public class ProjectFunctions implements ProjectConstants {
 		reprintingoflabel = new ReprintingOfLabel();
 		reprintingoflabelpage = new ReprintingOfLabelPage();
 		pdcReport=new PDCReport();
+		transfer=new Transfer();
+		transferOrder=new TransferOrder();
 		pdcReportPage=new PDCReportPage();
+		allTagPage=new AllTagPage();
 		SoftAssert softAssert = new SoftAssert();
 		actions = new Actions(driver);
 
@@ -295,12 +298,12 @@ public class ProjectFunctions implements ProjectConstants {
 	 */
 
 	public void navigateToPage(WebElement selectModule, WebElement specificPageElement) throws InterruptedException {
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.clickModule());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnModule());
 		Thread.sleep(1000);
 		genericHelper.javascriptExecutor.executeScript("arguments[0].scrollIntoView();", selectModule);
 		Thread.sleep(1000);
 		genericHelper.clickWithJavascriptExecutor(selectModule);
-		genericHelper.clickWithJavascriptExecutor(transferorderpage.expandAll());
+		genericHelper.clickWithJavascriptExecutor(transferOrderPage.btnExpandAll());
 		genericHelper.clickWithJavascriptExecutor(specificPageElement);
 	}
 
