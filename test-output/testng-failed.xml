@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.d365.testlayer.runTransfer">
+      <class name="com.d365.testlayer.RunTransferOrderReceipt">
         <methods>
           <include name="preSuiteHandler"/>
-          <include name="postSuiteHandler"/>
-          <include name="newTransfer"/>
+          <include name="negativeTransferOrderReceipt"/>
           <include name="postMethodHandler"/>
         </methods>
-      </class> <!-- com.d365.testlayer.runTransfer -->
+      </class> <!-- com.d365.testlayer.RunTransferOrderReceipt -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

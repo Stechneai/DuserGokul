@@ -76,5 +76,15 @@
 			<artifactId>TicketingSystemStableV7_01</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>MHPOS</groupId>
+			<artifactId>MHPOS</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>POS</groupId>
+			<artifactId>POS</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -33,7 +33,7 @@ public class MasterClass extends ProjectFunctions {
 		String browser = "chrome";
 		driver = genericHelper.startBrowser(browser);
 		pageInitialiazation(driver);
-		String url = propertyHelper.readDataFromPropertyFile(GlobalConstants.CONFIG_FILE, "UATT");
+		String url = propertyHelper.readDataFromPropertyFile(GlobalConstants.CONFIG_FILE, "UAT");
 		genericHelper.navigateToURL(test, url);
 		login();
 	}
@@ -43,10 +43,10 @@ public class MasterClass extends ProjectFunctions {
 		reportHelper.tearDown(test, result);
 		extentReports.flush();
 	}
-
-	@AfterSuite
-	public void postSuiteHandler() throws IOException, Exception {
-		isLoggedIn = false;
-	}
+//
+//	@AfterSuite
+//	public void postSuiteHandler() throws IOException, Exception {
+//		isLoggedIn = false;
+//	}
 
 }

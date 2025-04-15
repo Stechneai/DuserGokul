@@ -80,13 +80,18 @@ public class MonthlySavingSchemeDefaulterListPage extends MasterClass{
  	 	    return(ok);
  	 	}
  	 	
- 		@FindBy(id ="download")
+ 		@FindBy(xpath ="//button[@id='download']")
  	 	private WebElement download;	
  	 	public WebElement btnDownload()
  	 	{
  	 	    return(download);
  	 	}
- 	 	
+ 		@FindBy(xpath="//span[text()='WAKAD BRANCH']")
+ 	 	private WebElement stored;	
+ 	 	public WebElement labelStored()
+ 	 	{
+ 	 	    return(stored);
+ 	 	}
  		@FindBy(xpath="//span[contains(text(),'CSUT000000005')]")
  	 	private WebElement customercode1;	
  	 	public WebElement txtCustomerCode1()
@@ -123,6 +128,51 @@ public class MonthlySavingSchemeDefaulterListPage extends MasterClass{
  	 	{
  	 	    return(schementryno3);
  	 	}
+ 		@FindBy(xpath="//label[text()='Store']")
+ 	 	private WebElement storel;	
+ 	 	public WebElement labelStorel()
+ 	 	{
+ 	 	    return(storel);
+ 	 	}
+ 	 	@FindBy(xpath="//label[text()='Scheme Type']")
+ 	 	private WebElement schemetypel;	
+ 	 	public WebElement labelSchemeTypel()
+ 	 	{
+ 	 	    return(schemetypel);
+ 	 	}
+ 		@FindBy(xpath="//label[text()='From Date']")
+ 	 	private WebElement fromdatel;	
+ 	 	public WebElement labelFromDatel()
+ 	 	{
+ 	 	    return(fromdatel);
+ 	 	}
+ 		@FindBy(xpath="//label[text()='To Date']")
+ 	 	private WebElement todatel;	
+ 	 	public WebElement labelToDatel()
+ 	 	{
+ 	 	    return(todatel);
+ 	 	}
+ 		@FindBy(xpath="//label[text()='Type']")
+ 	 	private WebElement typel;	
+ 	 	public WebElement labelTypel()
+ 	 	{
+ 	 	    return(typel);
+ 	 	}
+ 	 	
+ 		@FindBy(xpath="//button[@id='dynNavigationBarMessages_buttonNotifications']")
+ 	 	private WebElement notificationb;	
+ 	 	public WebElement btnNotification()
+ 	 	{
+ 	 	    return(notificationb);
+ 	 	}
+ 	 	@FindBy(xpath = "//li[@class=\"messageCenter-item\"][1]")
+ 		private WebElement notificationmessage;
+
+ 		public WebElement labelNotificationMessage() {
+ 			return notificationmessage;
+ 		}
+
+ 	 	
  		
 
 }

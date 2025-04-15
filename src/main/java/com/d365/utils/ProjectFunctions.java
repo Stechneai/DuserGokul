@@ -1,6 +1,15 @@
 package com.d365.utils;
 
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +17,26 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+
+import java.awt.Robot;
+import java.awt.AWTException;
+import java.awt.event.InputEvent;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -23,10 +51,18 @@ import org.testng.asserts.SoftAssert;
 import com.d365.core.Rng;
 import com.d365.core.Transfer;
 import com.d365.core.TransferOrder;
+import com.d365.core.TransferOrderReceipt;
+import com.d365.core.TransferReceipt;
 import com.d365.pagelayer.RngPage;
 import com.d365.pagelayer.TransferOrderPage;
 import com.d365.pagelayer.TransferOrderPageLot;
+import com.d365.pagelayer.TransferOrderReceiptPage;
 import com.d365.pagelayer.TransferPage;
+import com.d365.pagelayer.TransferReceiptPage;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pos.core.CardReceipt;
+import com.pos.pagelayer.CardReceiptPage;
+import com.pos.pagelayer.CommonFieldsPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.d365.core.AgentMaster;
@@ -132,7 +168,6 @@ public class ProjectFunctions implements ProjectConstants {
 	public static PendingVendorInvoicesPage pendingVendorInvoicesPage;
 	public static PDCReport pdcReport;
 	public static PDCReportPage pdcReportPage;
-	
 
 	public static ItemTypeMaster itemTypeMaster;
 	public static ReprintingOfLabel reprintingoflabel;
@@ -144,6 +179,14 @@ public class ProjectFunctions implements ProjectConstants {
 	public static Transfer transfer;
 	public static TransferOrder transferOrder;
 	public static AllTagPage allTagPage;
+	public static CardReceipt cardReceipt;
+	public static CardReceiptPage cardReceiptPage;
+	public static TransferReceipt transferReceipt;
+	public static TransferReceiptPage transferReceiptPage;
+	public static TransferOrderReceipt transferOrderReceipt;
+	public static TransferOrderReceiptPage transferOrderReceiptPage;
+	
+	
 
 	public void pageInitialiazation(WebDriver driver) {
 
@@ -159,10 +202,10 @@ public class ProjectFunctions implements ProjectConstants {
 		rngpage = new RngPage(driver);
 		transferOrderPage = new TransferOrderPage();
 		transferPage = new TransferPage();
-		
+
 		agentmaster = new AgentMaster();
 		agentmasterpage = new AgentMasterPage();
-		
+
 		customerOrder = new CustomerOrder();
 		customerOrderPage = new CustomerOrderPage(driver);
 		offlineTaggingPage = new OfflineTaggingPage();
@@ -178,20 +221,28 @@ public class ProjectFunctions implements ProjectConstants {
 		provisionalParcel = new ProvisionalParcel();
 		batchRegistrationPages = new BatchRegistrationPages();
 		postproductreceiptpage = new PostProductReceiptPage();
-        pendingVendorInvoicesPage = new PendingVendorInvoicesPage();
+		pendingVendorInvoicesPage = new PendingVendorInvoicesPage();
 		batchRegistration = new BatchRegistration();
-		monthlySavingSchemeDefaulterList=new MonthlySavingSchemeDefaulterList();
-		monthlySavingSchemeDefaulterListPage=new MonthlySavingSchemeDefaulterListPage();
+		monthlySavingSchemeDefaulterList = new MonthlySavingSchemeDefaulterList();
+		monthlySavingSchemeDefaulterListPage = new MonthlySavingSchemeDefaulterListPage();
 		offlineTagging = new OfflineTagging();
 		itemTypeMasterPage = new ItemTypeMasterPage();
 		itemTypeMaster = new ItemTypeMaster();
 		reprintingoflabel = new ReprintingOfLabel();
 		reprintingoflabelpage = new ReprintingOfLabelPage();
-		pdcReport=new PDCReport();
-		transfer=new Transfer();
-		transferOrder=new TransferOrder();
-		pdcReportPage=new PDCReportPage();
-		allTagPage=new AllTagPage();
+		pdcReport = new PDCReport();
+		transfer = new Transfer();
+		transferOrder = new TransferOrder();
+		pdcReportPage = new PDCReportPage();
+		allTagPage = new AllTagPage();
+		cardReceipt=new CardReceipt();
+		cardReceiptPage=new CardReceiptPage();
+		transferReceipt=new TransferReceipt();
+		transferReceiptPage=new TransferReceiptPage();
+		transferOrderReceipt=new TransferOrderReceipt();
+		transferOrderReceiptPage=new TransferOrderReceiptPage();
+		
+		
 		SoftAssert softAssert = new SoftAssert();
 		actions = new Actions(driver);
 
@@ -229,6 +280,7 @@ public class ProjectFunctions implements ProjectConstants {
 	}
 
 	public void login() throws InterruptedException {
+
 		driver.findElement(By.id("i0116")).sendKeys(username);
 		driver.findElement(By.id("idSIButton9")).click();
 		driver.findElement(By.xpath("//input[contains(@name,\"pass\")]")).sendKeys(password);
@@ -722,7 +774,60 @@ public class ProjectFunctions implements ProjectConstants {
 			reportHelper.onTestFailure(test, "An exception occurred while checking notification presence");
 			reportHelper.generateLogWithScreenshot(test, "Exception occurred while checking notification presence");
 		} finally {
-			//Thread.sleep(2000);
+			// Thread.sleep(2000);
+			driver.navigate().refresh();
+		}
+	}
+	
+	public void checkNotificationPresenceAndHandleForStore(MasterDto masterDto) throws IOException, InterruptedException {
+		String expectedMessage = getValueOrDefault(masterDto.getAttributeValue("Expected Message")).trim();
+		System.out.println("expectedMessage:" + expectedMessage);
+		try {
+			// Locate the notification element
+			WebElement notificationElement = driver.findElement(By.xpath("//li[@class=\"messageCenter-item\"][1]"));
+
+			// Check if the notification element is displayed
+			if (notificationElement.isDisplayed()) {
+
+				String xpathExpression = "//li[@class=\"messageCenter-item\"][1]";
+				List<WebElement> messageElements = driver.findElements(By.xpath(xpathExpression));
+
+				// Loop through each element and compare the text
+				for (WebElement element : messageElements) {
+					genericHelper.javascriptExecutor.executeScript("arguments[0].scrollIntoView();", element);
+					String actualMessage = element.getText().trim();
+					System.out.println("Actual: " + actualMessage);
+
+					// Use contains to verify if expectedMessage is part of actualMessage
+
+//					reportHelper.performAssert(test, "Data", expectedMessage, actualMessage);
+//					reportHelper.generateLog(test, actualMessage);
+//					reportHelper.generateLogFullScreenSS(test, expectedMessage);
+					if (actualMessage.trim().contains(expectedMessage.trim())) {
+						reportHelper.onTestSuccess(test,
+								"Expected: " + expectedMessage + " | Actual: " + actualMessage);
+						reportHelper.generateLog(test, actualMessage);
+						reportHelper.generateLogFullScreenSS(test, expectedMessage);
+					} else {
+						reportHelper.onTestFailure(test, "No Match: Expected does not contain Actual | Expected: "
+								+ expectedMessage + " | Actual: " + actualMessage);
+						reportHelper.generateLog(test, actualMessage);
+						reportHelper.generateLogFullScreenSS(test, actualMessage);
+						customerOrderPage.notificationCloseButton().click();
+					}
+				}
+			}
+		} catch (NoSuchElementException e) {
+			// Handle the case where the notification element is not found
+			reportHelper.onTestFailure(test, "No notification found");
+			reportHelper.generateLog(test, "No notification found");
+			reportHelper.generateLogFullScreenSS(test, "No notification found");
+		} catch (Exception e) {
+			// Handle any other exceptions that may occur
+			reportHelper.onTestFailure(test, "An exception occurred while checking notification presence");
+			reportHelper.generateLogWithScreenshot(test, "Exception occurred while checking notification presence");
+		} finally {
+			// Thread.sleep(2000);
 			driver.navigate().refresh();
 		}
 	}
@@ -1306,12 +1411,246 @@ public class ProjectFunctions implements ProjectConstants {
 			System.out.println("Failed: " + e.getMessage());
 		}
 	}
-	
-	public static String convertDateFormatJava8(String inputDate) {
-	    DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-	    DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 
-	    LocalDate date = LocalDate.parse(inputDate, inputFormatter);
-	    return date.format(outputFormatter);
+	public static String convertDateFormatJava8(String inputDate) {
+		DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+		DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
+
+		LocalDate date = LocalDate.parse(inputDate, inputFormatter);
+		return date.format(outputFormatter);
 	}
+
+	public void downloadPDFUsingRobot() {
+		try {
+//			WebElement pdfElement = driver.findElement(By.tagName("body"));
+//			pdfElement.click();
+//			Thread.sleep(1000);
+
+			WebElement downloadButton = monthlySavingSchemeDefaulterListPage.btnDownload();
+
+			// Scroll element into view
+			genericHelper.javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", downloadButton);
+
+			// Get element's location on screen
+			Point location = downloadButton.getLocation();
+			int x = location.getX();
+			int y = location.getY();
+
+			// Adjust based on browser window position (optional if using fullscreen)
+			Robot robot = new Robot();
+			robot.mouseMove(x + 10, y + 80); // Add offset if needed (toolbar, window decoration)
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+
+//			Robot robot = new Robot();
+//			robot.keyPress(KeyEvent.VK_CONTROL);
+//			robot.keyPress(KeyEvent.VK_S);
+//			robot.keyRelease(KeyEvent.VK_S);
+//			robot.keyRelease(KeyEvent.VK_CONTROL);
+//			Thread.sleep(2000);
+//
+//			robot.keyPress(KeyEvent.VK_ENTER);
+//			robot.keyRelease(KeyEvent.VK_ENTER);
+//			Thread.sleep(2000);
+
+			System.out.println("PDF Downloaded Successfully!");
+		} catch (Exception e) {
+			System.err.println("Error handling PDF download with Robot class: " + e.getMessage());
+		}
+	}
+
+	public void downloadPDF() {
+		try {
+			Thread.sleep(2000);
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_S);
+			robot.keyRelease(KeyEvent.VK_S);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			System.err.println("Error handling PDF download with JavaScript: " + e.getMessage());
+		}
+	}
+
+	/**
+	 * Waits for the latest downloaded PDF file.
+	 */
+	public static String waitForLatestDownloadedPDF(String directoryPath) throws InterruptedException {
+		for (int i = 0; i < 30; i++) {
+			String latestFilePath = getLatestDownloadedPDF(directoryPath);
+			if (latestFilePath != null) {
+				return latestFilePath;
+			}
+			Thread.sleep(1000);
+		}
+		return null;
+	}
+
+	/**
+	 * Gets the latest downloaded PDF file dynamically.
+	 */
+	public static String getLatestDownloadedPDF(String directoryPath) {
+		try {
+			Path downloadPath = Paths.get(directoryPath);
+			Optional<Path> latestFilePath = Files.list(downloadPath).filter(file -> file.toString().endsWith(".pdf"))
+					.max(Comparator.comparingLong(file -> file.toFile().lastModified()));
+
+			return latestFilePath.map(Path::toString).orElse(null);
+		} catch (IOException e) {
+			System.err.println("Error while fetching the latest PDF file: " + e.getMessage());
+			return null;
+		}
+	}
+
+	/**
+     * Extracts structured data from a PDF.
+     */
+    public static Map<String, Object> extractDataFromPDF(String pdfPath) throws IOException {
+        File file = new File(pdfPath);
+        if (!file.exists()) {
+            System.err.println("PDF file not found: " + pdfPath);
+            return null;
+        }
+
+        try (PDDocument document = PDDocument.load(file)) {
+            PDFTextStripper pdfStripper = new PDFTextStripper();
+            pdfStripper.setSortByPosition(true);
+            String text = pdfStripper.getText(document);
+            System.out.println("======= Extracted PDF Content =======");
+            System.out.println(text);
+            System.out.println("======================================");
+
+            return parsePDFText(text);
+        }
+    }
+
+    /**
+     * Parses extracted PDF text into structured key-value pairs and tables.
+     * This implementation is generic and will:
+     * - Use a regex to extract any key-value pairs on a line.
+     * - Create generic table rows if a line has multiple spaces.
+     */
+    public static Map<String, Object> parsePDFText(String text) {
+        Map<String, Object> extractedData = new LinkedHashMap<>();
+        Map<String, String> keyValuePairs = new LinkedHashMap<>();
+        List<Map<String, String>> tables = new ArrayList<>();
+        boolean isTable = false;
+
+        // Generic regex for key-value pairs:
+        // This will capture anything before a colon or equal sign as key and
+        // everything after as the value until another key delimiter or end of line.
+        Pattern kvPattern = Pattern.compile("([^:=]+?)\\s*[:=]\\s*([^:=]+?)(?=\\s*[:=]|$)");
+
+        String[] lines = text.split("\\n");
+        for (String line : lines) {
+            line = line.trim();
+            if (line.isEmpty())
+                continue;
+
+            boolean lineProcessed = false;
+            // Process lines that contain key-value pairs
+            if (line.contains(":") || line.contains("=")) {
+                Matcher matcher = kvPattern.matcher(line);
+                while (matcher.find()) {
+                    String key = matcher.group(1).trim();
+                    String value = matcher.group(2).trim();
+                    keyValuePairs.put(key, value);
+                    lineProcessed = true;
+                }
+            }
+
+            // If the line wasn't processed as key-value, check if it looks like a table row.
+            if (!lineProcessed && line.matches(".*\\s{2,}.*")) {
+                isTable = true;
+                // Split the line on multiple spaces.
+                String[] columns = line.split("\\s{2,}");
+                // Create a generic table row using Column1, Column2, etc.
+                if (columns.length > 1) {
+                    Map<String, String> rowData = new LinkedHashMap<>();
+                    for (int i = 0; i < columns.length; i++) {
+                        rowData.put("Column" + (i + 1), columns[i].trim());
+                    }
+                    tables.add(rowData);
+                }
+            }
+        }
+
+        if (!keyValuePairs.isEmpty()) {
+            extractedData.put("Invoice Details", keyValuePairs);
+        }
+        if (!tables.isEmpty()) {
+            extractedData.put("Table Data", tables);
+        }
+
+        // Debug: Print out the extracted data as JSON
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(extractedData);
+            System.out.println(jsonString);
+        } catch (Exception e) {
+            System.err.println("Error converting to JSON: " + e.getMessage());
+        }
+
+        return extractedData;
+    }
+
+    /**
+     * Validates that the extracted data contains the expected value.
+     * @throws IOException 
+     */
+    public void validateExtractedData(ExtentTest test, Map<String, Object> extractedData, String expectedValue) throws IOException {
+        boolean isValid = extractedData.values().stream()
+            .anyMatch(value -> value.toString().contains(expectedValue));
+
+        if (isValid) {
+            reportHelper.onTestSuccess(test, "Expected Value Found: " + expectedValue);
+            reportHelper.generateLogWithScreenshot(test, "Expected Value Found: " + expectedValue);
+        } else {
+            reportHelper.onTestFailure(test, "Expected Value NOT Found: " + expectedValue);
+            reportHelper.generateLogWithScreenshot(test, "Expected Value NOT Found: " + expectedValue);
+        }
+    }
+
+
+public void compareFields(ExtentTest test, MasterDto masterDto, String fieldName, String expected)
+		throws IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+//Validate inputs
+	if (fieldName == null || fieldName.isEmpty()) {
+		System.out.println("Error: Field Name is null or empty");
+		return;
+	}
+	if (expected == null) {
+		System.out.println("Error: Expected Value is null");
+		return;
+	}
+
+	String actual = "";
+	try {
+//Get the corresponding method from CommonFieldsPage
+		Method method = CommonFieldsPage.class.getMethod(fieldName);
+		WebElement element = (WebElement) method.invoke(commonFields);
+
+		if (element.getTagName().equalsIgnoreCase("input") || element.getTagName().equalsIgnoreCase("textarea")) {
+			actual = element.getAttribute("value");
+		} else {
+			actual = element.getText().trim();
+		}
+
+		System.out.println("Comparing " + fieldName + " | Expected: " + expected + " | Actual: " + actual);
+
+//Compare expected and actual values
+		if (!expected.equalsIgnoreCase(actual)) {
+			reportHelper.onTestFailure(test,
+					fieldName + " mismatch. Expected: " + expected + ", Actual: " + actual);
+			reportHelper.generateLogWithScreenshot(test, "Mismatch for: " + fieldName);
+		} else {
+			reportHelper.onTestSuccess(test, "PASS: " + fieldName + " matches. Value: " + expected);
+			reportHelper.generateLogWithScreenshot(test, "PASS: " + fieldName + " matches. Value: " + expected);
+		}
+	} catch (NoSuchMethodException e) {
+		System.out.println("No matching method found for field: " + fieldName);
+		reportHelper.onTestFailure(test, "No matching field found: " + fieldName);
+	} 
+}
 }
