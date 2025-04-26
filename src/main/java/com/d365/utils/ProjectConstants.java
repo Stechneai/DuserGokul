@@ -11,6 +11,10 @@ public interface ProjectConstants {
 	public String reportName = "TransferOrderReceiptNegative";
 	public String username = "testing@csjewels.co.in";
 	public String password = "Branch@4321";
+	public String docTitle = "D365";
+	public String reportName = "D365";
+	public String username = "kiran.dhanepkar@techneai.com";
+	public String password = "1994@Kiru";
 
 	public String excelPath = "./public/data/";
 	public String reprintingOfLabel = "ReprintingOfLabeling.xlsx";
@@ -23,9 +27,12 @@ public interface ProjectConstants {
 	public String transferReceiptModuleSheet="TransferReceiptModule.xlsx";
 	public String transferOrderReceiptModuleSheet="TransferOrderReceiptModule.xlsx";
 
+	public String unFixMasterSheet = "Unfix.xlsx";
+	public String duplicateentryProvisional ="Provisionalparcel1";
 	public final String propertyFile = "./testResources/appData.properties";
 	public final String configFile = "./testResources/config.properties";
 	public final String DOWNLOAD_DIR = System.getProperty("user.home") + File.separator + "Downloads";
+	
 //	public final String currentDir = System.getProperty("user.dir");
 //	public final String extentReportSSPath = "./extentReport/screenshot/";
 //	public final String reportPath = "./extentReport/"; 
